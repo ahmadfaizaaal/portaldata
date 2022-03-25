@@ -1,11 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === 0 ? 'https://' : 'http://';
-$root     = $protocol . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']);
+$protocol   = stripos($_SERVER['SERVER_PROTOCOL'],'https') === 0 ? 'https://' : 'http://';
+$serverRoot = $protocol . $_SERVER['HTTP_HOST'];
+$root       = $serverRoot . dirname($_SERVER['SCRIPT_NAME']);
 
 define('BASE_URL', $root);
 define('BASE_THEME', $root.'/assets/');
+define('WEBAPI_URL', $serverRoot.'/webapi');
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace
