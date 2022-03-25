@@ -136,7 +136,7 @@
                         <!-- Header-btn -->
                         <div class="header-btns d-none d-lg-block f-right">
                             <!-- <a href="#" class="mr-40"><i class="ti-user"></i> Log in</a> -->
-                            <a href="<?= WEBAPI_URL ?>/auth" class="btn btn-xs">Masuk</a>
+                            <a href="<?= WEBAPI_URL ?>/auth?r=portal-data" class="btn btn-xs">Masuk</a>
                         </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">

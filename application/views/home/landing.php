@@ -74,7 +74,7 @@
                     </li>
                     <!-- <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li> -->
                     <!-- <li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li> -->
-                    <li class="nav-item cta cta-colored"><a href="<?= WEBAPI_URL ?>/auth" class="nav-link">Masuk</a></li>
+                    <li class="nav-item cta cta-colored"><a href="<?= WEBAPI_URL ?>/auth?r=portal-data" class="nav-link">Masuk</a></li>
 
                 </ul>
             </div>
