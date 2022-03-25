@@ -214,8 +214,9 @@
 
         function dateFormat(date) {
             var day = date.substr(8, 2);
-            var month = date.substr(6, 1);
+            var month = date.substr(5, 2);
             var year = date.substr(0, 4);
+            alert(month);
             var label = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
             return day + ' ' + label[month] + ' ' + year;
         }

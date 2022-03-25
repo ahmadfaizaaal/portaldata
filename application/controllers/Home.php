@@ -7,10 +7,16 @@ class Home extends CI_Controller
     {
         parent::__construct();
         date_default_timezone_set('Asia/Bangkok');
-        $this->load->library('form_validation');
-        $this->load->model('M_Registration', 'registration');
-        $this->load->model('M_Auth', 'auth');
+        // $this->load->library('form_validation');
+        // $this->load->model('M_Registration', 'registration');
+        // $this->load->model('M_Auth', 'auth');
         date_default_timezone_set('Asia/Bangkok');
+    }
+
+    public function landing()
+    {
+        $data['result'] = $_SESSION;
+        $this->load->view('home/landing2', $data);
     }
 
     public function index()
