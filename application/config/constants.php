@@ -1,8 +1,11 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-define('BASE_URL', 'http://localhost/portaldata/');
-define('BASE_THEME', 'http://localhost/portaldata/assets/');
+$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === 0 ? 'https://' : 'http://';
+$root     = $protocol . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']);
+
+define('BASE_URL', $root);
+define('BASE_THEME', $root.'/assets/');
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace
