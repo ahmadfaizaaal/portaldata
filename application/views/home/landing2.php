@@ -50,7 +50,7 @@
                     <!-- Section Tittle -->
                     <div class="section-tittle text-center mb-60">
                         <p class="default-blue">Data berdasarkan</p>
-                        <h2 class="default-yellow">Badan Usaha Jasa Konstruksi</h2>
+                        <h2 class="default-orange">Badan Usaha Jasa Konstruksi</h2>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                     <!-- Section Tittle -->
                     <div class="section-tittle section-top-border text-center mb-60">
                         <p class="default-blue">Data berdasarkan</p>
-                        <h2 class="default-yellow">Tenaga Kerja Konstruksi</h2>
+                        <h2 class="default-orange">Tenaga Kerja Konstruksi</h2>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                     <!-- Section Tittle -->
                     <div class="section-tittle section-top-border text-center mb-60">
                         <p class="default-blue">Data berdasarkan</p>
-                        <h2 class="default-yellow">Pembinaan Jasa Konstruksi</h2>
+                        <h2 class="default-orange">Pembinaan Jasa Konstruksi</h2>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@
                     <!-- Section Tittle -->
                     <div class="section-tittle text-center mb-80">
                         <p class="default-blue">Data berdasarkan</p>
-                        <h2 class="default-yellow">Laporan Tahunan Asing</h2>
+                        <h2 class="default-orange">Laporan Tahunan Asing</h2>
                     </div>
                 </div>
             </div>

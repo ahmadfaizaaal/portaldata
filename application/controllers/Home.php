@@ -7,35 +7,29 @@ class Home extends CI_Controller
     {
         parent::__construct();
         date_default_timezone_set('Asia/Bangkok');
-        // $this->load->library('form_validation');
-        // $this->load->model('M_Registration', 'registration');
-        // $this->load->model('M_Auth', 'auth');
-        date_default_timezone_set('Asia/Bangkok');
-    }
-
-    public function bujk()
-    {
-        $data['result'] = $_SESSION;
-        $this->load->view('component/header');
-        $this->load->view('bujk/sbu_transisi', $data);
-        $this->load->view('component/footer');
+        $this->load->model('M_GeneralSetting', 'genset');
     }
 
     public function index()
     {
-        // if ($this->session->userdata('username')) {
-        //     if ('1' == $this->session->userdata('role_id')) {
-        //         redirect('staff');
-        //     } else if ('2' == $this->session->userdata('role_id')) {
-        //         redirect('penghulu');
-        //     }
+        load_page('home', 'landing2', 'beranda');
+        // $menu = $this->genset->listMenu();
+        // $submenuMapping = array();
+        // for ($i = 0; $i < count($menu); $i++) {
+        //     $submenu = $this->genset->listSubmenu($menu[$i]->id_menu);
+        //     $temp = array(
+        //         'id_parentmenu' => $menu[$i]->id_menu,
+        //         'child_menu' => $submenu
+        //     );
+        //     array_push($submenuMapping, $temp);
         // }
-        // $data['title'] = "Sistem Manajemen Layanan Pernikahan";
-        // $this->load->view('home/index', $data);
-        $data['result'] = $_SESSION;
-        $this->load->view('component/header');
-        $this->load->view('home/landing2', $data);
-        $this->load->view('component/footer');
+
+        // $data['listMenu'] = $menu;
+        // $data['listSubmenu'] = $submenuMapping;
+
+        // $this->load->view('component/header', $data);
+        // $this->load->view('home/landing2');
+        // $this->load->view('component/footer');
     }
 
     public function registration($type)

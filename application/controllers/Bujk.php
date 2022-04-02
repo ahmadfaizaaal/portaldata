@@ -7,35 +7,22 @@ class Bujk extends CI_Controller
     {
         parent::__construct();
         date_default_timezone_set('Asia/Bangkok');
-        // $this->load->library('form_validation');
-        // $this->load->model('M_Registration', 'registration');
-        // $this->load->model('M_Auth', 'auth');
-        date_default_timezone_set('Asia/Bangkok');
+        $this->load->model('M_GeneralSetting', 'genset');
     }
 
     public function index()
     {
-        // if ($this->session->userdata('username')) {
-        //     if ('1' == $this->session->userdata('role_id')) {
-        //         redirect('staff');
-        //     } else if ('2' == $this->session->userdata('role_id')) {
-        //         redirect('penghulu');
-        //     }
-        // }
-        // $data['title'] = "Sistem Manajemen Layanan Pernikahan";
-        // $this->load->view('home/index', $data);
-        $data['result'] = $_SESSION;
         $this->load->view('component/header');
-        $this->load->view('home/landing2', $data);
+        $this->load->view('home/landing2');
         $this->load->view('component/footer');
     }
 
     public function sbuTransisi()
     {
-        $data['result'] = $_SESSION;
-        $this->load->view('component/header');
-        $this->load->view('bujk/sbu_transisi', $data);
-        $this->load->view('component/footer');
+        load_page('bujk', 'sbu_transisi');
+        // $this->load->view('component/header');
+        // $this->load->view('bujk/sbu_transisi');
+        // $this->load->view('component/footer');
     }
 
 
