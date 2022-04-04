@@ -7,7 +7,7 @@ class Bujk extends CI_Controller
     {
         parent::__construct();
         date_default_timezone_set('Asia/Bangkok');
-        $this->load->model('M_GeneralSetting', 'genset');
+        // $this->load->model('M_GeneralSetting', 'genset');
     }
 
     public function index()
@@ -19,7 +19,7 @@ class Bujk extends CI_Controller
 
     public function sbuTransisi()
     {
-        load_page('bujk', 'sbu_transisi');
+        load_page('bujk', 'sbu_transisi', '' , null, 6);
         // $this->load->view('component/header');
         // $this->load->view('bujk/sbu_transisi');
         // $this->load->view('component/footer');

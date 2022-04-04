@@ -64,86 +64,20 @@
                             <nav>
                                 <ul id="navigation">
                                     <li><a href="<?= BASE_URL ?>">Beranda</a></li>
-                                    <?php for ($i = 0; $i < count($listMenu); $i++) { ?>
-                                        <li><a href="javascript:void(0)" class="menu-hover"><?= $listMenu[$i]->title; ?> &nbsp;<span class="fa fa-solid fa-angle-down fa-xs"></span></a>
-                                            <ul class="submenu">
-                                                <?php for ($j = 0; $j < count($listSubmenu[$i]['child_menu']); $j++) { ?>
-                                                    <li><a href="<?= BASE_URL . $listSubmenu[$i]['child_menu'][$j]->url ?>"><?= $listSubmenu[$i]['child_menu'][$j]->title; ?></a>
-                                                        <?php
-                                                        if ($j != (count($listSubmenu[$i]['child_menu']) - 1)) {
-                                                            echo '<hr class="mt-1 mb-1" style="width: 320px;">';
-                                                        }
-                                                        ?>
-                                                    </li>
-                                                    <!-- <li><a href="directory_details.html">SBU Masa Reguler</a>
-                                                        <hr class="mt-1 mb-1" style="width: 320px;">
-                                                    </li>
-                                                    <li><a href="listing.html">BUJK (Masa Transisi)</a>
-                                                        <hr class="mt-1 mb-1" style="width: 320px;">
-                                                    </li>
-                                                    <li><a href="listing.html">BUJK (Masa Reguler)</a>
-                                                        <hr class="mt-1 mb-1" style="width: 320px;">
-                                                    </li>
-                                                    <li><a href="listing.html">Pengalaman Main BUJK</a>
-                                                        <hr class="mt-1 mb-1" style="width: 320px;">
-                                                    </li>
-                                                    <li><a href="listing.html">Pengalaman Sub BUJK</a>
-                                                    </li> -->
-                                                <?php } ?>
-                                            </ul>
-                                        </li>
-                                    <?php } ?>
-                                    <!-- <li><a href="#" class="menu-hover">Tenaga Kerja Konstruksi &nbsp;<span class="fa fa-solid fa-angle-down fa-xs"></span></a>
-                                        <ul class="submenu">
-                                            <li><a href="directory_details.html">Sertifikat Keahlian (SKA) Masa Transisi</a>
-                                                <hr class="mt-1 mb-1" style="width: 320px;">
-                                            </li>
-                                            <li><a href="listing.html">Sertifikat Keterampilan Kerja (SKTK) Masa Transisi</a>
-                                                <hr class="mt-1 mb-1" style="width: 320px;">
-                                            </li>
-                                            <li><a href="listing.html">Sertifikat Kompetensi Kerja (SKK) Masa Reguler</a>
-                                                <hr class="mt-1 mb-1" style="width: 320px;">
-                                            </li>
-                                            <li><a href="listing.html">Tenaga Ahli (SKA Masa Transisi)</a>
-                                                <hr class="mt-1 mb-1" style="width: 320px;">
-                                            </li>
-                                            <li><a href="listing.html">Tenaga Terampil (SKTK Masa Transisi)</a>
-                                                <hr class="mt-1 mb-1" style="width: 320px;">
-                                            </li>
-                                            <li><a href="listing.html">Tenaga Kerja Konstruksi (SKK Masa Reguler)</a>
-                                                <hr class="mt-1 mb-1" style="width: 320px;">
-                                            </li>
-                                            <li><a href="listing.html">Pengalaman Profesi</a>
-
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#" class="menu-hover">Pembinaan Jasa Konstruksi &nbsp;<span class="fa fa-solid fa-angle-down fa-xs"></span></a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.html">Peserta Pembinaan DJBK (Dayanaker)</a>
-                                                <hr class="mt-1 mb-1" style="width: 320px;">
-                                            </li>
-                                            <li><a href="blog_details.html">Pelatihan Pembinaan DJBK (Dayanaker)</a>
-                                                <hr class="mt-1 mb-1" style="width: 320px;">
-                                            </li>
-                                            <li><a href="elements.html">Peserta Distance Learning Bidang Konstruksi (SIBIMA)</a>
-                                                <hr class="mt-1 mb-1" style="width: 320px;">
-                                            </li>
-                                            <li><a href="elements.html">Pelatihan Distance Learning Bidang Konstruksi (SIBIMA)</a>
-
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#" class="menu-hover">Laporan Tahunan Asing &nbsp;<span class="fa fa-solid fa-angle-down fa-xs"></span></a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.html">BUJKA berdasarkan Laporan Tahunan</a>
-                                                <hr class="mt-1 mb-1" style="width: 320px;">
-                                            </li>
-                                            <li><a href="blog_details.html">Proyek Asing berdasarkan Laporan Tahunan</a>
-
-                                            </li>
-                                        </ul>
-                                    </li> -->
+									<?php foreach($displayListMenu as $index => $item): ?>
+										<li><a href="javascript:void(0)" class="menu-hover"><?= $item->title; ?> &nbsp;<span class="fa fa-solid fa-angle-down fa-xs"></span></a>
+										<?php if($item->has_child): ?>
+											<ul class="submenu">
+												<?php foreach($item->child as $childIndex => $childItem): ?>
+													<li><a href="<?= BASE_URL . $childItem->url ?>"><?= $childItem->title; ?></a>
+														<?= ($childIndex != (count($item->child) - 1)) ? '<hr class="mt-1 mb-1" style="width: 320px;">' : '' ?>
+													</li>
+												<?php endforeach ?>
+											</ul>
+										<?php endif ?>
+									<?php endforeach ?>
+									</li>
+                                    
                                 </ul>
                             </nav>
                         </div>

@@ -23,6 +23,7 @@
                 <div class="col-lg-12 posts-list" id="catA">
                     <div class="single-post">
                         <div class="blog_details">
+							<?php // var_dump($subMenu = $this->genset->get($currentActiveMenu)) ?>
                             <h2 style="color: #2d2d2d;">Rekap Data Sertifikat Badan Usaha (dihitung dari Subklas)</h2>
                             <ul class="blog-info-link mt-3">
                                 <li><a href="#"><i class="fa fa-user"></i> Admin Datin DJBK</a></li>

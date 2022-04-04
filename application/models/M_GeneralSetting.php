@@ -7,6 +7,8 @@ class M_GeneralSetting extends CI_Model
     {
         parent::__construct();
         date_default_timezone_set('Asia/Bangkok');
+
+		$this->_table = "tbl_portal_menu";
     }
 
     public function listMenu()
@@ -37,4 +39,16 @@ class M_GeneralSetting extends CI_Model
             return null;
         }
     }
+
+	public function getListMenu($getChildById = null) {
+		$where    = !is_null($getChildById) ? ['is_active' => 1, 'id_parentmenu' => $getChildById] : ['is_active' => 1, 'has_child' => 1, 'id_parentmenu IS NULL' => null];
+		$result   = $this->db->get_where($this->_table, $where);
+		$maxLevel = $this->db->select_max('menu_level')->get($this->_table)->row();
+		return $result->num_rows() ? ['maxLevel' => $maxLevel ? $maxLevel->menu_level : 0 , 'data' => $result->result()] : ['maxLevel' => 0, 'data' => []];
+	}
+
+	public function getListSubMenu($parentId) {
+		$result = $this->db->get_where($this->_table, ['id_parentmenu' => $parentId]);
+		return $result->num_rows() ? $result->result() : [];
+	}
 }

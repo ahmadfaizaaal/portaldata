@@ -68,14 +68,17 @@
 <div id="shortcut-container" class="shortcut-container">
     <p class="font-weight-bold text-right mb-2">Data berdasarkan&nbsp;:</p>
     <ul class="sub-shortcut text-right">
-        <?php //for ($i = 0; $i < count($listSubSubmenu); $i++) { 
+        <?php
+			$subMenu = $this->genset->getListSubMenu($currentActiveMenu);
+			// var_dump($subMenu);
+			if ($subMenu) {
+				foreach ($subMenu as $key => $item) {
+					?>
+					<li class="pt-3 pb-3 scroll-to-section"><a href="<?= $item->url ?>"><?= $item->title ?><i class="fa-solid fa-caret-left ml-3"></i></a></li>
+					<?php
+				}
+			}
         ?>
-        <li class="pt-3 pb-3 scroll-to-section"><a href="#catA">SBU Masa Transisi<i class="fa-solid fa-caret-left ml-3"></i></a></li>
-        <li class="pt-3 pb-3 scroll-to-section"><a href="#catB">SBU Masa Reguler<i class="fa-solid fa-caret-left ml-3"></i></a></li>
-        <li class="pt-3 pb-3 scroll-to-section"><a href="#catC">BUJK (Masa Transisi)<i class="fa-solid fa-caret-left ml-3"></i></a></li>
-        <li class="pt-3 pb-3 scroll-to-section"><a href="listing.html">BUJK (Masa Reguler)<i class="fa-solid fa-caret-left ml-3"></i></a></li>
-        <li class="pt-3 pb-3 scroll-to-section"><a href="listing.html">Pengalaman Main BUJK<i class="fa-solid fa-caret-left ml-3"></i></a></li>
-        <li class="pt-3 pb-3 scroll-to-section"><a href="listing.html">Pengalaman Sub BUJK<i class="fa-solid fa-caret-left ml-3"></i></a></li>
         <?php //} 
         ?>
     </ul>
