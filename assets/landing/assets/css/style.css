@@ -2353,7 +2353,8 @@ hr {
 	}
 }
 .slider-height3 {
-	height: 440px;
+	/* height: 440px; */
+	height: 370px;
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 	.slider-height3 {
@@ -6257,16 +6258,17 @@ h2.default-orange {
 }
 
 .shortcut-container {
-	/* background: rgba(55, 71, 116, 0.1); */
+	background: rgba(255, 255, 255, 0.6);
+	z-index: 1;
 	/* height: 50px; */
 	width: 340px;
 	right: 31px;
-	bottom: 150px;
+	bottom: 140px;
 	position: fixed;
 	color: #eab630;
 	font-size: 20px;
 	text-align: center;
-	/* border-radius: 50%; */
+	border-radius: 15px;
 	/* line-height: 48px; */
 	border: 2px solid transparent;
 	/* box-shadow: 0 0 10px 3px rgba(108, 106, 98, 0.2); */

@@ -66,18 +66,18 @@
     <a title="Kategori" href="javascript:void(0)" onclick="shortcutToggle()"> <i class="fa fa-solid fa-list"></i></a>
 </div>
 <div id="shortcut-container" class="shortcut-container">
-    <p class="font-weight-bold text-right mb-2">Data berdasarkan&nbsp;:</p>
+    <p class="font-weight-bold text-right mb-2 pt-3">Data berdasarkan&nbsp;:</p>
     <ul class="sub-shortcut text-right">
         <?php
-			$subMenu = $this->genset->getListSubMenu($currentActiveMenu);
-			// var_dump($subMenu);
-			if ($subMenu) {
-				foreach ($subMenu as $key => $item) {
-					?>
-					<li class="pt-3 pb-3 scroll-to-section"><a href="<?= $item->url ?>"><?= $item->title ?><i class="fa-solid fa-caret-left ml-3"></i></a></li>
-					<?php
-				}
-			}
+        $subMenu = $this->genset->getListSubMenu($currentActiveMenu);
+        // var_dump($subMenu);
+        if ($subMenu) {
+            foreach ($subMenu as $key => $item) {
+        ?>
+                <li class="pt-3 pb-1 scroll-to-section"><a href="#<?= $item->url ?>"><?= $item->title ?><i class="fa-solid fa-caret-left ml-3"></i></a></li>
+        <?php
+            }
+        }
         ?>
         <?php //} 
         ?>

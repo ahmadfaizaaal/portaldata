@@ -19,10 +19,12 @@ class Bujk extends CI_Controller
 
     public function sbuTransisi()
     {
-        load_page('bujk', 'sbu_transisi', '' , null, 6);
-        // $this->load->view('component/header');
-        // $this->load->view('bujk/sbu_transisi');
-        // $this->load->view('component/footer');
+        $url =  '/' . $this->uri->uri_string();
+        $idMenu = $this->genset->getIdMenu($url);
+
+        $data['displayListSubmenu'] = $this->genset->getListSubMenu($idMenu);
+
+        load_page('bujk', 'sbu_transisi', '', $data, $idMenu);
     }
 
 
