@@ -12,6 +12,7 @@ class Home extends CI_Controller
 
     public function index()
     {
+        // echo 'test';
         load_page('home', 'landing2', 'beranda');
         // $menu = $this->genset->listMenu();
         // $submenuMapping = array();
@@ -27,9 +28,9 @@ class Home extends CI_Controller
         // $data['listMenu'] = $menu;
         // $data['listSubmenu'] = $submenuMapping;
 
-        // $this->load->view('component/header', $data);
+        // $this->load->view('components/header', $data);
         // $this->load->view('home/landing2');
-        // $this->load->view('component/footer');
+        // $this->load->view('components/footer');
     }
 
     public function registration($type)

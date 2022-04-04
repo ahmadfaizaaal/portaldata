@@ -66,14 +66,18 @@
     <a title="Kategori" href="javascript:void(0)" onclick="shortcutToggle()"> <i class="fa fa-solid fa-list"></i></a>
 </div>
 <div id="shortcut-container" class="shortcut-container">
-    <p class="font-weight-bold text-right mb-2">Data SBU berdasarkan&nbsp;:</p>
+    <p class="font-weight-bold text-right mb-2">Data berdasarkan&nbsp;:</p>
     <ul class="sub-shortcut text-right">
+        <?php //for ($i = 0; $i < count($listSubSubmenu); $i++) { 
+        ?>
         <li class="pt-3 pb-3 scroll-to-section"><a href="#catA">SBU Masa Transisi<i class="fa-solid fa-caret-left ml-3"></i></a></li>
         <li class="pt-3 pb-3 scroll-to-section"><a href="#catB">SBU Masa Reguler<i class="fa-solid fa-caret-left ml-3"></i></a></li>
         <li class="pt-3 pb-3 scroll-to-section"><a href="#catC">BUJK (Masa Transisi)<i class="fa-solid fa-caret-left ml-3"></i></a></li>
         <li class="pt-3 pb-3 scroll-to-section"><a href="listing.html">BUJK (Masa Reguler)<i class="fa-solid fa-caret-left ml-3"></i></a></li>
         <li class="pt-3 pb-3 scroll-to-section"><a href="listing.html">Pengalaman Main BUJK<i class="fa-solid fa-caret-left ml-3"></i></a></li>
         <li class="pt-3 pb-3 scroll-to-section"><a href="listing.html">Pengalaman Sub BUJK<i class="fa-solid fa-caret-left ml-3"></i></a></li>
+        <?php //} 
+        ?>
     </ul>
 </div>
 <!-- Scroll Up -->
