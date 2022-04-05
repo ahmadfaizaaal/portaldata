@@ -90,7 +90,7 @@
 
 <script>
     $(function() {
-        var title = '<?= $page_title ?>';
+        var title = '<?= $pageTitle ?>';
         if (title === 'beranda') {
             document.getElementById("shortcut-menu").style.display = "none";
         }

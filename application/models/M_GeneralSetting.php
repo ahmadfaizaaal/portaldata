@@ -52,8 +52,14 @@ class M_GeneralSetting extends CI_Model
     public function getListSubMenu($parentId)
     {
         $this->db->order_by('seq', 'ASC');
-        $result = $this->db->get_where($this->_table, ['id_parentmenu' => $parentId]);
+        $result = $this->db->get_where($this->_table, ['id_parentmenu' => $parentId, 'is_active' => '1']);
         return $result->num_rows() ? $result->result() : [];
+    }
+
+    public function getMenu($url)
+    {
+        $result = $this->db->get_where($this->_table, ['url' => $url]);
+        return $result->row();
     }
 
     public function getIdMenu($url)

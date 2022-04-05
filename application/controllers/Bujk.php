@@ -19,12 +19,24 @@ class Bujk extends CI_Controller
 
     public function sbuTransisi()
     {
+        $pageTitle = 'Sertifikat Badan Usaha (SBU) Masa Transisi';
         $url =  '/' . $this->uri->uri_string();
-        $idMenu = $this->genset->getIdMenu($url);
+        $menu = $this->genset->getMenu($url);
 
-        $data['displayListSubmenu'] = $this->genset->getListSubMenu($idMenu);
+        $data['displayListSubmenu'] = $this->genset->getListSubMenu($menu->id_menu);
 
-        load_page('bujk', 'sbu_transisi', '', $data, $idMenu);
+        loadPage('bujk', 'sbu_transisi', $pageTitle, $data, $menu->id_menu);
+    }
+
+    public function sbuReguler()
+    {
+        $pageTitle = 'Sertifikat Badan Usaha (SBU) Masa Reguler';
+        $url =  '/' . $this->uri->uri_string();
+        $menu = $this->genset->getMenu($url);
+
+        $data['displayListSubmenu'] = $this->genset->getListSubMenu($menu->id_menu);
+
+        loadPage('bujk', 'sbu_reguler', $pageTitle, $data, $menu->id_menu);
     }
 
 

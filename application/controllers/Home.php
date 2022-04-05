@@ -13,7 +13,7 @@ class Home extends CI_Controller
     public function index()
     {
         // echo 'test';
-        load_page('home', 'landing2', 'beranda');
+        loadPage('home', 'landing2', 'beranda');
         // $menu = $this->genset->listMenu();
         // $submenuMapping = array();
         // for ($i = 0; $i < count($menu); $i++) {
