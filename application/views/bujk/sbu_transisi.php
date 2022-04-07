@@ -285,7 +285,7 @@
 				}
 			}
 
-			var base_url = '<?= base_url() ?>'
+			var base_url = '<?= BASE_URL ?>'
 
             $('.dataTableChart').DataTable({
 				processing: true,
