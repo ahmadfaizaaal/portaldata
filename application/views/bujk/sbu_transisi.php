@@ -304,7 +304,7 @@
 					{ width: "20%", targets: [0, 1, 2, 3, 4] },
 				],
 				ajax: {
-					url: `${base_url}bujk/ajax-sbu-transisi`,
+					url: `${base_url}/bujk/ajax-sbu-transisi`,
 					dataSrc: ( response ) => {
 						if( response.status != 200 ) {
 							alert(response.messages)
