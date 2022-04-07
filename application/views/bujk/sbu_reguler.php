@@ -1,13 +1,14 @@
 <main>
     <!--? Hero Start -->
     <div class="slider-area2">
-        <div class="slider-height3  hero-overly hero-bg4 d-flex align-items-center">
+        <div class="slider-height3  hero-overly hero-bg6 d-flex align-items-center">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap2 pt-20 text-center">
                             <p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?= BASE_URL ?>">Beranda&nbsp;&nbsp;&nbsp;<i class="fa fa-solid fa-angle-right fa-xs"></i></a></span> <span class="default-yellow">Badan Usaha Jasa Konstruksi</span></p>
                             <h2 class="pt-2"><?= $pageTitle; ?></h2>
+                            <p class="user-info pt-3 mb-0"><span><i class="fa fa-user"></i>&nbsp;Admin Datin DJBK&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><i class="fa fa-solid fa-calendar-days"></i>&nbsp;Last Update : 28 Maret 2022</span></p>
                         </div>
                     </div>
                 </div>
@@ -25,10 +26,10 @@
                         <div class="single-post">
                             <div class="blog_details">
                                 <h2 style="color: #2d2d2d;"><?= $item->title; ?></h2>
-                                <ul class="blog-info-link mt-3">
+                                <!-- <ul class="blog-info-link mt-3">
                                     <li><a href="#"><i class="fa fa-user"></i> Admin Datin DJBK</a></li>
                                     <li><a href="#"><i class="fa fa-solid fa-calendar-days"></i> Last Update : 28 Maret 2022</a></li>
-                                </ul>
+                                </ul> -->
                                 <div class="row mt-5">
                                     <?php if ($item->position == 'L') : ?>
                                         <div class="col-md-6">
@@ -87,7 +88,7 @@
                             </div>
                         </div>
                         <div class="navigation-top mt-3">
-                            <div class="d-sm-flex justify-content-between text-center"></div>
+                            <div class="d-sm-flex justify-content-between text-center mb-5"></div>
                         </div>
                     </div>
                 <?php endforeach; ?>

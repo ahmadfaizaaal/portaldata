@@ -30,10 +30,12 @@
 
     <script src="https://kit.fontawesome.com/ab0cd48a50.js" crossorigin="anonymous"></script>
     <script src="<?= BASE_THEME; ?>v4/vendor/jquery/jquery.min.js"></script>
-    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
-    <script src="https://code.highcharts.com/maps/modules/map.js"></script>
+    <!-- <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/map.js"></script> -->
     <!-- <script src="<?= BASE_THEME; ?>highchart/highcharts-more.js"></script>
     <script src="<?= BASE_THEME; ?>highchart/highmaps.js"></script> -->
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
 </head>
 
 <body>
@@ -64,20 +66,20 @@
                             <nav>
                                 <ul id="navigation">
                                     <li><a href="<?= BASE_URL ?>">Beranda</a></li>
-									<?php foreach($displayListMenu as $index => $item): ?>
-										<li><a href="javascript:void(0)" class="menu-hover"><?= $item->title; ?> &nbsp;<span class="fa fa-solid fa-angle-down fa-xs"></span></a>
-										<?php if($item->has_child): ?>
-											<ul class="submenu">
-												<?php foreach($item->child as $childIndex => $childItem): ?>
-													<li><a href="<?= BASE_URL . $childItem->url ?>"><?= $childItem->title; ?></a>
-														<?= ($childIndex != (count($item->child) - 1)) ? '<hr class="mt-1 mb-1" style="width: 320px;">' : '' ?>
-													</li>
-												<?php endforeach ?>
-											</ul>
-										<?php endif ?>
-									<?php endforeach ?>
-									</li>
-                                    
+                                    <?php foreach ($displayListMenu as $index => $item) : ?>
+                                        <li><a href="javascript:void(0)" class="menu-hover"><?= $item->title; ?> &nbsp;<span class="fa fa-solid fa-angle-down fa-xs"></span></a>
+                                            <?php if ($item->has_child) : ?>
+                                                <ul class="submenu">
+                                                    <?php foreach ($item->child as $childIndex => $childItem) : ?>
+                                                        <li><a href="<?= BASE_URL . $childItem->url ?>"><?= $childItem->title; ?></a>
+                                                            <?= ($childIndex != (count($item->child) - 1)) ? '<hr class="mt-1 mb-1" style="width: 320px;">' : '' ?>
+                                                        </li>
+                                                    <?php endforeach ?>
+                                                </ul>
+                                            <?php endif ?>
+                                        <?php endforeach ?>
+                                        </li>
+
                                 </ul>
                             </nav>
                         </div>

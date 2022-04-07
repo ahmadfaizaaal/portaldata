@@ -2391,6 +2391,11 @@ hr {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+.hero-bg6 {
+	background-image: url(../img/hero/h1_hero6.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 .slider-area .hero__caption {
 	text-align: center;
 }
@@ -4536,7 +4541,8 @@ hr {
 	transition: all 0.2s linear;
 }
 .single-post-area .blog_details {
-	padding-top: 26px;
+	/* padding-top: 26px; */
+	padding-top: 0px;
 }
 .single-post-area .blog_details p {
 	margin-bottom: 20px;
@@ -6309,4 +6315,12 @@ ul.sub-shortcut > li > a {
 ul.sub-shortcut > li > a:hover {
 	color: #eab630;
 	background: none;
+}
+
+.user-info {
+	color: #fff;
+	font-size: 15px;
+	text-transform: capitalize;
+	line-height: 1;
+	font-weight: 400;
 }

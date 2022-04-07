@@ -105,7 +105,7 @@
         var
             direction = section.replace(/#/, ''),
             reqSection = document.getElementById(direction),
-            reqSectionPos = parseInt(reqSection.offsetTop) - 120;
+            reqSectionPos = parseInt(reqSection.offsetTop) - 140;
 
         if (isAnimate) {
             $('body, html').animate({

@@ -1,13 +1,14 @@
 <main>
     <!--? Hero Start -->
     <div class="slider-area2">
-        <div class="slider-height3  hero-overly hero-bg4 d-flex align-items-center">
+        <div class="slider-height3  hero-overly hero-bg6 d-flex align-items-center">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap2 pt-20 text-center">
                             <p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?= BASE_URL ?>">Beranda&nbsp;&nbsp;&nbsp;<i class="fa fa-solid fa-angle-right fa-xs"></i></a></span> <span class="default-yellow">Badan Usaha Jasa Konstruksi</span></p>
                             <h2 class="pt-2"><?= $pageTitle; ?></h2>
+                            <p class="user-info pt-3 mb-0"><span><i class="fa fa-user"></i>&nbsp;Admin Datin DJBK&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><i class="fa fa-solid fa-calendar-days"></i>&nbsp;Last Update : 28 Maret 2022</span></p>
                         </div>
                     </div>
                 </div>
@@ -24,11 +25,11 @@
                     <div class="col-lg-12 posts-list" id="<?= $item->url; ?>">
                         <div class="single-post">
                             <div class="blog_details">
-                                <h2 style="color: #2d2d2d;"><?= $item->title; ?></h2>
-                                <ul class="blog-info-link mt-3">
+                                <h2 style="color: #2d2d2d;"><?= $item->title_desc; ?></h2>
+                                <!-- <ul class="blog-info-link mt-3">
                                     <li><a href="#"><i class="fa fa-user"></i> Admin Datin DJBK</a></li>
                                     <li><a href="#"><i class="fa fa-solid fa-calendar-days"></i> Last Update : 28 Maret 2022</a></li>
-                                </ul>
+                                </ul> -->
                                 <div class="row mt-5">
                                     <?php if ($item->position == 'L') : ?>
                                         <div class="col-md-6">
@@ -87,19 +88,15 @@
                             </div>
                         </div>
                         <div class="navigation-top mt-3">
-                            <div class="d-sm-flex justify-content-between text-center"></div>
+                            <div class="d-sm-flex justify-content-between text-center mb-5"></div>
                         </div>
                     </div>
                 <?php endforeach; ?>
                 <!-- KATEGORI B -->
-                <!-- <div class="col-lg-12 posts-list" id="catB">
+                <div class="col-lg-12 posts-list" id="catB">
                     <div class="single-post">
                         <div class="blog_details">
-                            <h2 style="color: #2d2d2d;">Rekap Data BUJK Pemilik Sertifikat Badan Usaha</h2>
-                            <ul class="blog-info-link mt-3">
-                                <li><a href="#"><i class="fa fa-user"></i> Admin Datin DJBK</a></li>
-                                <li><a href="#"><i class="fa fa-solid fa-calendar-days"></i> Last Update : 28 Maret 2022</a></li>
-                            </ul>
+                            <h2 style="color: #2d2d2d;">Maps Contoh</h2>
                             <div class="row mt-5">
                                 <div class="col-md-6">
                                     <table class="table table-striped table-responsive dataTableChart" id="dataTableChart2">
@@ -113,13 +110,13 @@
 
                                             </tr>
                                         </thead>
-                                        <tbody id="showDataChart2" class="showDataChart">
+                                        <tbody id="showDataChart3" class="showDataChart">
 
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="col-md-6">
-                                    <div id="line"></div>
+                                    <div id="chart-maps"></div>
                                     <div class="quote-wrapper">
                                         <div class="quotes button-group-area text-center pt-3">
                                             <a href="<?= WEBAPI_URL ?>/auth?r=portal-data" class="genric-btn pupr radius"><span><i class="fa-solid fa-download"></i></span>&nbsp;Download Excel</a>
@@ -130,9 +127,9 @@
                         </div>
                     </div>
                     <div class="navigation-top mt-3">
-                        <div class="d-sm-flex justify-content-between text-center"></div>
+                        <div class="d-sm-flex justify-content-between text-center mb-5"></div>
                     </div>
-                </div> -->
+                </div>
                 <!-- KATEGORI C -->
                 <!-- <div class="col-lg-12 posts-list" id="catC">
                     <div class="single-post">
@@ -158,6 +155,95 @@
     </section>
 
     <script>
+        (async () => {
+
+            const topology = await fetch(
+                'https://code.highcharts.com/mapdata/countries/id/id-all.topo.json'
+            ).then(response => response.json());
+
+            // Prepare demo data. The data is joined to map using value of 'hc-key'
+            // property by default. See API docs for 'joinBy' for more info on linking
+            // data and map.
+            const data = [
+                ['id-3700', 10],
+                ['id-ac', 11],
+                ['id-jt', 12],
+                ['id-be', 13],
+                ['id-bt', 14],
+                ['id-kb', 15],
+                ['id-bb', 16],
+                ['id-ba', 17],
+                ['id-ji', 18],
+                ['id-ks', 19],
+                ['id-nt', 20],
+                ['id-se', 21],
+                ['id-kr', 22],
+                ['id-ib', 23],
+                ['id-su', 0],
+                ['id-ri', 25],
+                ['id-sw', 26],
+                ['id-ku', 27],
+                ['id-la', 28],
+                ['id-sb', 29],
+                ['id-ma', 30],
+                ['id-nb', 31],
+                ['id-sg', 32],
+                ['id-st', 33],
+                ['id-pa', 34],
+                ['id-jr', 35],
+                ['id-ki', 36],
+                ['id-1024', 37],
+                ['id-jk', 38],
+                ['id-go', 39],
+                ['id-yo', 40],
+                ['id-sl', 41],
+                ['id-sr', 42],
+                ['id-ja', 43],
+                ['id-kt', 44]
+            ];
+
+            // Create the chart
+            Highcharts.mapChart('chart-maps', {
+                chart: {
+                    map: topology
+                },
+
+                title: {
+                    text: 'Peta Indonesia'
+                },
+
+                // subtitle: {
+                //     text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/id/id-all.topo.json">Indonesia</a>'
+                // },
+
+                mapNavigation: {
+                    enabled: true,
+                    buttonOptions: {
+                        verticalAlign: 'bottom'
+                    }
+                },
+
+                colorAxis: {
+                    min: 0
+                },
+
+                series: [{
+                    data: data,
+                    name: 'Random data',
+                    states: {
+                        hover: {
+                            color: '#BADA55'
+                        }
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.name}'
+                    }
+                }]
+            });
+
+        })();
+
         $(function() {
 
             showDataChart();
@@ -169,9 +255,9 @@
                 ]
             });
 
-            Highcharts.mapChart('chart-maps', {
+            // Highcharts.mapChart('chart-maps', {
 
-            });
+            // });
         });
 
         //SHOW DATA CHART
