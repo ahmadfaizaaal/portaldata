@@ -44,11 +44,16 @@
                                             <table class="table table-striped table-responsive dataTableChart" id="dataTableChart">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col" style="width: 2%;">No.</th>
+                                                        <!-- <th scope="col" style="width: 2%;">No.</th>
                                                         <th scope="col" style="width: 13%;">NIP</th>
                                                         <th scope="col" style="width: 25%;">Nama Pegawai</th>
                                                         <th scope="col" style="width: 20%;">Alamat</th>
-                                                        <th scope="col" style="width: 5%;">No.Telp</th>
+                                                        <th scope="col" style="width: 5%;">No.Telp</th> -->
+                                                        <th scope="col"></th>
+                                                        <th scope="col">Nama</th>
+                                                        <th scope="col">NPWP</th>
+                                                        <th scope="col">Bentuk BU</th>
+                                                        <th scope="col">Email</th>
 
                                                     </tr>
                                                 </thead>
@@ -62,11 +67,16 @@
                                             <table class="table table-striped table-responsive dataTableChart" id="dataTableChart">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col" style="width: 2%;">No.</th>
+                                                        <!-- <th scope="col" style="width: 2%;">No.</th>
                                                         <th scope="col" style="width: 13%;">NIP</th>
                                                         <th scope="col" style="width: 25%;">Nama Pegawai</th>
                                                         <th scope="col" style="width: 20%;">Alamat</th>
-                                                        <th scope="col" style="width: 5%;">No.Telp</th>
+                                                        <th scope="col" style="width: 5%;">No.Telp</th> -->
+														<th scope="col"></th>
+                                                        <th scope="col">Nama</th>
+                                                        <th scope="col">NPWP</th>
+                                                        <th scope="col">Bentuk BU</th>
+                                                        <th scope="col">Email</th>
 
                                                     </tr>
                                                 </thead>
@@ -246,14 +256,92 @@
 
         $(function() {
 
-            showDataChart();
+            // showDataChart();
+
+			function datatableLanguage() {
+				return {
+					"decimal":        "",
+					"emptyTable":     "Tidak ada data untuk ditampilkan",
+					"info":           "Menmapilkan _START_ sampai _END_ dari _TOTAL_ data",
+					"infoEmpty":      "Menampilkan data kosong",
+					"infoFiltered":   "(filter dari _MAX_ total data)",
+					"infoPostFix":    "",
+					"thousands":      ".",
+					"lengthMenu":     "Menampilkan _MENU_ Record",
+					"loadingRecords": "Memuat...",
+					"processing":     "Loading...",
+					"search":         "Cari:",
+					"zeroRecords":    "Data tidak ditemukan",
+					"paginate": {
+						"first":      "Pertama",
+						"last":       "Terakhir",
+						"next":       "Selanjutnya",
+						"previous":   "Sebelumnya"
+					},
+					"aria": {
+						"sortAscending":  ": activate to sort column ascending",
+						"sortDescending": ": activate to sort column descending"
+					}
+				}
+			}
+
+			var base_url = '<?= base_url() ?>'
 
             $('.dataTableChart').DataTable({
-                "lengthMenu": [
-                    [5, 10, 25, 50, -1],
-                    [5, 10, 25, 50, "All"]
-                ]
-            });
+				processing: true,
+				serverSide: true,
+				scrollX: true,
+				autoWidth: false,
+				lengthMenu: [[10, 15, 20, 25, 50, 75, 100, 500, -1], [10, 15, 20, 25, 50, 75, 100, 500, "Semua"]],
+				columns: [
+					{ data: "id_bu" },
+					{ data: "nama" },
+					{ data: "npwp" },
+					{ data: "bentuk_bu" },
+					{ data: "email" },
+				],
+				columnDefs: [
+					{ width: "20%", targets: [0, 1, 2, 3, 4] },
+				],
+				ajax: {
+					url: `${base_url}bujk/ajax-sbu-transisi`,
+					dataSrc: ( response ) => {
+						if( response.status != 200 ) {
+							alert(response.messages)
+						}
+
+						return response.data
+					}
+				},
+				language: datatableLanguage(),
+				fnInitComplete: function () {
+					// const ps = new PerfectScrollbar('.dataTables_scrollBody');
+					// initPlugin()
+					
+					var currentTable = this
+					// Apply the search
+					currentTable.api().columns().every( function () {
+						var column = this;
+		
+						$( 'input, select', this.header() ).on( 'keyup clear change', function (e) {
+							console.log(this.value)
+
+							if(e.keyCode === 10 && e.keyCode === 13) {
+								return;
+							} else {
+								if (column.visible()) {
+									console.log('here')
+									currentTable.api().column( column.index() ).search( this.value ).draw();
+								}
+							}
+						} );
+					} );
+				},
+				fnDrawCallback: function (oSettings) {
+					// const ps = new PerfectScrollbar('.dataTables_scrollBody');
+					// initPlugin()
+				}
+			});
 
             // Highcharts.mapChart('chart-maps', {
 
@@ -261,21 +349,21 @@
         });
 
         //SHOW DATA CHART
-        function showDataChart() {
-            var html = '';
-            var i;
-            for (i = 0; i < 25; i++) {
-                html += '<tr>' +
-                    '<th scope="col" style="width: 2%;">' + (i + 1) + '</th>' +
-                    '<td scope="col" style="width: 13%;">' + '1234567' + '</td>' +
-                    '<td scope="col" style="width: 25%;">' + 'Rudy Habibie' + '</td>' +
-                    '<td scope="col" style="width: 20%;">' + 'Jakarta Selatan' + '</td>' +
-                    '<td scope="col" style="width: 5%;">' + '0851234567' + '</td>' +
-                    '</tr>';
-            }
-            $('.showDataChart').html(html);
-            // $('#showDataChart2').html(html);
-        }
+        // function showDataChart() {
+        //     var html = '';
+        //     var i;
+        //     for (i = 0; i < 25; i++) {
+        //         html += '<tr>' +
+        //             '<th scope="col" style="width: 2%;">' + (i + 1) + '</th>' +
+        //             '<td scope="col" style="width: 13%;">' + '1234567' + '</td>' +
+        //             '<td scope="col" style="width: 25%;">' + 'Rudy Habibie' + '</td>' +
+        //             '<td scope="col" style="width: 20%;">' + 'Jakarta Selatan' + '</td>' +
+        //             '<td scope="col" style="width: 5%;">' + '0851234567' + '</td>' +
+        //             '</tr>';
+        //     }
+        //     $('.showDataChart').html(html);
+        //     // $('#showDataChart2').html(html);
+        // }
         // $.ajax({
         //     type: 'ajax',
         //     method: 'post',

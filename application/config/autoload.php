@@ -103,7 +103,7 @@ $autoload['helper'] = array('url', 'file', 'security', 'simlakah', 'portaldata')
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array();
+$autoload['config'] = array('api');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,7 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('M_GeneralSetting' => 'genset');
+$autoload['model'] = array(
+	'M_GeneralSetting' => 'genset',
+	'M_SbuTransisi' => 'sbutransisi',
+);
