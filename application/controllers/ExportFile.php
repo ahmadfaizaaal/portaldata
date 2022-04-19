@@ -79,6 +79,8 @@ class ExportFile extends CI_Controller
 
     public function sbuTransisi()
     {
+        echo "Test";
+        die;
         //ASOSIASI
         $this->_spreadsheet->setActiveSheetIndex(0);
         $sheet = $this->_spreadsheet->getActiveSheet();
