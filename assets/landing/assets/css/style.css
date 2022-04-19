@@ -6204,6 +6204,11 @@ del {
 	margin-bottom: 10px;
 }
 
+
+
+
+
+
 p.default-blue {
 	color: #374774;
 	font-weight: bold;
@@ -6329,10 +6334,28 @@ ul.sub-shortcut > li > a:hover {
 	border-right: 0.15rem solid #000 !important;
 }
 
-.vertical-center {
-	margin: 0;
-	position: absolute;
-	top: 50%;
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-  }
+.text-pupr-orange {
+	color: #eab630 !important;
+}
+
+a.text-pupr-orange:hover,
+a.text-pupr-orange:focus {
+	color: #d49f18 !important;
+}
+
+.text-pupr-blue {
+	color: #374774 !important;
+}
+
+a.text-pupr-blue:hover,
+a.text-pupr-blue:focus {
+	color: #0b2469 !important;
+}
+
+.border-bottom-pupr-orange {
+	border-bottom: 0.50rem solid #eab630 !important;
+}
+
+.border-bottom-pupr-blue {
+	border-bottom: 0.50rem solid #374774 !important;
+}

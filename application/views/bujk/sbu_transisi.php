@@ -9,7 +9,7 @@
                             <p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?= BASE_URL ?>">Beranda&nbsp;&nbsp;&nbsp;<i class="fa fa-solid fa-angle-right fa-xs"></i></a></span> <span class="default-yellow">Badan Usaha Jasa Konstruksi</span></p>
                             <h2 class="pt-2"><?= $pageTitle; ?></h2>
                             <p class="user-info pt-3 mb-0"><span><i class="fa fa-user"></i>&nbsp;Admin Datin DJBK&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><i class="fa fa-solid fa-calendar-days"></i>&nbsp;Last Update : 28 Maret 2022</span></p>
-                            <a href="<?= BASE_URL ?>/exportfile/sbutransisi" class="genric-btn pupr radius mt-5"><span><i class="fa-solid fa-download"></i></span>&nbsp;Download Excel</a>
+                            <a href="<?= BASE_URL ?>/export-file/sbutransisi" class="genric-btn pupr radius mt-5"><span><i class="fa-solid fa-download"></i></span>&nbsp;Download Excel</a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                                 </ul> -->
                                 <div class="row mt-5">
                                     <?php if ($item->position == 'L') : ?>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div id="bar"></div>
                                             <div class="quote-wrapper">
                                                 <div class="quotes button-group-area text-center pt-3">
@@ -81,7 +81,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-8">
                                             <table class="table table-striped table-responsive dataTableChart" id="table-<?= $item->id_menu ?>">
                                                 <thead>
                                                     <tr>
@@ -103,11 +103,11 @@
                                             </table>
                                         </div>
                                     <?php elseif ($item->position == 'R') : ?>
-                                        <div class="col-md-6">
+                                        <div class="col-md-8">
                                             <table class="table table-striped table-responsive dataTableChart" id="table-<?= $item->id_menu ?>">
                                                 <thead>
                                                     <tr>
-														<th scope="col">ID Jenis Usaha</th>
+                                                        <th scope="col">ID Jenis Usaha</th>
                                                         <th scope="col">Jenis Usaha BU</th>
                                                         <th scope="col">Detail Jenis Usaha</th>
                                                         <th scope="col">Jumlah Sertifikat</th>
@@ -118,7 +118,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div id="line"></div>
                                             <div class="quote-wrapper">
                                                 <div class="quotes button-group-area text-center pt-3">
@@ -338,11 +338,18 @@
                     [10, 15, 20, 25, 50, 75, 100, 500, -1],
                     [10, 15, 20, 25, 50, 75, 100, 500, "Semua"]
                 ],
-                columns: [
-					{data: "id_jenis"},
-					{data: "jenis_usaha_bu"},
-					{data: "detail_jenis_usaha"},
-					{data: "jml_sertif"},
+                columns: [{
+                        data: "id_jenis"
+                    },
+                    {
+                        data: "jenis_usaha_bu"
+                    },
+                    {
+                        data: "detail_jenis_usaha"
+                    },
+                    {
+                        data: "jml_sertif"
+                    },
                 ],
                 columnDefs: [{
                     width: "20%",
