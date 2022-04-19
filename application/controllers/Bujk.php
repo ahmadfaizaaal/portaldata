@@ -28,51 +28,52 @@ class Bujk extends CI_Controller
         loadPage('bujk', 'sbu_transisi', $pageTitle, $data, $menu->id_menu);
     }
 
-	public function ajax_sbu_transisi() {
-		$columnIndex = ['id_bu', 'nama', 'npwp', 'bentuk_bu', 'email'];
-				
-		$start     = $this->input->get('start');
-		$length    = $this->input->get('length');
-		$page      = ($start / $length) + 1;
-		$order     = $this->input->get('order');
-		$orderCol  = $columnIndex[$order[0]['column']];
-		$orderDir  = $order[0]['dir'];
-		$search    = $this->input->get('search');
-		$searchVal = $search['value'];
-		$searchCol = null;
-		if ($this->input->get('columns')) {
-			foreach ($this->input->get('columns') as $key => $item) {
-				if ($item['data'] == "session_id") {
-					if ($item['search']['value'] != '') {
-						$column = $item['data'];
-						$value = ($item['search']['value']) ? "online" : "offline";
-						$searchCol .= "searchCol=$column&searchColVal=$value&";
-					}
-				} else {
-					if ($item['search']['value']) {
-						$column = $item['data'];
-						$value  = $item['search']['value'];
+    public function ajax_sbu_transisi()
+    {
+        $columnIndex = ['id_bu', 'nama', 'npwp', 'bentuk_bu', 'email'];
 
-						$searchCol .= "searchCol=$column&searchColVal=$value&";
-					}						
-				}
-			}
-			$searchCol = rtrim($searchCol, "&");
-		}
+        $start     = $this->input->get('start');
+        $length    = $this->input->get('length');
+        $page      = ($start / $length) + 1;
+        $order     = $this->input->get('order');
+        $orderCol  = $columnIndex[$order[0]['column']];
+        $orderDir  = $order[0]['dir'];
+        $search    = $this->input->get('search');
+        $searchVal = $search['value'];
+        $searchCol = null;
+        if ($this->input->get('columns')) {
+            foreach ($this->input->get('columns') as $key => $item) {
+                if ($item['data'] == "session_id") {
+                    if ($item['search']['value'] != '') {
+                        $column = $item['data'];
+                        $value = ($item['search']['value']) ? "online" : "offline";
+                        $searchCol .= "searchCol=$column&searchColVal=$value&";
+                    }
+                } else {
+                    if ($item['search']['value']) {
+                        $column = $item['data'];
+                        $value  = $item['search']['value'];
 
-		// var_dump($this->input->get());
-		// var_dump($page);
-		
-		$rawData   = $this->sbutransisi->getSbuTransisi($page, $length, $orderCol, $orderDir, $searchVal, $searchCol);
+                        $searchCol .= "searchCol=$column&searchColVal=$value&";
+                    }
+                }
+            }
+            $searchCol = rtrim($searchCol, "&");
+        }
 
-		$data = $rawData;
-		$data['draw'] = $this->input->get('draw');
-		$data['recordsTotal'] = $rawData['contents']->count ?? 0;
-		$data['recordsFiltered'] = $rawData['contents']->count ?? 0;
-		$data['data'] = $rawData['contents']->rows ?? [];
+        // var_dump($this->input->get());
+        // var_dump($page);
 
-		echo json_encode($data);
-	}
+        $rawData   = $this->sbutransisi->getSbuTransisi($page, $length, $orderCol, $orderDir, $searchVal, $searchCol);
+
+        $data = $rawData;
+        $data['draw'] = $this->input->get('draw');
+        $data['recordsTotal'] = $rawData['contents']->count ?? 0;
+        $data['recordsFiltered'] = $rawData['contents']->count ?? 0;
+        $data['data'] = $rawData['contents']->rows ?? [];
+
+        echo json_encode($data);
+    }
 
     public function sbuReguler()
     {
@@ -84,7 +85,6 @@ class Bujk extends CI_Controller
 
         loadPage('bujk', 'sbu_reguler', $pageTitle, $data, $menu->id_menu);
     }
-
 
     public function registration($type)
     {

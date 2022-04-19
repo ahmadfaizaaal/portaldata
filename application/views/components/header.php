@@ -11,7 +11,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?= BASE_THEME; ?>img/portal-icon.png">
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/custom_style.css">
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/slicknav.css">
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/flaticon.css">
@@ -86,7 +87,7 @@
                         <!-- Header-btn -->
                         <div class="header-btns d-none d-lg-block f-right">
                             <!-- <a href="#" class="mr-40"><i class="ti-user"></i> Log in</a> -->
-                            <a href="<?= WEBAPI_URL ?>/auth?r=portal-data" class="btn btn-xs">Masuk</a>
+                            <a href="<?= WEBAPI_URL ?>/auth?r=portal-data" class="btnCustom btn-xs">Masuk</a>
                         </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">

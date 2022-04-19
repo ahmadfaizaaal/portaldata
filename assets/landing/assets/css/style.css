@@ -304,7 +304,7 @@ hr {
 	color: #fff;
 	background: #ff3500;
 }
-.btn {
+.btnCustom {
 	/* background: #eab630; */
 	background: #eab630;
 	font-family: "Rubik", sans-serif;
@@ -329,7 +329,7 @@ hr {
 	overflow: hidden;
 	margin: 0;
 }
-.btn::before {
+.btnCustom::before {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -347,19 +347,19 @@ hr {
 	transform: scaleX(0);
 	border-radius: 0px;
 }
-.btn i {
+.btnCustom i {
 	padding-right: 11px;
 }
-.btn:hover::before {
+.btnCustom:hover::before {
 	transform: scaleX(1);
 	color: #fff !important;
 	z-index: -1;
 }
-.btn:hover {
+.btnCustom:hover {
 	background-position: right;
 }
-.btn.focus,
-.btn:focus {
+.btnCustom.focus,
+.btnCustom:focus {
 	outline: 0;
 	box-shadow: none;
 }
@@ -2353,8 +2353,8 @@ hr {
 	}
 }
 .slider-height3 {
-	/* height: 440px; */
-	height: 370px;
+	height: 440px;
+	/* height: 370px; */
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 	.slider-height3 {
@@ -6324,3 +6324,15 @@ ul.sub-shortcut > li > a:hover {
 	line-height: 1;
 	font-weight: 400;
 }
+
+.border-right-custom {
+	border-right: 0.15rem solid #000 !important;
+}
+
+.vertical-center {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+  }

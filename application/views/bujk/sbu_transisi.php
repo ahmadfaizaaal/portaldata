@@ -9,6 +9,7 @@
                             <p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?= BASE_URL ?>">Beranda&nbsp;&nbsp;&nbsp;<i class="fa fa-solid fa-angle-right fa-xs"></i></a></span> <span class="default-yellow">Badan Usaha Jasa Konstruksi</span></p>
                             <h2 class="pt-2"><?= $pageTitle; ?></h2>
                             <p class="user-info pt-3 mb-0"><span><i class="fa fa-user"></i>&nbsp;Admin Datin DJBK&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><i class="fa fa-solid fa-calendar-days"></i>&nbsp;Last Update : 28 Maret 2022</span></p>
+                            <a href="<?= BASE_URL ?>/exportfile/sbutransisi" class="genric-btn pupr radius mt-5"><span><i class="fa-solid fa-download"></i></span>&nbsp;Download Excel</a>
                         </div>
                     </div>
                 </div>
@@ -19,6 +20,46 @@
     <!--? Blog Area Start -->
     <section class="blog_area single-post-area section-padding">
         <div class="container">
+            <div class="row">
+                <!-- PROJECT REQUIREMENTS -->
+                <div class="col-xl-6 col-md-6 mb-4">
+                    <div class="card border-bottom-warning shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center pb-3" style="padding-top: inherit;">
+                                <div class="col-md-9 border-right-custom">
+                                    <h2 class="font-weight-bold text-warning text-uppercase mb-0 ml-5">SBU</h2>
+                                    <p class="text-gray-800 ml-5 mb-0">Sertifikat Badan Usaha</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h1 class="text-center font-weight-bold text-warning">19.233</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT STATUS -->
+                <div class="col-xl-6 col-md-6 mb-4">
+                    <div class="card border-bottom-warning shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center pb-3" style="padding-top: inherit;">
+                                <div class="col-md-9 border-right-custom">
+                                    <h2 class="font-weight-bold text-warning text-uppercase mb-0 ml-5">BUJK</h2>
+                                    <p class="text-gray-800 ml-5 mb-0">Badan Usaha Jasa Konstruksi</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h1 class="text-center font-weight-bold text-warning">19.233</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 mb-5">
+                <div class="col-xl-12 col-lg-12 col-md-12" id="chart-maps"></div>
+            </div>
+
             <div class="row">
                 <!-- KATEGORI A -->
                 <?php foreach ($displayListSubmenu as $index => $item) : ?>
@@ -49,7 +90,7 @@
                                                         <th scope="col" style="width: 25%;">Nama Pegawai</th>
                                                         <th scope="col" style="width: 20%;">Alamat</th>
                                                         <th scope="col" style="width: 5%;">No.Telp</th> -->
-                                                        <th scope="col"></th>
+                                                        <th scope="col">ID Badan Usaha</th>
                                                         <th scope="col">Nama</th>
                                                         <th scope="col">NPWP</th>
                                                         <th scope="col">Bentuk BU</th>
@@ -72,7 +113,7 @@
                                                         <th scope="col" style="width: 25%;">Nama Pegawai</th>
                                                         <th scope="col" style="width: 20%;">Alamat</th>
                                                         <th scope="col" style="width: 5%;">No.Telp</th> -->
-														<th scope="col"></th>
+                                                        <th scope="col">ID Badan Usaha</th>
                                                         <th scope="col">Nama</th>
                                                         <th scope="col">NPWP</th>
                                                         <th scope="col">Bentuk BU</th>
@@ -126,7 +167,7 @@
                                     </table>
                                 </div>
                                 <div class="col-md-6">
-                                    <div id="chart-maps"></div>
+                                    <!-- <div id="chart-maps"></div> -->
                                     <div class="quote-wrapper">
                                         <div class="quotes button-group-area text-center pt-3">
                                             <a href="<?= WEBAPI_URL ?>/auth?r=portal-data" class="genric-btn pupr radius"><span><i class="fa-solid fa-download"></i></span>&nbsp;Download Excel</a>
@@ -258,90 +299,103 @@
 
             // showDataChart();
 
-			function datatableLanguage() {
-				return {
-					"decimal":        "",
-					"emptyTable":     "Tidak ada data untuk ditampilkan",
-					"info":           "Menmapilkan _START_ sampai _END_ dari _TOTAL_ data",
-					"infoEmpty":      "Menampilkan data kosong",
-					"infoFiltered":   "(filter dari _MAX_ total data)",
-					"infoPostFix":    "",
-					"thousands":      ".",
-					"lengthMenu":     "Menampilkan _MENU_ Record",
-					"loadingRecords": "Memuat...",
-					"processing":     "Loading...",
-					"search":         "Cari:",
-					"zeroRecords":    "Data tidak ditemukan",
-					"paginate": {
-						"first":      "Pertama",
-						"last":       "Terakhir",
-						"next":       "Selanjutnya",
-						"previous":   "Sebelumnya"
-					},
-					"aria": {
-						"sortAscending":  ": activate to sort column ascending",
-						"sortDescending": ": activate to sort column descending"
-					}
-				}
-			}
+            function datatableLanguage() {
+                return {
+                    "decimal": "",
+                    "emptyTable": "Tidak ada data untuk ditampilkan",
+                    "info": "Menmapilkan _START_ sampai _END_ dari _TOTAL_ data",
+                    "infoEmpty": "Menampilkan data kosong",
+                    "infoFiltered": "(filter dari _MAX_ total data)",
+                    "infoPostFix": "",
+                    "thousands": ".",
+                    "lengthMenu": "Menampilkan _MENU_ Record",
+                    "loadingRecords": "Memuat...",
+                    "processing": "Loading...",
+                    "search": "Cari:",
+                    "zeroRecords": "Data tidak ditemukan",
+                    "paginate": {
+                        "first": "Pertama",
+                        "last": "Terakhir",
+                        "next": "Selanjutnya",
+                        "previous": "Sebelumnya"
+                    },
+                    "aria": {
+                        "sortAscending": ": activate to sort column ascending",
+                        "sortDescending": ": activate to sort column descending"
+                    }
+                }
+            }
 
-			var base_url = '<?= BASE_URL ?>' 
+            var base_url = '<?= BASE_URL ?>'
 
             $('.dataTableChart').DataTable({
-				processing: true,
-				serverSide: true,
-				scrollX: true,
-				autoWidth: false,
-				lengthMenu: [[10, 15, 20, 25, 50, 75, 100, 500, -1], [10, 15, 20, 25, 50, 75, 100, 500, "Semua"]],
-				columns: [
-					{ data: "id_bu" },
-					{ data: "nama" },
-					{ data: "npwp" },
-					{ data: "bentuk_bu" },
-					{ data: "email" },
-				],
-				columnDefs: [
-					{ width: "20%", targets: [0, 1, 2, 3, 4] },
-				],
-				ajax: {
-					url: `${base_url}/bujk/ajax-sbu-transisi`,
-					dataSrc: ( response ) => {
-						if( response.status != 200 ) {
-							alert(response.messages)
-						}
+                processing: true,
+                serverSide: true,
+                scrollX: true,
+                autoWidth: false,
+                lengthMenu: [
+                    [10, 15, 20, 25, 50, 75, 100, 500, -1],
+                    [10, 15, 20, 25, 50, 75, 100, 500, "Semua"]
+                ],
+                columns: [{
+                        data: "id_bu"
+                    },
+                    {
+                        data: "nama"
+                    },
+                    {
+                        data: "npwp"
+                    },
+                    {
+                        data: "bentuk_bu"
+                    },
+                    {
+                        data: "email"
+                    },
+                ],
+                columnDefs: [{
+                    width: "20%",
+                    targets: [0, 1, 2, 3, 4]
+                }, ],
+                ajax: {
+                    url: `${base_url}/bujk/ajax-sbu-transisi`,
+                    dataSrc: (response) => {
+                        if (response.status != 200) {
+                            alert(response.messages)
+                        }
 
-						return response.data
-					}
-				},
-				language: datatableLanguage(),
-				fnInitComplete: function () {
-					// const ps = new PerfectScrollbar('.dataTables_scrollBody');
-					// initPlugin()
-					
-					var currentTable = this
-					// Apply the search
-					currentTable.api().columns().every( function () {
-						var column = this;
-		
-						$( 'input, select', this.header() ).on( 'keyup clear change', function (e) {
-							console.log(this.value)
+                        return response.data
+                    }
+                },
+                language: datatableLanguage(),
+                fnInitComplete: function() {
+                    // const ps = new PerfectScrollbar('.dataTables_scrollBody');
+                    // initPlugin()
 
-							if(e.keyCode === 10 && e.keyCode === 13) {
-								return;
-							} else {
-								if (column.visible()) {
-									console.log('here')
-									currentTable.api().column( column.index() ).search( this.value ).draw();
-								}
-							}
-						} );
-					} );
-				},
-				fnDrawCallback: function (oSettings) {
-					// const ps = new PerfectScrollbar('.dataTables_scrollBody');
-					// initPlugin()
-				}
-			});
+                    var currentTable = this
+                    // Apply the search
+                    currentTable.api().columns().every(function() {
+                        var column = this;
+
+                        $('input, select', this.header()).on('keyup clear change', function(e) {
+                            console.log(this.value)
+
+                            if (e.keyCode === 10 && e.keyCode === 13) {
+                                return;
+                            } else {
+                                if (column.visible()) {
+                                    console.log('here')
+                                    currentTable.api().column(column.index()).search(this.value).draw();
+                                }
+                            }
+                        });
+                    });
+                },
+                fnDrawCallback: function(oSettings) {
+                    // const ps = new PerfectScrollbar('.dataTables_scrollBody');
+                    // initPlugin()
+                }
+            });
 
             // Highcharts.mapChart('chart-maps', {
 
