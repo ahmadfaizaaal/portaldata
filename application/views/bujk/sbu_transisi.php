@@ -82,19 +82,18 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <table class="table table-striped table-responsive dataTableChart" id="dataTableChart">
+                                            <table class="table table-striped table-responsive dataTableChart" id="table-<?= $item->id_menu ?>">
                                                 <thead>
                                                     <tr>
-                                                        <!-- <th scope="col" style="width: 2%;">No.</th>
-                                                        <th scope="col" style="width: 13%;">NIP</th>
-                                                        <th scope="col" style="width: 25%;">Nama Pegawai</th>
-                                                        <th scope="col" style="width: 20%;">Alamat</th>
-                                                        <th scope="col" style="width: 5%;">No.Telp</th> -->
-                                                        <th scope="col">ID Badan Usaha</th>
+                                                        <!-- <th scope="col">ID Badan Usaha</th>
                                                         <th scope="col">Nama</th>
                                                         <th scope="col">NPWP</th>
                                                         <th scope="col">Bentuk BU</th>
-                                                        <th scope="col">Email</th>
+                                                        <th scope="col">Email</th> -->
+                                                        <th scope="col">ID Jenis Usaha</th>
+                                                        <th scope="col">Jenis Usaha BU</th>
+                                                        <th scope="col">Detail Jenis Usaha</th>
+                                                        <th scope="col">Jumlah Sertifikat</th>
 
                                                     </tr>
                                                 </thead>
@@ -105,20 +104,13 @@
                                         </div>
                                     <?php elseif ($item->position == 'R') : ?>
                                         <div class="col-md-6">
-                                            <table class="table table-striped table-responsive dataTableChart" id="dataTableChart">
+                                            <table class="table table-striped table-responsive dataTableChart" id="table-<?= $item->id_menu ?>">
                                                 <thead>
                                                     <tr>
-                                                        <!-- <th scope="col" style="width: 2%;">No.</th>
-                                                        <th scope="col" style="width: 13%;">NIP</th>
-                                                        <th scope="col" style="width: 25%;">Nama Pegawai</th>
-                                                        <th scope="col" style="width: 20%;">Alamat</th>
-                                                        <th scope="col" style="width: 5%;">No.Telp</th> -->
-                                                        <th scope="col">ID Badan Usaha</th>
-                                                        <th scope="col">Nama</th>
-                                                        <th scope="col">NPWP</th>
-                                                        <th scope="col">Bentuk BU</th>
-                                                        <th scope="col">Email</th>
-
+														<th scope="col">ID Jenis Usaha</th>
+                                                        <th scope="col">Jenis Usaha BU</th>
+                                                        <th scope="col">Detail Jenis Usaha</th>
+                                                        <th scope="col">Jumlah Sertifikat</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="showDataChart" class="showDataChart">
@@ -277,7 +269,7 @@
                 colorAxis: {
                     min: 0
                 },
-
+                enableMouseWheelZoom: false,
                 series: [{
                     data: data,
                     name: 'Random data',
@@ -328,7 +320,16 @@
 
             var base_url = '<?= BASE_URL ?>'
 
-            $('.dataTableChart').DataTable({
+            // const datatables = {
+            //     tableIds: ['#table-27', '#table-28', '#table-29', '#table-30', '#table-31', '#table-33'],
+            //     tableLabels: [
+            //         {
+            //             data: 
+            //         }
+            //     ]
+            // }
+
+            $('#table-27').DataTable({
                 processing: true,
                 serverSide: true,
                 scrollX: true,
@@ -337,25 +338,15 @@
                     [10, 15, 20, 25, 50, 75, 100, 500, -1],
                     [10, 15, 20, 25, 50, 75, 100, 500, "Semua"]
                 ],
-                columns: [{
-                        data: "id_bu"
-                    },
-                    {
-                        data: "nama"
-                    },
-                    {
-                        data: "npwp"
-                    },
-                    {
-                        data: "bentuk_bu"
-                    },
-                    {
-                        data: "email"
-                    },
+                columns: [
+					{data: "id_jenis"},
+					{data: "jenis_usaha_bu"},
+					{data: "detail_jenis_usaha"},
+					{data: "jml_sertif"},
                 ],
                 columnDefs: [{
                     width: "20%",
-                    targets: [0, 1, 2, 3, 4]
+                    targets: [0, 1, 2, 3]
                 }, ],
                 ajax: {
                     url: `${base_url}/bujk/ajax-sbu-transisi`,
@@ -371,25 +362,6 @@
                 fnInitComplete: function() {
                     // const ps = new PerfectScrollbar('.dataTables_scrollBody');
                     // initPlugin()
-
-                    var currentTable = this
-                    // Apply the search
-                    currentTable.api().columns().every(function() {
-                        var column = this;
-
-                        $('input, select', this.header()).on('keyup clear change', function(e) {
-                            console.log(this.value)
-
-                            if (e.keyCode === 10 && e.keyCode === 13) {
-                                return;
-                            } else {
-                                if (column.visible()) {
-                                    console.log('here')
-                                    currentTable.api().column(column.index()).search(this.value).draw();
-                                }
-                            }
-                        });
-                    });
                 },
                 fnDrawCallback: function(oSettings) {
                     // const ps = new PerfectScrollbar('.dataTables_scrollBody');
@@ -401,51 +373,4 @@
 
             // });
         });
-
-        //SHOW DATA CHART
-        // function showDataChart() {
-        //     var html = '';
-        //     var i;
-        //     for (i = 0; i < 25; i++) {
-        //         html += '<tr>' +
-        //             '<th scope="col" style="width: 2%;">' + (i + 1) + '</th>' +
-        //             '<td scope="col" style="width: 13%;">' + '1234567' + '</td>' +
-        //             '<td scope="col" style="width: 25%;">' + 'Rudy Habibie' + '</td>' +
-        //             '<td scope="col" style="width: 20%;">' + 'Jakarta Selatan' + '</td>' +
-        //             '<td scope="col" style="width: 5%;">' + '0851234567' + '</td>' +
-        //             '</tr>';
-        //     }
-        //     $('.showDataChart').html(html);
-        //     // $('#showDataChart2').html(html);
-        // }
-        // $.ajax({
-        //     type: 'ajax',
-        //     method: 'post',
-        //     url: '<?= BASE_URL . 'staff/showDataPenghulu'; ?>',
-        //     async: false,
-        //     dataType: 'json',
-        //     success: function(data) {
-        //         var html = '';
-        //         var i;
-        //         for (i = 0; i < data.length; i++) {
-        //             html += '<tr>' +
-        //                 '<th scope="col" style="width: 2%;">' + (i + 1) + '</th>' +
-        //                 '<td scope="col" style="width: 13%;">' + data[i].NIP + '</td>' +
-        //                 '<td scope="col" style="width: 25%;">' + data[i].NAME + '</td>' +
-        //                 '<td scope="col" style="width: 20%;">' + data[i].ADDRESS + '</td>' +
-        //                 '<td scope="col" style="width: 5%;">' + data[i].PHONE + '</td>' +
-        //                 '<td scope="col" style="width: 40%">' +
-        //                 '<a href="javascript:;" class="btn round btn-sm btn-icon btn-info viewPenghulu" style="margin-left:5px;" data-toggle="tooltip" data-placement="bottom" title="LIhat Detail" data="' + data[i].OFFICER_ID + '"><i class="ft-eye"></i></a>' +
-        //                 '<a href="javascript:;" class="btn round btn-sm btn-icon btn-warning editPenghulu" style="margin-left:5px;" data-toggle="tooltip" data-placement="bottom" title="Edit" data="' + data[i].OFFICER_ID + '"><i class="ft-edit-2"></i></a>' +
-        //                 '<a href="javascript:;" class="btn round btn-sm btn-icon btn-danger deletePenghulu" style="margin-left:5px;" data-toggle="tooltip" data-placement="bottom" title="Hapus" data="' + data[i].OFFICER_ID + '"><i class="ft-x"></i></a>' +
-        //                 '</td>' +
-        //                 '</tr>';
-        //         }
-        //         $('#showDataPenghulu').html(html);
-        //         $('[data-toggle="tooltip"]').tooltip();
-        //     },
-        //     error: function() {
-        //         swal("Error!", "Could not get Data from Database!", "error");
-        //     }
-        // });
     </script>

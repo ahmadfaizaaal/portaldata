@@ -30,7 +30,7 @@ class Bujk extends CI_Controller
 
     public function ajax_sbu_transisi()
     {
-        $columnIndex = ['id_bu', 'nama', 'npwp', 'bentuk_bu', 'email'];
+        $columnIndex = ['id_jenis', 'jenis_usaha_bu', 'detail_jenis_usaha', 'jml_sertif'];
 
         $start     = $this->input->get('start');
         $length    = $this->input->get('length');
@@ -68,9 +68,9 @@ class Bujk extends CI_Controller
 
         $data = $rawData;
         $data['draw'] = $this->input->get('draw');
-        $data['recordsTotal'] = $rawData['contents']->count ?? 0;
-        $data['recordsFiltered'] = $rawData['contents']->count ?? 0;
-        $data['data'] = $rawData['contents']->rows ?? [];
+        $data['recordsTotal'] = $rawData['contents']->data->jenisUsaha->count ?? 0;
+        $data['recordsFiltered'] = $rawData['contents']->data->jenisUsaha->count ?? 0;
+        $data['data'] = $rawData['contents']->data->jenisUsaha->rows ?? [];
 
         echo json_encode($data);
     }
