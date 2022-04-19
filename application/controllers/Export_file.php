@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-class ExportFile extends CI_Controller
+class Export_file extends CI_Controller
 {
 
     public function __construct()
@@ -77,10 +77,8 @@ class ExportFile extends CI_Controller
         $writer->save('php://output');
     }
 
-    public function sbuTransisi()
+    public function sbutransisi()
     {
-        echo "Test";
-        die;
         //ASOSIASI
         $this->_spreadsheet->setActiveSheetIndex(0);
         $sheet = $this->_spreadsheet->getActiveSheet();
