@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/style.css">
 
     <link rel="stylesheet" href="<?= BASE_THEME; ?>mazer/assets/vendors/apexcharts/apexcharts.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
 
     <script src="https://kit.fontawesome.com/ab0cd48a50.js" crossorigin="anonymous"></script>
     <script src="<?= BASE_THEME; ?>v4/vendor/jquery/jquery.min.js"></script>

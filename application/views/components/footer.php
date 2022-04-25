@@ -137,11 +137,14 @@
 
 <!-- JS here -->
 
-<script src="<?= BASE_THEME; ?>v4/vendor/jquery/jquery.min.js"></script>
+<!-- <script src="<?= BASE_THEME; ?>v4/vendor/jquery/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://code.highcharts.com/maps/highmaps.js"></script>
 <script src="https://code.highcharts.com/maps/modules/map.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 <!-- <script src="<?= BASE_THEME; ?>landing/assets/js/vendor/jquery-1.12.4.min.js"></script> -->
-<script src="<?= BASE_THEME ?>adm/app-assets/vendors/js/tables/datatable/datatables.min.js" type="text/javascript"></script>
+<!-- <script src="<?= BASE_THEME ?>adm/app-assets/vendors/js/tables/datatable/datatables.min.js" type="text/javascript"></script> -->
 <script src="<?= BASE_THEME; ?>landing/assets/js/vendor/modernizr-3.5.0.min.js"></script>
 <!-- Jquery, Popper, Bootstrap -->
 <script src="<?= BASE_THEME; ?>landing/assets/js/popper.min.js"></script>

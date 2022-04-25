@@ -23,15 +23,15 @@
             <div class="row">
                 <!-- PROJECT REQUIREMENTS -->
                 <div class="col-xl-6 col-md-6 mb-4">
-                    <div class="card border-bottom-warning shadow h-100 py-2">
+                    <div class="card border-bottom-pupr-blue shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center pb-3" style="padding-top: inherit;">
                                 <div class="col-md-9 border-right-custom">
-                                    <h2 class="font-weight-bold text-warning text-uppercase mb-0 ml-5">SBU</h2>
+                                    <h2 class="font-weight-bold text-pupr-blue text-uppercase mb-0 ml-5">SBU</h2>
                                     <p class="text-gray-800 ml-5 mb-0">Sertifikat Badan Usaha</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <h1 class="text-center font-weight-bold text-warning">19.233</h1>
+                                    <h1 class="text-center font-weight-bold text-pupr-orange">19.233</h1>
                                 </div>
                             </div>
                         </div>
@@ -40,15 +40,15 @@
 
                 <!-- PROJECT STATUS -->
                 <div class="col-xl-6 col-md-6 mb-4">
-                    <div class="card border-bottom-warning shadow h-100 py-2">
+                    <div class="card border-bottom-pupr-blue shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center pb-3" style="padding-top: inherit;">
                                 <div class="col-md-9 border-right-custom">
-                                    <h2 class="font-weight-bold text-warning text-uppercase mb-0 ml-5">BUJK</h2>
+                                    <h2 class="font-weight-bold text-pupr-blue text-uppercase mb-0 ml-5">BUJK</h2>
                                     <p class="text-gray-800 ml-5 mb-0">Badan Usaha Jasa Konstruksi</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <h1 class="text-center font-weight-bold text-warning">19.233</h1>
+                                    <h1 class="text-center font-weight-bold text-pupr-orange">19.233</h1>
                                 </div>
                             </div>
                         </div>
@@ -260,26 +260,26 @@
                 // },
 
                 mapNavigation: {
-                    enabled: true,
+                    enabled: false,
                     buttonOptions: {
                         verticalAlign: 'bottom'
-                    }
+                    },
+                    enableMouseWheelZoom: false,
                 },
 
                 colorAxis: {
                     min: 0
                 },
-                enableMouseWheelZoom: false,
                 series: [{
                     data: data,
                     name: 'Random data',
                     states: {
                         hover: {
-                            color: '#BADA55'
+                            color: '#EAB630'
                         }
                     },
                     dataLabels: {
-                        enabled: true,
+                        enabled: false,
                         format: '{point.name}'
                     }
                 }]
@@ -330,6 +330,7 @@
             // }
 
             $('#table-27').DataTable({
+                responsive: true,
                 processing: true,
                 serverSide: true,
                 scrollX: true,
