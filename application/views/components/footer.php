@@ -62,27 +62,27 @@
 </footer>
 
 
-<div id="shortcut-menu">
+<!-- <div id="shortcut-menu">
     <a title="Kategori" href="javascript:void(0)" onclick="shortcutToggle()"> <i class="fa fa-solid fa-list"></i></a>
 </div>
 <div id="shortcut-container" class="shortcut-container">
     <p class="font-weight-bold text-right mb-2 pt-3">Data berdasarkan&nbsp;:</p>
     <ul class="sub-shortcut text-right">
         <?php
-        $subMenu = $this->genset->getListSubMenu($currentActiveMenu);
+        // $subMenu = $this->genset->getListSubMenu($currentActiveMenu);
         // var_dump($subMenu);
-        if ($subMenu) {
-            foreach ($subMenu as $key => $item) {
+        // if ($subMenu) {
+           //  foreach ($subMenu as $key => $item) {
         ?>
-                <li class="pt-3 pb-1 scroll-to-section"><a href="#<?= $item->url ?>"><?= $item->title ?><i class="fa-solid fa-caret-left ml-3"></i></a></li>
+                <li class="pt-3 pb-1 scroll-to-section"><a href="#<?php // echo $item->url ?>"><?php // echo $item->title ?><i class="fa-solid fa-caret-left ml-3"></i></a></li>
         <?php
-            }
-        }
+            // }
+        // }
         ?>
         <?php //} 
         ?>
     </ul>
-</div>
+</div> -->
 <!-- Scroll Up -->
 <div id="back-top">
     <a title="Kembali ke atas" href="#"> <i class="fa fa-solid fa-angle-up"></i></a>
@@ -138,9 +138,8 @@
 <!-- JS here -->
 
 <!-- <script src="<?= BASE_THEME; ?>v4/vendor/jquery/jquery.min.js"></script> -->
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://code.highcharts.com/maps/highmaps.js"></script>
-<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+<script src="<?= BASE_THEME; ?>landing/assets/js/vendor/highchart/highmaps.js"></script>
+<script src="<?= BASE_THEME; ?>landing/assets/js/vendor/highchart/map.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 <!-- <script src="<?= BASE_THEME; ?>landing/assets/js/vendor/jquery-1.12.4.min.js"></script> -->
@@ -153,7 +152,7 @@
 <script src="<?= BASE_THEME; ?>landing/assets/js/jquery.slicknav.min.js"></script>
 
 <!-- Jquery Slick , Owl-Carousel Plugins -->
-<script src="<?= BASE_THEME; ?>landing/assets/js/owl.carousel.min.js"></script>
+<!-- <script src="<?php // echo BASE_THEME; ?>landing/assets/js/owl.carousel.min.js"></script> (Arif Comment) -->
 <script src="<?= BASE_THEME; ?>landing/assets/js/slick.min.js"></script>
 <!-- One Page, Animated-HeadLin -->
 <script src="<?= BASE_THEME; ?>landing/assets/js/wow.min.js"></script>

@@ -103,7 +103,7 @@ $autoload['helper'] = array('url', 'file', 'security', 'simlakah', 'portaldata')
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array('api');
+$autoload['config'] = array('api', 'portal_menu');
 
 /*
 | -------------------------------------------------------------------

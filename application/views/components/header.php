@@ -13,31 +13,32 @@
     <!-- CSS here -->
     <!-- <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/custom_style.css">
-    <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/owl.carousel.min.css">
+    <!-- <link rel="stylesheet" href="<?php // echo BASE_THEME; ?>landing/assets/css/owl.carousel.min.css"> (Arif Comment) -->
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/slicknav.css">
-    <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/flaticon.css">
+    <!-- <link rel="stylesheet" href="<?php // echo BASE_THEME; ?>landing/assets/css/flaticon.css"> (Arif Comment) -->
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/progressbar_barfiller.css">
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/gijgo.css">
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/animate.min.css">
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/animated-headline.css">
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/magnific-popup.css">
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/themify-icons.css">
+    <!-- <link rel="stylesheet" href="<?php // echo BASE_THEME; ?>landing/assets/css/themify-icons.css"> (Arif Comment) -->
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/slick.css">
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/nice-select.css">
     <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/style.css">
 
     <link rel="stylesheet" href="<?= BASE_THEME; ?>mazer/assets/vendors/apexcharts/apexcharts.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= BASE_THEME; ?>landing/assets/css/dataTables.bootstrap4.min.css">
 
-    <script src="https://kit.fontawesome.com/ab0cd48a50.js" crossorigin="anonymous"></script>
-    <script src="<?= BASE_THEME; ?>v4/vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/ab0cd48a50.js" crossorigin="anonymous"></script> (Arif Comment) -->
+    <!-- <script src="<?php // echo BASE_THEME; ?>v4/vendor/jquery/jquery.min.js"></script> (Arif Comment) -->
     <!-- <script src="https://code.highcharts.com/maps/highmaps.js"></script>
     <script src="https://code.highcharts.com/maps/modules/map.js"></script> -->
-    <!-- <script src="<?= BASE_THEME; ?>highchart/highcharts-more.js"></script>
-    <script src="<?= BASE_THEME; ?>highchart/highmaps.js"></script> -->
-    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
-    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <!-- <script src="<?php // echo BASE_THEME; ?>highchart/highcharts-more.js"></script>
+    <script src="<?php // echo BASE_THEME; ?>highchart/highmaps.js"></script> -->
+    <!-- <script src="https://code.highcharts.com/maps/highmaps.js"></script> -->
+    <!-- <script src="https://code.highcharts.com/maps/modules/exporting.js"></script> -->
+	<script src="<?= BASE_THEME; ?>landing/assets/js/jquery-3.5.1.js"></script>
 </head>
 
 <body>
@@ -67,21 +68,35 @@
                         <div class="main-menu f-right d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
-                                    <li><a href="<?= BASE_URL ?>">Beranda</a></li>
-                                    <?php foreach ($displayListMenu as $index => $item) : ?>
-                                        <li><a href="javascript:void(0)" class="menu-hover"><?= $item->title; ?> &nbsp;<span class="fa fa-solid fa-angle-down fa-xs"></span></a>
-                                            <?php if ($item->has_child) : ?>
-                                                <ul class="submenu">
-                                                    <?php foreach ($item->child as $childIndex => $childItem) : ?>
-                                                        <li><a href="<?= BASE_URL . $childItem->url ?>"><?= $childItem->title; ?></a>
-                                                            <?= ($childIndex != (count($item->child) - 1)) ? '<hr class="mt-1 mb-1" style="width: 320px;">' : '' ?>
-                                                        </li>
-                                                    <?php endforeach ?>
-                                                </ul>
-                                            <?php endif ?>
-                                        <?php endforeach ?>
-                                        </li>
+									<?php 
+										$portalMenu = $this->config->item('portal_menu'); 
+										foreach ($portalMenu as $item) :
+											if ($item['type'] == "table") :
+												foreach ($item['data'] as $menuIndex => $menuData) :
+													if (intval($menuData['menu_level']) == 1 && boolval($menuData['is_active'])) :
+														if(boolval($menuData['has_child'])) :
+														?>
+															<li><a href="javascript:void(0)" class="menu-hover"><?= $menuData['title']; ?> &nbsp;<span class="fa fa-solid fa-angle-down fa-xs"></span></a>
+																<ul class="submenu">
+																	<?php foreach ($item['data'] as $subMenuIndex => $subMenuData) : ?>
+																		<?php if($subMenuData['id_parentmenu'] == $menuData['id_menu']): ?>
+																			<li><a href="<?= BASE_URL . $subMenuData['url'] ?>"><?= $subMenuData['title']; ?></a>
+																				<hr class="mt-1 mb-1" style="width: 320px;">
+																			</li>
+																		<?php endif; ?>
+																	<?php endforeach; ?>
+																</ul>
+															</li>
 
+														<?php else: ?>
+															<li><a href="<?= $menuData['url'] ? BASE_URL . $menuData['url'] : BASE_URL ?>"><?= $menuData['title'] ?></a></li>
+														<?php
+														endif;
+													endif;
+												endforeach;
+											endif;
+										endforeach;
+									?>
                                 </ul>
                             </nav>
                         </div>
@@ -100,3 +115,4 @@
         </div>
         <!-- Header End -->
     </header>
+
