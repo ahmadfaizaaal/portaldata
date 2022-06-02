@@ -31,7 +31,7 @@
                                     <p class="text-gray-800 ml-5 mb-0">Sertifikat Badan Usaha</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <h1 class="text-center font-weight-bold text-pupr-orange">19.233</h1>
+                                    <h1 class="text-center font-weight-bold text-pupr-orange"><?= number_format(isset($data) ? ($data['jumlah_subklas'] ? $data['jumlah_subklas']['jumlah_subklas'] : 0) : 0) ?></h1>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                                     <p class="text-gray-800 ml-5 mb-0">Badan Usaha Jasa Konstruksi</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <h1 class="text-center font-weight-bold text-pupr-orange">19.233</h1>
+                                    <h1 class="text-center font-weight-bold text-pupr-orange"><?= number_format(isset($data) ? ($data['jumlah_bujk'] ? $data['jumlah_bujk']['jumlah_bujk'] : 0) : 0) ?></h1>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,11 @@
             </div>
 
             <div class="row mt-5 mb-5">
-                <div class="col-xl-12 col-lg-12 col-md-12" id="chart-maps"></div>
+				<?php // var_dump($data) ?>
+				<div class="col-md-12">
+					<h2 class="text-center">Provinsi Registrasi BUJK</h2>
+					<canvas id="provRegistrasiMaps"></canvas>
+				</div>
             </div>
 
             <div class="row">
@@ -67,92 +71,69 @@
     </section>
 
     <script>
-        // (async () => {
+		var ctx = document.getElementById("provRegistrasiMaps")
+		var themePath = '<?= BASE_THEME; ?>'
 
-        //     const topology = await fetch(
-        //         'https://code.highcharts.com/mapdata/countries/id/id-all.topo.json'
-        //     ).then(response => response.json());
+		function search(nameKey, myArray){
+			for (var i=0; i < myArray.length; i++) {
+				if (myArray[i].provinsi_reg_bujk === nameKey) {
+					return myArray[i];
+				}
+			}
+		}
 
-        //     // Prepare demo data. The data is joined to map using value of 'hc-key'
-        //     // property by default. See API docs for 'joinBy' for more info on linking
-        //     // data and map.
-        //     const data = [
-        //         ['id-3700', 10],
-        //         ['id-ac', 11],
-        //         ['id-jt', 12],
-        //         ['id-be', 13],
-        //         ['id-bt', 14],
-        //         ['id-kb', 15],
-        //         ['id-bb', 16],
-        //         ['id-ba', 17],
-        //         ['id-ji', 18],
-        //         ['id-ks', 19],
-        //         ['id-nt', 20],
-        //         ['id-se', 21],
-        //         ['id-kr', 22],
-        //         ['id-ib', 23],
-        //         ['id-su', 0],
-        //         ['id-ri', 25],
-        //         ['id-sw', 26],
-        //         ['id-ku', 27],
-        //         ['id-la', 28],
-        //         ['id-sb', 29],
-        //         ['id-ma', 30],
-        //         ['id-nb', 31],
-        //         ['id-sg', 32],
-        //         ['id-st', 33],
-        //         ['id-pa', 34],
-        //         ['id-jr', 35],
-        //         ['id-ki', 36],
-        //         ['id-1024', 37],
-        //         ['id-jk', 38],
-        //         ['id-go', 39],
-        //         ['id-yo', 40],
-        //         ['id-sl', 41],
-        //         ['id-sr', 42],
-        //         ['id-ja', 43],
-        //         ['id-kt', 44]
-        //     ];
+		const dataProvRegistrasi = <?php echo json_encode($data['provinsi_registrasi_sertifikat']) ?>;
 
-        //     // Create the chart
-        //     Highcharts.mapChart('chart-maps', {
-        //         chart: {
-        //             map: topology
-        //         },
+		$.getJSON(themePath + 'landing/assets/json/asiaTopo.json', function(asiaTopo) {
 
-        //         title: {
-        //             text: 'Peta Indonesia'
-        //         },
+			const countries = ChartGeo.topojson.feature(asiaTopo, asiaTopo.objects.continent_Asia_subunits).features;
+			const Indonesia = countries.find((d) => d.properties.geounit === 'Indonesia');
+	
+			$.getJSON(themePath + 'landing/assets/json/indonesiaTopo.json', function(topoData) {
+				var indonesiaTopo = ChartGeo.topojson.feature(topoData, topoData.objects.topoindo).features
+	
+				const data = {
+					labels: indonesiaTopo.map(provinsi => provinsi.properties.provinsi),
+					datasets: [{
+						label: "Provinsi Registrasi",
+						outline: Indonesia,
+						data: indonesiaTopo.map(provinsi => ({feature: provinsi, value: (search(provinsi.properties.provinsi, dataProvRegistrasi) ? search(provinsi.properties.provinsi, dataProvRegistrasi).jumlah_subklas : 0)}))
+					}]
+				}
+				console.log(topoData)
+				console.log(indonesiaTopo)
+				const config = {
+					type: "choropleth",
+					data,
+					options: {
+						onClick: (e) => {
+							const activePoints = mapsChart.getElementsAtEventForMode(e, 'nearest', {
+								intersect: true
+							}, false)
+							const [{
+								index
+							}] = activePoints;
+							
 
-        //         // subtitle: {
-        //         //     text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/id/id-all.topo.json">Indonesia</a>'
-        //         // },
+							// Custom Click Event
+							alert("Provinsi di klik " + data.datasets[0].data[index].feature.properties.provinsi + ". dengan Jumlah " + data.datasets[0].data[index].value.toLocaleString())
+						},
+						scales: {
+							xy: {
+								projection: "equalEarth"
+							}
+						},
+						plugins: {
+							legend: {
+								display: false
+							}
+						}
+					}
+				}
+	
+				var mapsChart = new Chart(ctx, config)
+			});
 
-        //         mapNavigation: {
-        //             enabled: false,
-        //             buttonOptions: {
-        //                 verticalAlign: 'bottom'
-        //             },
-        //             enableMouseWheelZoom: false,
-        //         },
-
-        //         colorAxis: {
-        //             min: 0
-        //         },
-        //         series: [{
-        //             data: data,
-        //             name: 'Random data',
-        //             states: {
-        //                 hover: {
-        //                     color: '#EAB630'
-        //                 }
-        //             },
-        //             dataLabels: {
-        //                 enabled: false,
-        //                 format: '{point.name}'
-        //             }
-        //         }]
-        //     });
-
-        // })();
+		})
+		
     </script>

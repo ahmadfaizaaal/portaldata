@@ -21,4 +21,4 @@ $config['endpoints']['default'] = 'http://34.101.127.57/api';
 */
 
 $config['apikeys'] = array();
-$config['apikeys']['default'] = '5578e19acd4ba04fd9788d9be57ceb6c4a08cb9c8f0fae0ef10695a1d779ec7c';
+$config['apikeys']['default'] = 'd4cd5ddf604937b2724bfa717bac59e17e4ad45f8cd0d083be87528e1627acd1';

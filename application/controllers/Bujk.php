@@ -8,6 +8,8 @@ class Bujk extends CI_Controller
         parent::__construct();
         date_default_timezone_set('Asia/Bangkok');
         // $this->load->model('M_GeneralSetting', 'genset');
+		$this->endpoints  = $this->config->item('endpoints');
+		$this->apikey     = $this->config->item('apikeys');
     }
 
     public function index()
@@ -20,7 +22,9 @@ class Bujk extends CI_Controller
     public function sbuTransisi()
     {
         $pageTitle = 'Sertifikat Badan Usaha (SBU) Masa Transisi';
-		$data = [];
+		$context   = "/badan-usaha/sbu-transisi";
+		$data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
+
         loadPage('bujk', 'sbu_transisi', $pageTitle, $data);
     }
 

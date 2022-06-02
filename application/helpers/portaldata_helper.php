@@ -29,3 +29,27 @@ if (!function_exists('loadPage')) {
         $CI->load->view('components/footer', $data);
     }
 }
+
+if (!function_exists('http_request')) {
+    function http_request($url = null, $http_method = 'get', $data = [])
+    {
+		$output = [];
+		if ($url) {
+			$ch = curl_init();  
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_FAILONERROR, true);
+			$output = curl_exec($ch);
+			if (curl_errno($ch)) {
+				$error_msg = curl_error($ch);
+				return ["status" => 500, "messages" => $error_msg];
+			} else {
+				return json_decode($output, true);
+			}
+			curl_close($ch);      
+		} else {
+			return $output;
+		}
+	
+    }
+}
