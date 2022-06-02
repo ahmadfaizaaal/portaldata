@@ -9,7 +9,7 @@
                             <p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?= BASE_URL ?>">Beranda&nbsp;&nbsp;&nbsp;<i class="fa fa-solid fa-angle-right fa-xs"></i></a></span> <span class="default-yellow">Badan Usaha Jasa Konstruksi</span></p>
                             <h2 class="pt-2"><?= $pageTitle; ?></h2>
                             <p class="user-info pt-3 mb-0"><span><i class="fa fa-user"></i>&nbsp;Admin Datin DJBK&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><i class="fa fa-solid fa-calendar-days"></i>&nbsp;Last Update : 28 Maret 2022</span></p>
-                            <a href="<?= BASE_URL ?>/export-file/sbutransisi" class="genric-btn pupr radius mt-5"><span><i class="fa-solid fa-download"></i></span>&nbsp;Download Excel</a>
+                            <a href="<?= BASE_URL ?>/export-file/sbutransisi" class="genric-btn pupr radius mt-5"><span><i class="fa fa-solid fa-download"></i></span>&nbsp;Download Excel</a>
                         </div>
                     </div>
                 </div>
