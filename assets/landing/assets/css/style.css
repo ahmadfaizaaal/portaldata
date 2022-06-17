@@ -2199,7 +2199,7 @@ hr {
 }
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
 	.header-area .menu-wrapper .main-menu {
-		margin-right: 30px;
+		margin-left: 20px;
 	}
 }
 .header-area .menu-wrapper .main-menu ul li {
@@ -2210,7 +2210,7 @@ hr {
 .header-area .menu-wrapper .main-menu ul li a {
 	color: #fff;
 	font-weight: 400;
-	padding: 39px 19px;
+	padding: 29px 9px;
 	display: block;
 	font-size: 16px;
 	font-family: "Rubik", sans-serif;
@@ -2222,7 +2222,7 @@ hr {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.header-area .menu-wrapper .main-menu ul li a {
-		padding: 39px 9px;
+		padding: 29px 9px;
 	}
 }
 .header-area .menu-wrapper .main-menu ul li:hover > a {

@@ -48,6 +48,24 @@
 			.loading-skeleton img {
 			filter: grayscale(100) contrast(0%) brightness(1.8);
 		}
+
+		.f-16 {
+			font-size: 16px
+		}
+
+		.text-middle {
+			vertical-align: middle !important
+		}
+
+		.section-title {
+			font-size: 4rem !important
+		}
+
+		.text-pupr-blue { color: #374774 }
+		.bg-pupr-blue { background-color: #374774; color: #FFFFFF }
+		.text-pupr-yellow { color: #EAB630 }
+		.bg-pupr-yellow { background-color: #EAB630; color: #FFFFFF }
+
 	</style>
 <!--? Hero Start -->
 <div class="slider-area2">
@@ -117,20 +135,104 @@
 			</div>
 		</div>
 
-		<div class="row mt-5 mb-5 loading-skeleton">
+		<div class="row mt-5 mb-5 loading-skeleton" id="provinsi-registrasi-section">
 			<?php // var_dump($data) ?>
-			<div class="col-md-12" style="min-height:583px">
-				<h2 class="text-center font-weight-bolder">Provinsi Registrasi BUJK</h2>
+			<div class="col-md-12 text-center skeleton-div">
+				
+				<h1 class="section-title"><b>Provinsi Registrasi BUJK</b></h1>
+				<a href="#provinsi-registrasi-section" class="btn radius btn-lg bg-pupr-blue"><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Provinsi Registrasi BUJK</a>
+
 				<canvas id="provRegistrasiMaps"></canvas>
 			</div>
 		</div>
 
-		<div class="row">
-			
+		<div class="row" id="asosiasi-permohonan-sertifikat-section">
+			<div class="col-md-12 text-center my-5 py-3">
+				<h1 class="section-title bg-white"><b>Asosiasi Permohonan Sertifikat</b></h1>
+				<a href="#asosiasi-permohonan-sertifikat-section" class="btn radius btn-lg bg-pupr-blue"><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Asosiasi Permohonan Sertifikat</a>
+			</div>
+			<div class="col-md-7">
+				<table class="table table-bordered" width="100%" id="asosiasi-permohonan-sertifikat">
+					<thead>
+						<tr>
+							<th class="text-center" width="60%">Asosiasi BUJK</th>
+							<th class="text-center" width="40%">Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td colspan="2" class="text-center">Loading...</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-5 loading-skeleton">
+				<div style="height: 522px; position: relative" class="chart-container skeleton-div" id="asosiasi-permohonan-sertifikat-chart-container">
+					<canvas id="asosiasi-permohonan-sertifikat-chart" height="1044px"></canvas>
+				</div>
+			</div>
 		</div>
+
+		<div class="row" id="kualifikasi-sertifikat-section">
+			<div class="col-md-12 text-center my-5 py-3">
+				<h1 class="section-title"><b>Kualifikasi Sertifikat</b></h1>
+				<a href="#kualifikasi-sertifkat-section" class="btn radius btn-lg bg-pupr-blue"><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Kualifikasi Sertifikat</a>
+			</div>
+			<div class="col-md-7">
+				<table class="table table-bordered" width="100%" id="kualifikasi-sertifikat">
+					<thead>
+						<tr>
+							<th class="text-center" colspan="3">Kualifikasi KBLI</th>
+						</tr>
+						<tr>
+							<th class="text-center" width="40%">Group</th>
+							<th class="text-center" width="30%">Kode</th>
+							<th class="text-center" width="30%">Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td colspan="3" class="text-center">Loading...</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-5 loading-skeleton">
+				<div style="height: 522px; position: relative" class="chart-container skeleton-div" id="kualifikasi-sertifikat-chart-container">
+					<canvas id="kualifikasi-sertifikat-chart" height="1044px"></canvas>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" id="jenis-sertifikat-section">
+			<div class="col-md-12 text-center my-5 py-3">
+				<h1 class="section-title"><b>Jenis Sertifikat</b></h1>
+				<a href="#jenis-sertifkat-section" class="btn radius btn-lg bg-pupr-blue"><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Jenis Sertifikat</a>
+			</div>
+			<div class="col-md-7">
+				<table class="table table-bordered" width="100%" id="jenis-sertifikat">
+					<thead>
+						<tr>
+							<th class="text-center" colspan="3">Jenis SBU</th>
+						</tr>
+						<tr>
+							<th class="text-center" width="40%">Group</th>
+							<th class="text-center" width="30%">Jenis Usaha</th>
+							<th class="text-center" width="30%">Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td colspan="3" class="text-center">Loading...</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-5 loading-skeleton">
+				<div style="height: 522px; position: relative" class="chart-container skeleton-div" id="jenis-sertifikat-chart-container">
+					<canvas id="jenis-sertifikat-chart" height="1044px"></canvas>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </section>
 
+<script src="<?= BASE_THEME ?>landing/assets/js/vendor/dataTables.rowsGroup.js"></script>
 <script>
 	var ctx       = document.getElementById("provRegistrasiMaps") // Get Canvas Element
 	var baseUrl   = '<?= BASE_URL; ?>' // Project Root URL
@@ -146,12 +248,52 @@
 	}
 
 	$(window).on("load", function() {
+		
+		// Perfect Scrollbar Initialize
+		// const ps = new PerfectScrollbar(".ps")
+
+		const tableElementData = [{
+			id: "#asosiasi-permohonan-sertifikat",
+			index: "asosiasi_permohonan_sertifikat",
+			fields: ["asosiasi_bujk", "jumlah_subklas"],
+			centerIndex: [1],
+			formating: ['text', 'number'],
+			options: {
+				scrollX: true,
+				scrollY: "400px",
+				order: [[1, "desc"]]
+			}
+		}, {
+			id: "#kualifikasi-sertifikat",
+			index: "kualifikasi_sertifikat",
+			fields: ["kualifikasi_kbli_grup", "kualifikasi_kbli", "jumlah_subklas"],
+			centerIndex: [0, 1, 2],
+			formating: ['text', 'text', 'number'],
+			options: {
+				scrollX: true,
+				rowsGroup: [0],
+				paginate: false,
+				ordering: false
+			}
+		}, {
+			id: "#jenis-sertifikat",
+			index: "jenis_sertifikat",
+			fields: ["jenis_sbu_grup", "jenis_usaha_bu", "jumlah_subklas"],
+			centerIndex: [0, 1, 2],
+			formating: ['text', 'text', 'number'],
+			options: {
+				scrollX: true,
+				rowsGroup: [0],
+				paginate: false,
+				ordering: false
+			}
+		}]
+
 		$.get(baseUrl + "/bujk-dev/sbutransisi/ajax", (res) => { res = $.parseJSON(res)
 			if (res.status == 200) {
 				$(".loading-skeleton").removeClass("loading-skeleton")
 				const resData = res.data
 				const resDateRecord = new Date(res.dateRecord)
-				console.log(res)
 				
 				const ElementLastUpdate = $("#ajax-last-update").html(" Data per Tanggal : " + resDateRecord.toLocaleString("ID"))
 				const ElementJumlahSBU = $("#ajax-jumlah-sbu").html(( resData.jumlah_subklas.jumlah_subklas.toLocaleString() ))
@@ -215,6 +357,206 @@
 					});
 	
 				})
+
+				/**
+				 * @desc Sorting Function for ordering Array by another array
+				 * @params Array / Object - array [raw array]
+				 * @params Array - order [array of desired order]
+				 * @params string - key [key index of sorting by]
+				 * @return Array / Object - Sorted array or object
+				*/
+				function mapOrder (array, order, key) {
+					array.sort( function (a, b) {
+						var A = a[key], B = b[key];
+						if (order.indexOf(A) > order.indexOf(B)) {
+							return 1;
+						} else {
+							return -1;
+						}
+					});
+					return array;
+				};
+				
+				/**
+				 * @desc Sorting Function for Multidimesional Array of Object
+				 * @params String - valuePath [Dimension sorting by]
+				 * @params Array / Object - valuePath [Dimension sorting by]
+				 * @return Array / Object - Sorted array or object
+				*/
+				function sort(valuePath, array){
+					let path = valuePath.split('.')  
+
+					return array.sort((a, b) => {
+						return getValue(b,path) -  getValue(a,path)    
+					});
+
+					function getValue(obj, path){
+						path.forEach(path => obj = obj[path])
+						return obj;
+					}
+				}
+
+				/**
+				 * @desc Optional Pre Pocessing Data List
+				*/
+
+				const rawKualifikasiSertifikat = resData.kualifikasi_sertifikat
+				const indexOrderingKeyKualifikasiSertifikat= ["Besar", "Menengah", "Kecil", "Perseorangan"]
+				resData.kualifikasi_sertifikat = mapOrder(rawKualifikasiSertifikat, indexOrderingKeyKualifikasiSertifikat, "kualifikasi_kbli_grup")
+
+				const rawJenisSertifikat = resData.jenis_sertifikat
+				const indexOrderingKeyJenisSertifikat = ["Jasa Konsultasi Konstruksi", "Pekerjaan Konstruksi", "Pekerjaan Konstruksi Terintegrasi", null]
+				resData.jenis_sertifikat = mapOrder(rawJenisSertifikat, indexOrderingKeyJenisSertifikat, "jenis_sbu_grup")
+				
+				/**
+				 * @desc DataTables mapping data
+				*/
+
+				tableElementData.map((data) => {
+					
+					$(`${data.id} tbody`).empty()
+
+					$.each(resData[data.index], (idx, elm) => {
+						$(`${data.id} tbody`).append(`<tr>${data.fields.map((field, fIndex) => {return `<td class="${data.centerIndex.includes(fIndex) ? "text-center text-middle bg-white" : "text-middle bg-white"}">${elm[field] != null ? (data.formating[fIndex] == "number" ? parseInt(elm[field]).toLocaleString() : elm[field]) : "-"}</td>`})}</tr>`)
+					})
+
+					$(data.id).DataTable(data.options)
+				})
+				
+				/**
+				 * @desc Chart Asosiasi Permohonan Sertifikat
+				 * @plugin Chart.js 3.8
+				 * @dataSource /bujk/sbutransisi [data: asosiasi_permohonan_sertifikat]
+				*/
+
+				const sortedDataAsosiasiPermohonanSertifikat = sort('jumlah_subklas', resData['asosiasi_permohonan_sertifikat'])
+				const labelsAsosiasiPermohonanSertifikat = []
+				const dataValueAsosiasiPermohonanSertifikat = []
+
+				sortedDataAsosiasiPermohonanSertifikat.map((item, index) => {
+					if (index < 15) {
+						labelsAsosiasiPermohonanSertifikat.push(item.asosiasi_bujk)
+						dataValueAsosiasiPermohonanSertifikat.push(parseInt(item.jumlah_subklas))
+					}
+				})
+
+				const dataAsosiasiPermohonanSertifikat = {
+					labels: labelsAsosiasiPermohonanSertifikat,
+					datasets: [{
+						axis: 'y',
+						label: 'Total Sertifikat',
+						data: dataValueAsosiasiPermohonanSertifikat,
+						fill: true,
+						backgroundColor: "rgb(55,71,116)",
+						borderWidth: 1
+					}]
+				}
+
+				const configAsosiasiPermohonanSertifikat = {
+					type: 'bar',
+					data: dataAsosiasiPermohonanSertifikat,
+					options: {
+						indexAxis: 'y',
+						maintainAspectRatio: false,
+						plugins: {
+							title: {
+								display: true,
+								text: 'Asosiasi Permohonan Sertifikat Teratas'
+							}
+						}
+					}
+				}
+
+				const asosiasiPermohonanSertifikatChart = new Chart(
+					document.getElementById("asosiasi-permohonan-sertifikat-chart"),
+					configAsosiasiPermohonanSertifikat
+				)
+
+				/**
+				 * @desc Chart Kualifikasi Sertifikat
+				 * @plugin Chart.js 3.8
+				 * @dataSource /bujk/sbutransisi [data: kualifikasi_sertifikat]
+				*/
+
+				const sortedDataKualifikasiSertifikat = {}
+				resData.kualifikasi_sertifikat.map((item) => {
+					sortedDataKualifikasiSertifikat[item.kualifikasi_kbli_grup] = parseInt(sortedDataKualifikasiSertifikat[item.kualifikasi_kbli_grup] ?? 0) + item.jumlah_subklas
+				})
+
+				const labelsKualifikasiSertifikat = Object.keys(sortedDataKualifikasiSertifikat)
+				const dataValueKualifikasiSertifikat = Object.values(sortedDataKualifikasiSertifikat)
+				
+				const dataKualifikasiSertifikat = {
+					labels: labelsKualifikasiSertifikat,
+					datasets: [{
+						label: 'Kualifikasi',
+						data: dataValueKualifikasiSertifikat,
+						backgroundColor: [
+							"rgb(55, 71, 116)",
+							"rgb(234, 182, 48)",
+							"rgb(216, 30, 91)",
+							"rgb(30, 174, 78)",
+						]
+					}]
+				};
+
+				const configKualifikasiSertifikat = {
+					type: 'pie',
+					data: dataKualifikasiSertifikat,
+					options: {
+						scale: {
+							ticks: {
+								beginAtZero:true
+							}
+						}
+					}
+				};
+
+				const kualifikasiSertifikatChart = new Chart(
+					document.getElementById("kualifikasi-sertifikat-chart"),
+					configKualifikasiSertifikat
+				)
+				
+				/**
+				 * @desc Chart Jenis Sertifikat
+				 * @plugin Chart.js 3.8
+				 * @dataSource /bujk/sbutransisi [data: jenis_sertifikat]
+				*/
+
+				const sortedDataJenisSertifikat = {}
+				resData.jenis_sertifikat.map((item) => {
+					sortedDataJenisSertifikat[(item.jenis_sbu_grup != null ? item.jenis_sbu_grup : "-")] = parseInt(sortedDataJenisSertifikat[(item.jenis_sbu_grup != null ? item.jenis_sbu_grup : "-")] ?? 0) + item.jumlah_subklas
+				})
+
+				const labelsJenisSertifikat = Object.keys(sortedDataJenisSertifikat)
+				const dataValueJenisSertifikat = Object.values(sortedDataJenisSertifikat)
+				
+				const dataJenisSertifikat = {
+					labels: labelsJenisSertifikat,
+					datasets: [{
+						label: 'Jenis',
+						data: dataValueJenisSertifikat,
+						backgroundColor: "rgb(55, 71, 116)"
+					}]
+				};
+
+				const configJenisSertifikat = {
+					type: 'radar',
+					data: dataJenisSertifikat,
+					options: {
+						scale: {
+							ticks: {
+								beginAtZero:true
+							}
+						}
+					}
+				};
+
+				const jenisSertifikatChart = new Chart(
+					document.getElementById("jenis-sertifikat-chart"),
+					configJenisSertifikat
+				)
+
 			} else {
 				// error handling here
 			}

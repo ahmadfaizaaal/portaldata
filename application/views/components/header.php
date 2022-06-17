@@ -91,6 +91,9 @@
 	<script src="<?= BASE_THEME; ?>landing/assets/js/chart.js"></script>
 	<script src="<?= BASE_THEME; ?>landing/assets/js/umd.min.js"></script>
 
+	<!-- PerfectScrollbar -->
+	<link rel="stylesheet" href="<?= BASE_THEME ?>landing/assets/css/perfect-scrollbar/perfect-scrollbar.css">
+	<script src="<?= BASE_THEME ?>landing/assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 	<!-- JS for apex charts -->
 	<!-- <script src="<?php // echo BASE_THEME; ?>mazer/assets/vendors/apexcharts/apexcharts.js"></script>
 	<script src="<?php // echo BASE_THEME; ?>mazer/assets/js/pages/ui-apexchart.js"></script> -->
