@@ -663,13 +663,13 @@
 								resData[sheetItem].map((resDataItem, resDataIndex) => {
 									const tempRow = []
 									Object.keys(tableHeaders[sheetItem]).map((headerItem => {
-										tempRow.push({text: resData[sheetItem][resDataIndex][headerItem]})
+										tempRow.push({text: (resData[sheetItem][resDataIndex][headerItem] ?? "(lain-lain)") })
 									}))
 									row.push(tempRow)
 								})
 							} else {
 								Object.keys(tableHeaders[sheetItem]).map((headerItem => {
-									row.push([{text: resData[sheetItem][headerItem]}])
+									row.push([{text: (resData[sheetItem][headerItem] ?? "(lain-lain)")}])
 								}))
 							}
 

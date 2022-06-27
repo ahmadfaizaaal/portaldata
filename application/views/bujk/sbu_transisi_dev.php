@@ -440,24 +440,33 @@
 				/**
 				 * @desc DataTables mapping data
 				*/
-
-				const ps = []
 				tableElementData.map((data) => {
 					
 					$(`${data.id} tbody`).empty()
 
 					$.each(resData[data.index], (idx, elm) => {
-						$(`${data.id} tbody`).append(`<tr>${data.fields.map((field, fIndex) => {return `<td class="${data.centerIndex.includes(fIndex) ? "text-center text-middle bg-white" : "text-middle bg-white"}">${elm[field] != null ? (data.formating[fIndex] == "number" ? parseInt(elm[field]).toLocaleString() : elm[field]) : "-"}</td>`})}</tr>`)
+						
+						$(`${data.id} tbody`).append(`
+							<tr>${
+								data.fields.map((field, fIndex) => {
+									return `<td class="${
+										
+										data.centerIndex.includes(fIndex) ? 
+										"text-center text-middle bg-white" : 
+										"text-middle bg-white"
+									
+									}">${
+										elm[field] != null ? 
+											(
+												data.formating[fIndex] == "number" ? 
+												parseInt(elm[field]).toLocaleString() : 
+												elm[field]
+											) : 
+											"-"
+									}</td>`
+								})
+							}</tr>`)
 					})
-
-					// const dataTablesOpt = {
-					// 	fnInitComplete: function () {
-					// 		ps[data.id] = new PerfectScrollbar('.dataTables_scrollBody')
-					// 	},
-					// 	fnDrawCallback: function (oSettings) {
-					// 		ps[data.id] = new PerfectScrollbar('.dataTables_scrollBody')
-					// 	}
-					// , ...data.options}
 
 					$(data.id).DataTable(data.options)
 				})
@@ -649,7 +658,23 @@
 					if (!dataSource) return
 					if (dataSource.length > 1) {
 
-						// Single Sheet Download Handler
+						const currentDataSource = dataSource[0]
+						const dataSourceDimension = dataSource[1]
+						if (currentDataSource != "resData") return
+						
+						const rawDataItems = resData[dataSourceDimension]
+						const row = []
+						if (Array.isArray(rawDataItems)) {
+							rawDataItems.map((resDataItem, resDataIndex) => {
+								const tempRow = []
+								Object.keys(tableHeaders[dataSourceDimension]).map((headerItem => {
+									tempRow.push({text: (rawDataItems[resDataIndex][headerItem] ?? "(lain-lain)") })
+								}))
+								row.push(tempRow)
+							})
+						} else {
+
+						}
 						
 					} else {
 						
@@ -663,34 +688,35 @@
 								resData[sheetItem].map((resDataItem, resDataIndex) => {
 									const tempRow = []
 									Object.keys(tableHeaders[sheetItem]).map((headerItem => {
-										tempRow.push({text: resData[sheetItem][resDataIndex][headerItem]})
+										tempRow.push({text: (resData[sheetItem][resDataIndex][headerItem] ?? "(lain-lain)") })
 									}))
 									row.push(tempRow)
 								})
 							} else {
 								Object.keys(tableHeaders[sheetItem]).map((headerItem => {
-									row.push([{text: resData[sheetItem][headerItem]}])
+									row.push([{text: (resData[sheetItem][headerItem] ?? "(lain-lain)")}])
 								}))
 							}
 
-							const sheetData = {
-								sheetName: sheetName[sheetIndex],
-								data: [sheetHeader, ...row]
-							}
-
-							convertedData.push(sheetData)
 						})
-
-						// console.log(convertedData)
-						$(btnItem).on("click", function (e) {
-							e.preventDefault()
-							e.stopImmediatePropagation()
-							Jhxlsx.export(convertedData, {fileName: `${fileName}`, header: true})
-						})
-
-						$(btnItem).removeAttr("disabled").removeClass("disabled")
+						
+					}
+					
+					const sheetData = {
+						sheetName: sheetName[sheetIndex],
+						data: [sheetHeader, ...row]
 					}
 
+					convertedData.push(sheetData)
+					
+					// console.log(convertedData)
+					$(btnItem).on("click", function (e) {
+						e.preventDefault()
+						e.stopImmediatePropagation()
+						Jhxlsx.export(convertedData, {fileName: `${fileName}`, header: true})
+					})
+
+					$(btnItem).removeAttr("disabled").removeClass("disabled")
 				})
 
 			} else {

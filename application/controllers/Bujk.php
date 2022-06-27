@@ -28,7 +28,7 @@ class Bujk extends CI_Controller
 			$data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
 			echo json_encode($data, true);
 		} else {
-			loadPage('bujk', 'sbu_transisi_dev', $pageTitle);
+			loadPage('bujk', 'sbu_transisi', $pageTitle);
 		}
 
     }

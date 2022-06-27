@@ -32,4 +32,18 @@ class Bujk_dev extends CI_Controller
 		}
 
     }
+
+    public function bujkTransisi($type = null)
+    {
+        $pageTitle = 'Badan Usaha Jasa Konstruksi (BUJK) Masa Transisi';
+
+		if ($type == "ajax") {
+			$context   = "/badan-usaha/bujk-transisi";
+			$data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
+			echo json_encode($data, true);
+		} else {
+			loadPage('bujk', 'bujk_transisi_dev', $pageTitle);
+		}
+
+    }
 }
