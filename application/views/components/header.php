@@ -97,6 +97,10 @@
 	<!-- JS for apex charts -->
 	<!-- <script src="<?php // echo BASE_THEME; ?>mazer/assets/vendors/apexcharts/apexcharts.js"></script>
 	<script src="<?php // echo BASE_THEME; ?>mazer/assets/js/pages/ui-apexchart.js"></script> -->
+
+	<script src="<?= BASE_THEME; ?>landing/assets/js/sheet.js"></script>
+	<script src="<?= BASE_THEME; ?>landing/assets/js/FileSaver.js"></script>
+	<script src="<?= BASE_THEME; ?>landing/assets/js/jhxlsx.js"></script>
 </head>
 
 <body>

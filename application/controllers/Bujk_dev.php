@@ -22,8 +22,6 @@ class Bujk_dev extends CI_Controller
     public function sbuTransisi($type = null)
     {
         $pageTitle = 'Sertifikat Badan Usaha (SBU) Masa Transisi';
-		// $context   = "/badan-usaha/sbu-transisi";
-		// $data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
 
 		if ($type == "ajax") {
 			$context   = "/badan-usaha/sbu-transisi";
@@ -34,16 +32,4 @@ class Bujk_dev extends CI_Controller
 		}
 
     }
-
-    // public function sbuReguler()
-    // {
-    //     $pageTitle = 'Sertifikat Badan Usaha (SBU) Masa Reguler';
-    //     $url =  '/' . $this->uri->uri_string();
-    //     $menu = $this->genset->getMenu($url);
-
-    //     $data['displayListSubmenu'] = $this->genset->getListSubMenu($menu->id_menu);
-
-    //     loadPage('bujk', 'sbu_reguler', $pageTitle, $data, $menu->id_menu);
-    // }
-
 }
