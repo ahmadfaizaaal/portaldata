@@ -83,7 +83,7 @@
 		<div class="row" id="asosiasi-permohonan-sertifikat-section">
 			<div class="col-md-12 text-center my-5 py-3">
 				<h1 class="section-title bg-white"><b>Asosiasi Permohonan Sertifikat</b></h1>
-				<a id="download-asosiasi-permohonan" href="#asosiasi-permohonan-sertifikat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Asosiasi Permohonan Sertifikat</a>
+				<a id="download-asosiasi-permohonan" href="#asosiasi-permohonan-sertifikat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Asosiasi-Permohonan-Sertifikat-Badan-Usaha" data-sheet-name="Asosiasi Permohonan Sertifikat" data-source="resData.asosiasi_permohonan_sertifikat" data-order-index="asosiasi_permohonan_sertifikat" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Asosiasi Permohonan Sertifikat</a>
 			</div>
 			<div class="col-md-7">
 				<table class="table table-bordered" width="100%" id="asosiasi-permohonan-sertifikat">
@@ -108,7 +108,7 @@
 		<div class="row" id="kualifikasi-sertifikat-section">
 			<div class="col-md-12 text-center my-5 py-3">
 				<h1 class="section-title"><b>Kualifikasi Sertifikat</b></h1>
-				<a id="download-kualifiaksi" href="#kualifikasi-sertifkat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Kualifikasi Sertifikat</a>
+				<a id="download-kualifiaksi" href="#kualifikasi-sertifkat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Kualifikasi-Sertifikat-Badan-Usaha" data-sheet-name="Kualifikasi Sertifikat" data-source="resData.kualifikasi_sertifikat" data-order-index="kualifikasi_sertifikat" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Kualifikasi Sertifikat</a>
 			</div>
 			<div class="col-md-7">
 				<table class="table table-bordered" width="100%" id="kualifikasi-sertifikat">
@@ -137,7 +137,7 @@
 		<div class="row" id="jenis-sertifikat-section">
 			<div class="col-md-12 text-center my-5 py-3">
 				<h1 class="section-title"><b>Jenis Sertifikat</b></h1>
-				<a id="download-jenis" href="#jenis-sertifkat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Jenis Sertifikat</a>
+				<a id="download-jenis" href="#jenis-sertifkat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Jenis-Sertifikat-Badan-Usaha" data-sheet-name="Jenis Sertifikat" data-source="resData.jenis_sertifikat" data-order-index="jenis_sertifikat" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Jenis Sertifikat</a>
 			</div>
 			<div class="col-md-7">
 				<table class="table table-bordered" width="100%" id="jenis-sertifikat">
@@ -166,7 +166,7 @@
 		<div class="row" id="klasifikasi-sertifikat-section">
 			<div class="col-md-12 text-center my-5 py-3">
 				<h1 class="section-title"><b>Klasifikasi Sertifikat</b></h1>
-				<a id="download-klasifikasi" href="#klasifikasi-sertifkat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Klasifikasi Sertifikat</a>
+				<a id="download-klasifikasi" href="#klasifikasi-sertifkat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Klasifikasi-Sertifikat-Badan-Usaha" data-sheet-name="Klasifikasi Sertifikat" data-source="resData.klasifikasi_sertifikat" data-order-index="klasifikasi_sertifikat" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Klasifikasi Sertifikat</a>
 			</div>
 			<div class="col-md-12">
 				<table class="table table-bordered" width="100%" id="klasifikasi-sertifikat">
@@ -184,10 +184,10 @@
 			</div>
 		</div>
 		
-		<div class="row" id=subklasifikasi-sertifikat-section">
+		<div class="row" id="subklasifikasi-sertifikat-section">
 			<div class="col-md-12 text-center my-5 py-3">
 				<h1 class="section-title"><b>Sub Klasifikasi Sertifikat</b></h1>
-				<a id="download-subklasifikasi" href="#subklasifikasi-sertifkat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Sub Klasifikasi Sertifikat</a>
+				<a id="download-subklasifikasi" href="#subklasifikasi-sertifkat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Sub-Klasifikasi-Sertifikat-Badan-Usaha" data-sheet-name="Sub Klasifikasi Sertifikat" data-source="resData.sub_klasifikasi_sertifikat" data-order-index="sub_klasifikasi_sertifikat" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Sub Klasifikasi Sertifikat</a>
 			</div>
 			<div class="col-md-12">
 				<table class="table table-bordered" width="100%" id="subklasifikasi-sertifikat">
@@ -440,24 +440,33 @@
 				/**
 				 * @desc DataTables mapping data
 				*/
-
-				const ps = []
 				tableElementData.map((data) => {
 					
 					$(`${data.id} tbody`).empty()
 
 					$.each(resData[data.index], (idx, elm) => {
-						$(`${data.id} tbody`).append(`<tr>${data.fields.map((field, fIndex) => {return `<td class="${data.centerIndex.includes(fIndex) ? "text-center text-middle bg-white" : "text-middle bg-white"}">${elm[field] != null ? (data.formating[fIndex] == "number" ? parseInt(elm[field]).toLocaleString() : elm[field]) : "-"}</td>`})}</tr>`)
+						
+						$(`${data.id} tbody`).append(`
+							<tr>${
+								data.fields.map((field, fIndex) => {
+									return `<td class="${
+										
+										data.centerIndex.includes(fIndex) ? 
+										"text-center text-middle bg-white" : 
+										"text-middle bg-white"
+									
+									}">${
+										elm[field] != null ? 
+											(
+												data.formating[fIndex] == "number" ? 
+												parseInt(elm[field]).toLocaleString() : 
+												elm[field]
+											) : 
+											"-"
+									}</td>`
+								})
+							}</tr>`)
 					})
-
-					// const dataTablesOpt = {
-					// 	fnInitComplete: function () {
-					// 		ps[data.id] = new PerfectScrollbar('.dataTables_scrollBody')
-					// 	},
-					// 	fnDrawCallback: function (oSettings) {
-					// 		ps[data.id] = new PerfectScrollbar('.dataTables_scrollBody')
-					// 	}
-					// , ...data.options}
 
 					$(data.id).DataTable(data.options)
 				})
@@ -645,16 +654,39 @@
 					const totalSheet = sheet.length ?? 0
 					const sheetName = $(btnItem).data('sheet-name') ? $(btnItem).data('sheet-name').split('.') : []
 					const dataSource = $(btnItem).data('source') ? $(btnItem).data('source').split('.') : []
+					const excelDataSet = []
+
 					if (!totalSheet) return
 					if (!dataSource) return
 					if (dataSource.length > 1) {
 
-						// Single Sheet Download Handler
+						const sheetIndex = 0
+						const currentDataSource = dataSource[0]
+						const dataSourceDimension = dataSource[1]
+						if (currentDataSource != "resData") return
+						
+						const rawDataItems = resData[dataSourceDimension]
+						const row = []
+
+						if (!Array.isArray(rawDataItems)) return
+						rawDataItems.map((resDataItem, resDataIndex) => {
+							const tempRow = []
+							Object.keys(tableHeaders[dataSourceDimension]).map((headerItem => {
+								tempRow.push({text: (rawDataItems[resDataIndex][headerItem] ?? "(lain-lain)") })
+							}))
+							row.push(tempRow)
+						})
+
+						const sheetHeader = Object.keys(tableHeaders[dataSourceDimension]).map(headerItem => ({text: tableHeaders[dataSourceDimension][headerItem]}) )
+						const sheetData = {
+							sheetName: sheetName[0],
+							data: [sheetHeader, ...row]
+						}
+
+						excelDataSet.push(sheetData)
 						
 					} else {
-						
 						if(dataSource[0] != "resData") return
-						const convertedData = []
 						sheet.map((sheetItem, sheetIndex) => {
 							const sheetHeader = Object.keys(tableHeaders[sheetItem]).map(headerItem => ({text: tableHeaders[sheetItem][headerItem]}) )
 							const row = []
@@ -677,20 +709,20 @@
 								sheetName: sheetName[sheetIndex],
 								data: [sheetHeader, ...row]
 							}
-
-							convertedData.push(sheetData)
+		
+							excelDataSet.push(sheetData)
 						})
-
-						// console.log(convertedData)
-						$(btnItem).on("click", function (e) {
-							e.preventDefault()
-							e.stopImmediatePropagation()
-							Jhxlsx.export(convertedData, {fileName: `${fileName}`, header: true})
-						})
-
-						$(btnItem).removeAttr("disabled").removeClass("disabled")
+						
 					}
+					
+					// console.log(convertedData)
+					$(btnItem).on("click", function (e) {
+						e.preventDefault()
+						e.stopImmediatePropagation()
+						Jhxlsx.export(excelDataSet, {fileName: `${fileName}`, header: true})
+					})
 
+					$(btnItem).removeAttr("disabled").removeClass("disabled")
 				})
 
 			} else {
