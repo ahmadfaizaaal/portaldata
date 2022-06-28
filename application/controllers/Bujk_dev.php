@@ -33,16 +33,16 @@ class Bujk_dev extends CI_Controller
 
     }
 
-    public function bujkTransisi($type = null)
+    public function sbuReguler($type = null)
     {
-        $pageTitle = 'Badan Usaha Jasa Konstruksi (BUJK) Masa Transisi';
+        $pageTitle = 'Sertifikat Badan Usaha (SBU) Reguler';
 
 		if ($type == "ajax") {
-			$context   = "/badan-usaha/bujk-transisi";
+			$context   = "/badan-usaha/sbu-reguler";
 			$data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
 			echo json_encode($data, true);
 		} else {
-			loadPage('bujk', 'bujk_transisi_dev', $pageTitle);
+			loadPage('bujk', 'sbu_reguler_dev', $pageTitle);
 		}
 
     }
