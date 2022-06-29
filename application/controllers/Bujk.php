@@ -8,8 +8,8 @@ class Bujk extends CI_Controller
         parent::__construct();
         date_default_timezone_set('Asia/Bangkok');
         // $this->load->model('M_GeneralSetting', 'genset');
-		$this->endpoints  = $this->config->item('endpoints');
-		$this->apikey     = $this->config->item('apikeys');
+        $this->endpoints  = $this->config->item('endpoints');
+        $this->apikey     = $this->config->item('apikeys');
     }
 
     public function index()
@@ -23,13 +23,25 @@ class Bujk extends CI_Controller
     {
         $pageTitle = 'Sertifikat Badan Usaha (SBU) Masa Transisi';
 
-		if ($type == "ajax") {
-			$context   = "/badan-usaha/sbu-transisi";
-			$data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
-			echo json_encode($data, true);
-		} else {
-			loadPage('bujk', 'sbu_transisi', $pageTitle);
-		}
+        if ($type == "ajax") {
+            $context   = "/badan-usaha/sbu-transisi";
+            $data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
+            echo json_encode($data, true);
+        } else {
+            loadPage('bujk', 'sbu_transisi', $pageTitle);
+        }
+    }
 
+    public function bujkTransisi($type = null)
+    {
+        $pageTitle = 'Badan Usaha Jasa Konstruksi (BUJK) Masa Transisi';
+
+        if ($type == "ajax") {
+            $context   = "/badan-usaha/bujk-transisi";
+            $data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
+            echo json_encode($data, true);
+        } else {
+            loadPage('bujk', 'bujk_transisi', $pageTitle);
+        }
     }
 }
