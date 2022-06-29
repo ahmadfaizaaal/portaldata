@@ -18,7 +18,7 @@
 
 							<p class="user-info pt-3 mb-0 loading-skeleton"><span><i class="fa fa-user"></i>&emsp;Admin Datin DJBK&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span id="ajax-last-update">&nbsp;</span></p>
 
-							<a href="#" id="download-full" class="btn text-white radius btn-lg bg-pupr-yellow px-5 py-3 mt-5 f-16 download-btn disabled" data-file-name="Rekapitulasi-Sertifikat-Badan-Usaha" data-sheet-name="Rekapitulasi SBU.Rekapitulasi BUJK.Provinsi Registrasi Sertifikat.Asosiasi Permohonan Sertifikat.Kualifikasi Sertifikat.Jenis Sertifikat.Klasifikasi Sertifikat.Sub Klasifikasi Sertifikat" data-source="resData" data-order-index="jumlah_subklas.jumlah_bujk.provinsi_registrasi_sertifikat.asosiasi_permohonan_sertifikat.kualifikasi_sertifikat.jenis_sertifikat.klasifikasi_sertifikat.sub_klasifikasi_sertifikat" disabled><span><i class="fa fa-solid fa-download"></i></span>&nbsp;&nbsp;Download Full Data BUJK Masa Transisi</a>
+							<a href="#" id="download-full" class="btn text-white radius btn-lg bg-pupr-yellow px-5 py-3 mt-5 f-16 download-btn disabled" data-file-name="Rekapitulasi-Badan-Usaha-Jasa-Konstruksi" data-sheet-name="Rekapitulasi Subklas.Rekapitulasi BUJK.Provinsi Domisili Badan Usaha.Asosiasi Badan Usaha.Bentuk Badan Usaha.Jenis Badan Usaha.Kualifikasi Badan Usaha.Sifat Usaha Badan Usaha" data-source="resData" data-order-index="jumlah_subklas.jumlah_bujk.provinsi_domisili_bujk.asosiasi_bujk.bentuk_bujk.jenis_bujk.kualifikasi_bujk.sifat_usaha_bujk" disabled><span><i class="fa fa-solid fa-download"></i></span>&nbsp;&nbsp;Download Full Data BUJK Masa Transisi</a>
 						</div>
 					</div>
 
@@ -74,7 +74,7 @@
 				?>
 				<div class="col-md-12 text-center skeleton-div">
 
-					<h1 class="section-title"><b>Provinsi Domisili Badan Usaha</b></h1>
+					<h1 class="section-title"><b>Provinsi Domisili Badan Usaha Jasa Konstruksi</b></h1>
 					<a id="download-provinsi-domisili" href="#provinsi-domisili-section" class="btn radius btn-lg bg-pupr-blue download-btn text-white disabled" data-file-name="Provinsi-Domisili-Badan-Usaha" data-sheet-name="Provinsi Domisili Badan Usaha" data-source="resData.provinsi_domisili_bujk" data-order-index="provinsi_domisili_bujk" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Provinsi Domisili Badan Usaha</a>
 
 					<canvas id="provDomisiliMaps"></canvas>
@@ -84,7 +84,7 @@
 			<div class="row" id="asosiasi-bujk-section">
 				<div class="col-md-12 text-center my-5 py-3">
 					<h1 class="section-title bg-white"><b>Asosiasi Badan Usaha Jasa Konstruksi</b></h1>
-					<a id="download-asosiasi-bujk" href="#asosiasi-bujk-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Asosiasi Badan Usaha</a>
+					<a id="download-asosiasi-bujk" href="#asosiasi-bujk-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Asosiasi-Badan-Usaha" data-sheet-name="Asosiasi Badan Usaha" data-source="resData.asosiasi_bujk" data-order-index="asosiasi_bujk" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Asosiasi Badan Usaha</a>
 				</div>
 				<div class="col-md-7">
 					<table class="table table-bordered" width="100%" id="asosiasi-bujk">
@@ -102,7 +102,7 @@
 					</table>
 				</div>
 				<div class="col-md-5 loading-skeleton">
-					<div style="height: 522px; position: relative" class="chart-container skeleton-div" id="asosiasi-bujk-chart-container">
+					<div style="height: 522px; position: relative" class="chart-container skeleton-div pl-5" id="asosiasi-bujk-chart-container">
 						<canvas id="asosiasi-bujk-chart" height="1044px"></canvas>
 					</div>
 				</div>
@@ -111,7 +111,7 @@
 			<div class="row" id="bentuk-bujk-section">
 				<div class="col-md-12 text-center my-5 py-3">
 					<h1 class="section-title bg-white"><b>Bentuk Badan Usaha Jasa Konstruksi</b></h1>
-					<a id="download-bentuk-bujk" href="#bentuk-bujk-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Bentuk Badan Usaha</a>
+					<a id="download-bentuk-bujk" href="#bentuk-bujk-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Bentuk-Badan-Usaha" data-sheet-name="Bentuk Badan Usaha" data-source="resData.bentuk_bujk" data-order-index="bentuk_bujk" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Bentuk Badan Usaha</a>
 				</div>
 				<div class="col-md-7">
 					<table class="table table-bordered" width="100%" id="bentuk-bujk">
@@ -138,7 +138,7 @@
 			<div class="row" id="jenis-bujk-section">
 				<div class="col-md-12 text-center my-5 py-3">
 					<h1 class="section-title bg-white"><b>Jenis Badan Usaha Jasa Konstruksi</b></h1>
-					<a id="download-jenis-bujk" href="#jenis-bujk-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Jenis Badan Usaha</a>
+					<a id="download-jenis-bujk" href="#jenis-bujk-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Jenis-Badan-Usaha" data-sheet-name="Jenis Badan Usaha" data-source="resData.jenis_bujk" data-order-index="jenis_bujk" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Jenis Badan Usaha</a>
 				</div>
 				<div class="col-md-7">
 					<table class="table table-bordered" width="100%" id="jenis-bujk">
@@ -156,117 +156,63 @@
 					</table>
 				</div>
 				<div class="col-md-5 loading-skeleton">
-					<div style="height: 522px; position: relative" class="chart-container skeleton-div" id="jenis-bujk-chart-container">
+					<div style="height: 522px; position: relative" class="chart-container skeleton-div pl-5" id="jenis-bujk-chart-container">
 						<canvas id="jenis-bujk-chart" height="1044px"></canvas>
 					</div>
 				</div>
 			</div>
 
-			<div class="row" id="kualifikasi-sertifikat-section">
+			<div class="row" id="kualifikasi-bujk-section">
 				<div class="col-md-12 text-center my-5 py-3">
-					<h1 class="section-title"><b>Kualifikasi Sertifikat</b></h1>
-					<a id="download-kualifiaksi" href="#kualifikasi-sertifkat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Kualifikasi Sertifikat</a>
+					<h1 class="section-title"><b>Kualifikasi Badan Usaha Jasa Konstruksi</b></h1>
+					<a id="download-kualifiaksi" href="#kualifikasi-bujk-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Kualifikasi-Badan-Usaha" data-sheet-name="Kualifikasi Badan Usaha" data-source="resData.kualifikasi_bujk" data-order-index="kualifikasi_bujk" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Kualifikasi Badan Usaha</a>
 				</div>
 				<div class="col-md-7">
-					<table class="table table-bordered" width="100%" id="kualifikasi-sertifikat">
+					<table class="table table-bordered" width="100%" id="kualifikasi-bujk">
 						<thead>
 							<tr>
-								<th class="text-center" colspan="3">Kualifikasi KBLI</th>
-							</tr>
-							<tr>
-								<th class="text-center" width="40%">Group</th>
-								<th class="text-center" width="30%">Kode</th>
-								<th class="text-center" width="30%">Total</th>
+								<th class="text-center" width="60%">Kualifikasi Badan Usaha</th>
+								<th class="text-center" width="40%">Total</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td colspan="3" class="text-center">Loading...</td>
+								<td colspan="2" class="text-center">Loading...</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 				<div class="col-md-5 loading-skeleton">
-					<div style="height: 522px; position: relative" class="chart-container skeleton-div" id="kualifikasi-sertifikat-chart-container">
-						<canvas id="kualifikasi-sertifikat-chart" height="1044px"></canvas>
+					<div style="height: 522px; position: relative" class="chart-container skeleton-div pl-5" id="kualifikasi-bujk-chart-container">
+						<canvas id="kualifikasi-bujk-chart" height="1044px"></canvas>
 					</div>
 				</div>
 			</div>
 
-			<div class="row" id="jenis-sertifikat-section">
+			<div class="row" id="sifat-usaha-bujk-section">
 				<div class="col-md-12 text-center my-5 py-3">
-					<h1 class="section-title"><b>Jenis Sertifikat</b></h1>
-					<a id="download-jenis" href="#jenis-sertifkat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Jenis Sertifikat</a>
+					<h1 class="section-title bg-white"><b>Sifat Usaha Badan Usaha Jasa Konstruksi</b></h1>
+					<a id="download-sifat-usaha-bujk" href="#sifat-usaha-bujk-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Sifat-Usaha-Badan-Usaha" data-sheet-name="Sifat Usaha Badan Usaha" data-source="resData.sifat_usaha_bujk" data-order-index="sifat_usaha_bujk" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Sifat Usaha Badan Usaha</a>
 				</div>
 				<div class="col-md-7">
-					<table class="table table-bordered" width="100%" id="jenis-sertifikat">
+					<table class="table table-bordered" width="100%" id="sifat-usaha-bujk">
 						<thead>
 							<tr>
-								<th class="text-center" colspan="3">Jenis SBU</th>
-							</tr>
-							<tr>
-								<th class="text-center" width="40%">Group</th>
-								<th class="text-center" width="30%">Jenis Usaha</th>
-								<th class="text-center" width="30%">Total</th>
+								<th class="text-center" width="60%">Sifat Usaha Badan Usaha</th>
+								<th class="text-center" width="40%">Total</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td colspan="3" class="text-center">Loading...</td>
+								<td colspan="2" class="text-center">Loading...</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 				<div class="col-md-5 loading-skeleton">
-					<div style="height: 522px; position: relative" class="chart-container skeleton-div" id="jenis-sertifikat-chart-container">
-						<canvas id="jenis-sertifikat-chart" height="1044px"></canvas>
+					<div style="height: 522px; position: relative" class="chart-container skeleton-div pl-5" id="sifat-usaha-bujk-chart-container">
+						<canvas id="sifat-usaha-bujk-chart" height="1044px"></canvas>
 					</div>
-				</div>
-			</div>
-
-			<div class="row" id="klasifikasi-sertifikat-section">
-				<div class="col-md-12 text-center my-5 py-3">
-					<h1 class="section-title"><b>Klasifikasi Sertifikat</b></h1>
-					<a id="download-klasifikasi" href="#klasifikasi-sertifkat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Klasifikasi Sertifikat</a>
-				</div>
-				<div class="col-md-12">
-					<table class="table table-bordered" width="100%" id="klasifikasi-sertifikat">
-						<thead>
-							<tr>
-								<th class="text-center" width="15%">ID Klasifikasi</th>
-								<th class="text-center" width="55%">Klasifikasi KBLI</th>
-								<th class="text-center" width="30%">Total</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td colspan="3" class="text-center">Loading...</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-
-			<div class="row" id=subklasifikasi-sertifikat-section">
-				<div class="col-md-12 text-center my-5 py-3">
-					<h1 class="section-title"><b>Sub Klasifikasi Sertifikat</b></h1>
-					<a id="download-subklasifikasi" href="#subklasifikasi-sertifkat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Sub Klasifikasi Sertifikat</a>
-				</div>
-				<div class="col-md-12">
-					<table class="table table-bordered" width="100%" id="subklasifikasi-sertifikat">
-						<thead>
-							<tr>
-								<th class="text-center" width="15%">ID Sub Klasifikasi</th>
-								<th class="text-center" width="70%">Sub Klasifikasi KBLI</th>
-								<th class="text-center" width="15%">Total</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td colspan="3" class="text-center">Loading...</td>
-							</tr>
-						</tbody>
-					</table>
 				</div>
 			</div>
 
@@ -336,63 +282,30 @@
 					}
 				},
 				{
-					id: "#kualifikasi-sertifikat",
-					index: "kualifikasi_sertifikat",
-					fields: ["kualifikasi_kbli_grup", "kualifikasi_kbli", "jumlah_subklas"],
-					centerIndex: [0, 1, 2],
-					formating: ['text', 'text', 'number'],
+					id: "#kualifikasi-bujk",
+					index: "kualifikasi_bujk",
+					fields: ["kualifikasi_bujk", "jumlah_bujk"],
+					centerIndex: [1],
+					formating: ['text', 'number'],
 					options: {
 						scrollX: true,
-						rowsGroup: [0],
-						paginate: false,
+						// rowsGroup: [0],
+						// paginate: false,
 						ordering: false
 					}
-				}, {
-					id: "#jenis-sertifikat",
-					index: "jenis_sertifikat",
-					fields: ["jenis_sbu_grup", "jenis_usaha_bu", "jumlah_subklas"],
-					centerIndex: [0, 1, 2],
-					formating: ['text', 'text', 'number'],
+				},
+				{
+					id: "#sifat-usaha-bujk",
+					index: "sifat_usaha_bujk",
+					fields: ["sifat_usaha", "jumlah_bujk"],
+					centerIndex: [1],
+					formating: ['text', 'number'],
 					options: {
 						scrollX: true,
-						rowsGroup: [0],
-						paginate: false,
-						ordering: false
-					}
-				}, {
-					id: "#klasifikasi-sertifikat",
-					index: "klasifikasi_sertifikat",
-					fields: ["id_klasifikasi_kbli", "klasifikasi_kbli", "jumlah_subklas"],
-					centerIndex: [0, 2],
-					formating: ['text', 'text', 'number'],
-					options: {
-						scrollX: true,
-						scrollY: "640px",
+						// scrollY: "400px",
 						order: [
-							[1, "asc"]
-						],
-						pageLength: 25
-					}
-				}, {
-					id: "#subklasifikasi-sertifikat",
-					index: "sub_klasifikasi_sertifikat",
-					fields: ["id_sub_klasifikasi_kbli", "klasifikasi_sub_kbli", "jumlah_subklas"],
-					centerIndex: [0, 2],
-					formating: ['text', 'text', 'number'],
-					options: {
-						scrollX: true,
-						scrollY: "640px",
-						order: [
-							[1, "asc"]
-						],
-						pageLength: 25,
-						scrollCollapse: true,
-						fnInitComplete: function() {
-							const psinit = new PerfectScrollbar($(this)[0].offsetParent)
-						},
-						fnDrawCallback: function(oSettings) {
-							const pscallback = new PerfectScrollbar($(this)[0].offsetParent)
-						}
+							[1, "desc"]
+						]
 					}
 				}
 			]
@@ -537,9 +450,9 @@
 					 * @desc Optional Pre Pocessing Data List
 					 */
 
-					// const rawKualifikasiSertifikat = resData.kualifikasi_sertifikat
-					// const indexOrderingKeyKualifikasiSertifikat = ["Besar", "Menengah", "Kecil", "Perseorangan"]
-					// resData.kualifikasi_sertifikat = mapOrder(rawKualifikasiSertifikat, indexOrderingKeyKualifikasiSertifikat, "kualifikasi_kbli_grup")
+					const rawKualifikasiBadanUsaha = resData.kualifikasi_bujk
+					const indexOrderingKeyKualifikasiBadanUsaha = ["Besar", "Menengah", "Kecil", "Perseorangan"]
+					resData.kualifikasi_bujk = mapOrder(rawKualifikasiBadanUsaha, indexOrderingKeyKualifikasiBadanUsaha, "kualifikasi_bujk")
 
 					// const rawJenisSertifikat = resData.jenis_sertifikat
 					// const indexOrderingKeyJenisSertifikat = ["Jasa Konsultasi Konstruksi", "Pekerjaan Konstruksi", "Pekerjaan Konstruksi Terintegrasi", null]
@@ -723,24 +636,24 @@
 					)
 
 					/**
-					 * @desc Chart Kualifikasi Sertifikat
+					 * @desc Chart Kualifikasi Badan Usaha
 					 * @plugin Chart.js 3.8
-					 * @dataSource /bujk/sbutransisi [data: kualifikasi_sertifikat]
+					 * @dataSource /bujk/sbutransisi [data: kualifikasi_bujk]
 					 */
 
-					const sortedDataKualifikasiSertifikat = {}
-					resData.kualifikasi_sertifikat.map((item) => {
-						sortedDataKualifikasiSertifikat[item.kualifikasi_kbli_grup] = parseInt(sortedDataKualifikasiSertifikat[item.kualifikasi_kbli_grup] ?? 0) + item.jumlah_subklas
+					const sortedDataKualifikasiBadanUsaha = {}
+					resData.kualifikasi_bujk.map((item) => {
+						sortedDataKualifikasiBadanUsaha[item.kualifikasi_bujk] = parseInt(sortedDataKualifikasiBadanUsaha[item.kualifikasi_bujk] ?? 0) + item.jumlah_bujk
 					})
 
-					const labelsKualifikasiSertifikat = Object.keys(sortedDataKualifikasiSertifikat)
-					const dataValueKualifikasiSertifikat = Object.values(sortedDataKualifikasiSertifikat)
+					const labelsKualifikasiBadanUsaha = Object.keys(sortedDataKualifikasiBadanUsaha)
+					const dataValueKualifikasiBadanUsaha = Object.values(sortedDataKualifikasiBadanUsaha)
 
-					const dataKualifikasiSertifikat = {
-						labels: labelsKualifikasiSertifikat,
+					const dataKualifikasiBadanUsaha = {
+						labels: labelsKualifikasiBadanUsaha,
 						datasets: [{
 							label: 'Kualifikasi',
-							data: dataValueKualifikasiSertifikat,
+							data: dataValueKualifikasiBadanUsaha,
 							backgroundColor: [
 								"rgb(55, 71, 116)",
 								"rgb(234, 182, 48)",
@@ -750,9 +663,9 @@
 						}]
 					};
 
-					const configKualifikasiSertifikat = {
+					const configKualifikasiBadanUsaha = {
 						type: 'pie',
-						data: dataKualifikasiSertifikat,
+						data: dataKualifikasiBadanUsaha,
 						options: {
 							scale: {
 								ticks: {
@@ -762,37 +675,41 @@
 						}
 					};
 
-					const kualifikasiSertifikatChart = new Chart(
-						document.getElementById("kualifikasi-sertifikat-chart"),
-						configKualifikasiSertifikat
+					const kualifikasiBadanUsahaChart = new Chart(
+						document.getElementById("kualifikasi-bujk-chart"),
+						configKualifikasiBadanUsaha
 					)
 
 					/**
-					 * @desc Chart Jenis Sertifikat
+					 * @desc Chart Sifat Usaha Badan Usaha
 					 * @plugin Chart.js 3.8
-					 * @dataSource /bujk/sbutransisi [data: jenis_sertifikat]
+					 * @dataSource /bujk/sbutransisi [data: sifat_usaha_bujk]
 					 */
 
-					const sortedDataJenisSertifikat = {}
-					resData.jenis_sertifikat.map((item) => {
-						sortedDataJenisSertifikat[(item.jenis_sbu_grup != null ? item.jenis_sbu_grup : "-")] = parseInt(sortedDataJenisSertifikat[(item.jenis_sbu_grup != null ? item.jenis_sbu_grup : "-")] ?? 0) + item.jumlah_subklas
+					const sortedDataSifatUsahaBadanUsaha = {}
+					resData.sifat_usaha_bujk.map((item) => {
+						sortedDataSifatUsahaBadanUsaha[item.sifat_usaha] = parseInt(sortedDataSifatUsahaBadanUsaha[item.sifat_usaha] ?? 0) + item.jumlah_bujk
 					})
 
-					const labelsJenisSertifikat = Object.keys(sortedDataJenisSertifikat)
-					const dataValueJenisSertifikat = Object.values(sortedDataJenisSertifikat)
+					const labelsSifatUsahaBadanUsaha = Object.keys(sortedDataSifatUsahaBadanUsaha)
+					const dataValueSifatUsahaBadanUsaha = Object.values(sortedDataSifatUsahaBadanUsaha)
 
-					const dataJenisSertifikat = {
-						labels: labelsJenisSertifikat,
+					const dataSifatUsahaBadanUsaha = {
+						labels: labelsSifatUsahaBadanUsaha,
 						datasets: [{
-							label: 'Jenis',
-							data: dataValueJenisSertifikat,
-							backgroundColor: "rgb(55, 71, 116)"
+							label: 'Sifat Usaha',
+							data: dataValueSifatUsahaBadanUsaha,
+							backgroundColor: [
+								"rgb(55, 71, 116)",
+								"rgb(234, 182, 48)",
+								"rgb(216, 30, 91)"
+							]
 						}]
 					};
 
-					const configJenisSertifikat = {
-						type: 'radar',
-						data: dataJenisSertifikat,
+					const configSifatUsahaBadanUsaha = {
+						type: 'pie',
+						data: dataSifatUsahaBadanUsaha,
 						options: {
 							scale: {
 								ticks: {
@@ -802,9 +719,9 @@
 						}
 					};
 
-					const jenisSertifikatChart = new Chart(
-						document.getElementById("jenis-sertifikat-chart"),
-						configJenisSertifikat
+					const sifatUsahaBadanUsahaChart = new Chart(
+						document.getElementById("sifat-usaha-bujk-chart"),
+						configSifatUsahaBadanUsaha
 					)
 
 					/**
@@ -817,38 +734,34 @@
 
 					const tableHeaders = {
 						jumlah_subklas: {
-							jumlah_subklas: "Total SBU"
+							jumlah_subklas: "Total Sub Klasifikasi"
 						},
 						jumlah_bujk: {
 							jumlah_bujk: "Total BUJK"
 						},
-						provinsi_registrasi_sertifikat: {
-							provinsi_reg_bujk: "Nama Provinsi",
-							jumlah_subklas: "Total Sertifikat"
+						provinsi_domisili_bujk: {
+							provinsi_bujk: "Nama Provinsi",
+							jumlah_bujk: "Total BUJK"
 						},
-						asosiasi_permohonan_sertifikat: {
+						asosiasi_bujk: {
 							asosiasi_bujk: "Nama Asosiasi",
-							jumlah_subklas: "Total Sertifikat"
+							jumlah_bujk: "Total BUJK"
 						},
-						kualifikasi_sertifikat: {
-							kualifikasi_kbli_grup: "Group Kualifikasi",
-							kualifikasi_kbli: "Kualifikasi",
-							jumlah_subklas: "Total Sertifikat"
+						bentuk_bujk: {
+							bentuk_bu: "Bentuk Badan Usaha",
+							jumlah_bujk: "Total BUJK"
 						},
-						jenis_sertifikat: {
-							jenis_sbu_grup: "Jenis SBU Group",
-							jenis_usaha_bu: "Jenis Usaha BU",
-							jumlah_subklas: "Total Sertifikat"
+						jenis_bujk: {
+							jenis_usaha_badan_usaha: "Jenis Badan Usaha",
+							jumlah_bujk: "Total BUJK"
 						},
-						klasifikasi_sertifikat: {
-							id_klasifikasi_kbli: "ID Klasifikasi",
-							klasifikasi_kbli: "Klasifikasi",
-							jumlah_subklas: "Total Sertifikat",
+						kualifikasi_bujk: {
+							kualifikasi_bujk: "Kualifikasi Badan Usaha",
+							jumlah_bujk: "Total BUJK"
 						},
-						sub_klasifikasi_sertifikat: {
-							id_sub_klasifikasi_kbli: "ID Sub Klasifikasi",
-							klasifikasi_sub_kbli: "Sub Klasifikasi",
-							jumlah_subklas: "Total Sertifikat"
+						sifat_usaha_bujk: {
+							sifat_usaha: "Sifat Usaha Badan Usaha",
+							jumlah_bujk: "Total BUJK"
 						}
 					}
 
@@ -858,16 +771,43 @@
 						const totalSheet = sheet.length ?? 0
 						const sheetName = $(btnItem).data('sheet-name') ? $(btnItem).data('sheet-name').split('.') : []
 						const dataSource = $(btnItem).data('source') ? $(btnItem).data('source').split('.') : []
+						const excelDataSet = []
+
 						if (!totalSheet) return
 						if (!dataSource) return
 						if (dataSource.length > 1) {
 
-							// Single Sheet Download Handler
+							const sheetIndex = 0
+							const currentDataSource = dataSource[0]
+							const dataSourceDimension = dataSource[1]
+							if (currentDataSource != "resData") return
+
+							const rawDataItems = resData[dataSourceDimension]
+							const row = []
+
+							if (!Array.isArray(rawDataItems)) return
+							rawDataItems.map((resDataItem, resDataIndex) => {
+								const tempRow = []
+								Object.keys(tableHeaders[dataSourceDimension]).map((headerItem => {
+									tempRow.push({
+										text: (rawDataItems[resDataIndex][headerItem] ?? "(lain-lain)")
+									})
+								}))
+								row.push(tempRow)
+							})
+
+							const sheetHeader = Object.keys(tableHeaders[dataSourceDimension]).map(headerItem => ({
+								text: tableHeaders[dataSourceDimension][headerItem]
+							}))
+							const sheetData = {
+								sheetName: sheetName[0],
+								data: [sheetHeader, ...row]
+							}
+
+							excelDataSet.push(sheetData)
 
 						} else {
-
 							if (dataSource[0] != "resData") return
-							const convertedData = []
 							sheet.map((sheetItem, sheetIndex) => {
 								const sheetHeader = Object.keys(tableHeaders[sheetItem]).map(headerItem => ({
 									text: tableHeaders[sheetItem][headerItem]
@@ -897,22 +837,22 @@
 									data: [sheetHeader, ...row]
 								}
 
-								convertedData.push(sheetData)
+								excelDataSet.push(sheetData)
 							})
 
-							// console.log(convertedData)
-							$(btnItem).on("click", function(e) {
-								e.preventDefault()
-								e.stopImmediatePropagation()
-								Jhxlsx.export(convertedData, {
-									fileName: `${fileName}`,
-									header: true
-								})
-							})
-
-							$(btnItem).removeAttr("disabled").removeClass("disabled")
 						}
 
+						// console.log(convertedData)
+						$(btnItem).on("click", function(e) {
+							e.preventDefault()
+							e.stopImmediatePropagation()
+							Jhxlsx.export(excelDataSet, {
+								fileName: `${fileName}`,
+								header: true
+							})
+						})
+
+						$(btnItem).removeAttr("disabled").removeClass("disabled")
 					})
 
 				} else {
