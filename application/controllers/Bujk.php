@@ -44,4 +44,18 @@ class Bujk extends CI_Controller
             loadPage('bujk', 'bujk_transisi', $pageTitle);
         }
     }
+
+	public function sbuReguler($type = null)
+    {
+        $pageTitle = 'Sertifikat Badan Usaha (SBU) Reguler';
+
+		if ($type == "ajax") {
+			$context   = "/badan-usaha/sbu-reguler";
+			$data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
+			echo json_encode($data, true);
+		} else {
+			loadPage('bujk', 'sbu_reguler', $pageTitle);
+		}
+
+    }
 }

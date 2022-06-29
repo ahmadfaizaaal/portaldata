@@ -18,7 +18,7 @@
 
 						<p class="user-info pt-3 mb-0 loading-skeleton"><span><i class="fa fa-user"></i>&emsp;Admin Datin DJBK&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span id="ajax-last-update">&nbsp;</span></p>
 						
-						<a href="#" id="download-full" class="btn text-white radius btn-lg bg-pupr-yellow px-5 py-3 mt-5 f-16 download-btn disabled" data-file-name="Rekapitulasi-Sertifikat-Badan-Usaha" data-sheet-name="Rekapitulasi SBU.Rekapitulasi BUJK.Periode Penerbitan Sertifikat.LSBU.Jenis Usaha.KBLI.Kualifikasi Sertifikat.Sub Klasifikasi Sertifikat" data-source="resData" data-order-index="jumlah_subklas.jumlah_bujk.waktu_proses_sertifikat.pelaksana_sertifikat.jenis_usaha_sertifikat.kbli_sertifikat.kualifikasi_sertifikat.sub_klasifikasi_sertifikat" disabled><span><i class="fa fa-solid fa-download"></i></span>&nbsp;&nbsp;Download Full Data SBU Reguler</a>
+						<a href="#" id="download-full" class="btn text-white radius btn-lg bg-pupr-yellow px-5 py-3 mt-5 f-16 download-btn disabled" data-file-name="Rekapitulasi-Badan-Usaha-Jasa-konstruksi-Reguler" data-sheet-name="Rekapitulasi SBU.Rekapitulasi BUJK.Asosiasi BUJK.Jenis BUJK.Kabupaten BUJK.Provinsi BUJK.Kualifikasi BUJK.Sifat BUJK" data-source="resData" data-order-index="jumlah_subklas.jumlah_bujk.asosiasi_bujk.jenis_bujk.kabupaten_bujk.provinsi_bujk.kualifikasi_bujk.sifat_bujk" disabled><span><i class="fa fa-solid fa-download"></i></span>&nbsp;&nbsp;Download Full Data BUJK Reguler</a>
 					</div>
 				</div>
 
@@ -69,16 +69,15 @@
 			</div>
 		</div>
 
-		<div class="row mt-5 mb-5 loading-skeleton" id="waktu-proses-sertifikat-section">
+		<div class="row mt-5 mb-5 loading-skeleton" id="provinsi-bujk-section">
 			<?php // var_dump($data) ?>
 			<div class="col-md-12 text-center skeleton-div">
 				
-				<h1 class="section-title"><b>Periode Penerbitan Sertifkat</b></h1>
-				<a id="download-waktu-proses-sertifikat" href="#waktu-proses-sertifikat-section" class="btn radius btn-lg bg-pupr-blue download-btn text-white disabled" data-file-name="Periode-Sertifikat-Badan-Usaha" data-sheet-name="Periode Sertifikat Sertifikat" data-source="resData.waktu_proses_sertifikat" data-order-index="waktu_sertifikat_sertifikat" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Periode Penerbitan Sertifikat</a>
+				<h1 class="section-title"><b>Peta Sebaran BUJK</b></h1>
+				<a id="download-provinsi-bujk" href="#provinsi-bujk-section" class="btn my-1 radius btn-lg bg-pupr-blue download-btn text-white disabled" data-file-name="Badan-Usaha-Berdasarkan-Provinsi" data-sheet-name="Provinsi BUJK" data-source="resData.provinsi_bujk" data-order-index="provinsi_bujk" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data BUJK beradasarkan Provinsi</a>
+				<a id="download-kabupaten-bujk" href="#provinsi-bujk-section" class="btn my-1 radius btn-lg bg-pupr-blue download-btn text-white disabled" data-file-name="Badan-Usaha-Berdasarkan-Kabupaten" data-sheet-name="Kabupaten BUJK" data-source="resData.kabupaten_bujk" data-order-index="kabupaten_bujk" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data BUJK berdasarkan Kabupaten</a>
 
-				<div style="height: 522px; position: relative" class="chart-container skeleton-div" id="waktu-proses-sertifikat-chart-container">
-					<canvas id="waktu-proses-sertifikat-chart" height="1044px"></canvas>
-				</div>
+				<canvas id="provBujkMaps"></canvas>
 			</div>
 		</div>
 
@@ -209,10 +208,19 @@
 
 <script src="<?= BASE_THEME ?>landing/assets/js/vendor/dataTables.rowsGroup.js"></script>
 <script>
-	var ctx       = document.getElementById("provRegistrasiMaps") // Get Canvas Element
+	var ctx       = document.getElementById("provBujkMaps") // Get Canvas Element
 	var baseUrl   = '<?= BASE_URL; ?>' // Project Root URL
 	var themePath = '<?= BASE_THEME; ?>' // Theme Assets Path
 	var devMode   = true // Dev Mode
+
+	// Comparing Data Provinsi BUJK Database <-> Maps Geo
+	function search(nameKey, myArray){
+		for (var i=0; i < myArray.length; i++) {
+			if (myArray[i].propinsi === nameKey) {
+				return myArray[i];
+			}
+		}
+	}
 
 	// Do Action on Window Loading Event
 	$(window).on("load", function() {
@@ -314,7 +322,7 @@
 		 * 		}
 		*/
 
-		$.get(baseUrl + `/${devMode ? "bujk-dev" : "bujk"}/sbureguler/ajax`, (res) => { res = $.parseJSON(res)
+		$.get(baseUrl + `/${devMode ? "bujk-dev" : "bujk"}/bujkreguler/ajax`, (res) => { res = $.parseJSON(res)
 			if (res.status == 200) {
 				$(".loading-skeleton").removeClass("loading-skeleton")
 				const resData = res.data
@@ -323,6 +331,65 @@
 				const ElementLastUpdate = $("#ajax-last-update").html(" Data per Tanggal : " + resDateRecord.toLocaleString("ID"))
 				const ElementJumlahSBU = $("#ajax-jumlah-sbu").html(( resData.jumlah_subklas.jumlah_subklas.toLocaleString() ))
 				const ElementJumlahBUJK = $("#ajax-jumlah-bujk").html(( resData.jumlah_bujk.jumlah_bujk.toLocaleString() ))
+
+				// Provinsi BUJK Database Array
+				const dataProvBujk = resData.provinsi_bujk
+	
+				// Get Asia Maps Geo Data
+				$.getJSON(themePath + 'landing/assets/json/asiaTopo.json', function(asiaTopo) {
+	
+					// Get Indonesia Region Outline
+					const countries = ChartGeo.topojson.feature(asiaTopo, asiaTopo.objects.continent_Asia_subunits).features;
+					const Indonesia = countries.find((d) => d.properties.geounit === 'Indonesia');
+	
+					// Get Indonesia Provinsi Geolocation Segment
+					$.getJSON(themePath + 'landing/assets/json/indonesiaTopo.json', function(topoData) {
+						
+						// Initialization Chart Geo Class with Indonesia Topology Data
+						var indonesiaTopo = ChartGeo.topojson.feature(topoData, topoData.objects.topoindo).features
+						
+						// Define Datasets Chart Goe
+						const data = {
+							labels: indonesiaTopo.map(provinsi => provinsi.properties.provinsi),
+							datasets: [{
+								label: "Provinsi BUJK", // Defining Chart Legend
+								outline: Indonesia, // Set Indonesia Outline Region
+								data: indonesiaTopo.map(provinsi => ({feature: provinsi, value: (search(provinsi.properties.provinsi, dataProvBujk) ? search(provinsi.properties.provinsi, dataProvBujk).jumlah_bujk : 0)})) // Defining Compared Provinsi Registrasi Data with Map Geo
+							}]
+						}
+	
+						// Chart Geo Configuration
+						const config = {
+							type: "choropleth", // Maps Type
+							data, // Dataset
+							options: {
+								onClick: (e) => { // Defining On Click Event
+									const activePoints = mapsChart.getElementsAtEventForMode(e, 'nearest', {
+										intersect: true
+									}, false) // Target Closest Click Point
+									
+									const [{ index }] = activePoints; // And then get the index value
+	
+									// Custom Click Event
+									alert("Provinsi di klik " + data.datasets[0].data[index].feature.properties.provinsi + ". dengan Jumlah " + data.datasets[0].data[index].value.toLocaleString())
+								},
+								scales: {
+									xy: {
+										projection: "equalEarth" // Defining Maps Projection size equal to earth (show world atlas)
+									}
+								},
+								plugins: {
+									legend: {
+										display: false // Hiding Legend Title
+									}
+								}
+							}
+						}
+	
+						var mapsChart = new Chart(ctx, config) // Chart Geo Instances
+					});
+	
+				})
 
 				/**
 				 * @desc Sorting Function for ordering Array by another array

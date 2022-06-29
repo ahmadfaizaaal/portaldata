@@ -46,4 +46,18 @@ class Bujk_dev extends CI_Controller
 		}
 
     }
+    
+	public function bujkReguler($type = null)
+    {
+        $pageTitle = 'Badan Usaha Jasa Konstruksi (BUJK) Reguler';
+
+		if ($type == "ajax") {
+			$context   = "/badan-usaha/bujk-reguler";
+			$data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
+			echo json_encode($data, true);
+		} else {
+			loadPage('bujk', 'bujk_reguler_dev', $pageTitle);
+		}
+
+    }
 }

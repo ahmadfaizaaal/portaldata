@@ -212,7 +212,7 @@
 	var ctx       = document.getElementById("provRegistrasiMaps") // Get Canvas Element
 	var baseUrl   = '<?= BASE_URL; ?>' // Project Root URL
 	var themePath = '<?= BASE_THEME; ?>' // Theme Assets Path
-	var devMode   = true // Dev Mode
+	var devMode   = false // Dev Mode
 
 	// Do Action on Window Loading Event
 	$(window).on("load", function() {
