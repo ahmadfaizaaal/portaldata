@@ -630,8 +630,8 @@
 						jumlah_subklas: "Total Sertifikat",
 					},
 					sub_klasifikasi_sertifikat: {
-						id_sub_klasifikasi_kbli: "ID Sub Klasifikasi",
-						klasifikasi_sub_kbli: "Sub Klasifikasi",
+						kode_subklasifikasi: "Kode Sub Klasifikasi",
+						subklasifikasi: "Sub Klasifikasi",
 						jumlah_subklas: "Total Sertifikat"
 					},
 					waktu_proses_sertifikat: {
