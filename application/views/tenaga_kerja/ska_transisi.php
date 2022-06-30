@@ -336,7 +336,7 @@
 			 * 		}
 			 */
 
-			$.get(baseUrl + `/${devMode ? "tenagakerja-dev" : "tenagakerja"}/skatransisi/ajax`, (res) => {
+			$.get(baseUrl + `/${devMode ? "tenagakerja-dev" : "tenaga-kerja"}/skatransisi/ajax`, (res) => {
 				res = $.parseJSON(res)
 				if (res.status == 200) {
 					$(".loading-skeleton").removeClass("loading-skeleton")

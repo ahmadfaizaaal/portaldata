@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class TenagaKerja extends CI_Controller
+class Tenaga_kerja extends CI_Controller
 {
     public function __construct()
     {
