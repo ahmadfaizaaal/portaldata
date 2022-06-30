@@ -31,29 +31,16 @@ class TenagaKerja extends CI_Controller
         }
     }
 
-    public function bujkTransisi($type = null)
+    public function ahli($type = null)
     {
-        $pageTitle = 'Badan Usaha Jasa Konstruksi (BUJK) Masa Transisi';
+        $pageTitle = 'Tenaga Ahli (SKA Masa Transisi)';
 
         if ($type == "ajax") {
-            $context   = "/badan-usaha/bujk-transisi";
+            $context   = "/tenaga-kerja-konstruksi/tenaga-ahli-transisi";
             $data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
             echo json_encode($data, true);
         } else {
-            loadPage('bujk', 'bujk_transisi', $pageTitle);
-        }
-    }
-
-    public function sbuReguler($type = null)
-    {
-        $pageTitle = 'Sertifikat Badan Usaha (SBU) Reguler';
-
-        if ($type == "ajax") {
-            $context   = "/badan-usaha/sbu-reguler";
-            $data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
-            echo json_encode($data, true);
-        } else {
-            loadPage('bujk', 'sbu_reguler', $pageTitle);
+            loadPage('tenaga_kerja', 'tenaga_ahli', $pageTitle);
         }
     }
 }
