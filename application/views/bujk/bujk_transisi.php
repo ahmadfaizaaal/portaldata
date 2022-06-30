@@ -638,7 +638,7 @@
 					/**
 					 * @desc Chart Kualifikasi Badan Usaha
 					 * @plugin Chart.js 3.8
-					 * @dataSource /bujk/sbutransisi [data: kualifikasi_bujk]
+					 * @dataSource /bujk/bujktransisi [data: kualifikasi_bujk]
 					 */
 
 					const sortedDataKualifikasiBadanUsaha = {}
@@ -683,7 +683,7 @@
 					/**
 					 * @desc Chart Sifat Usaha Badan Usaha
 					 * @plugin Chart.js 3.8
-					 * @dataSource /bujk/sbutransisi [data: sifat_usaha_bujk]
+					 * @dataSource /bujk/bujktransisi [data: sifat_usaha_bujk]
 					 */
 
 					const sortedDataSifatUsahaBadanUsaha = {}
