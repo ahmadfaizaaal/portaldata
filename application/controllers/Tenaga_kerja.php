@@ -56,4 +56,17 @@ class Tenaga_kerja extends CI_Controller
             loadPage('tenaga_kerja', 'tenaga_ahli', $pageTitle);
         }
     }
+
+    public function terampil($type = null)
+    {
+        $pageTitle = 'Tenaga Terampil (SKTK Masa Transisi)';
+
+        if ($type == "ajax") {
+            $context   = "/tenaga-kerja-konstruksi/tenaga-terampil-transisi";
+            $data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
+            echo json_encode($data, true);
+        } else {
+            loadPage('tenaga_kerja', 'tenaga_terampil', $pageTitle);
+        }
+    }
 }
