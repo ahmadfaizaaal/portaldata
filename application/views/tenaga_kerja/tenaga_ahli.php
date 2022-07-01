@@ -154,6 +154,7 @@
 				fields: ["kabupaten_personal", "jumlah_ta"],
 				centerIndex: [1],
 				formating: ['text', 'number'],
+				skipNull: true,
 				options: {
 					scrollX: true,
 					scrollY: "640px",
@@ -351,6 +352,19 @@
 					tableElementData.map((data) => {
 
 						$(`${data.id} tbody`).empty()
+
+						// Filtering Null Value
+						if (data.skipNull) {
+							var clearData = []
+							$.each(resData[data.index], (i, e) => {
+								var containsNull = false
+								Object.keys(e).map((dimensi) => {
+									if (resData[data.index][i][dimensi] === null) { containsNull = true }
+								})
+								if (!containsNull) { clearData.push(resData[data.index][i]) }
+							})
+							resData[data.index] = clearData
+						}
 
 						$.each(resData[data.index], (idx, elm) => {
 

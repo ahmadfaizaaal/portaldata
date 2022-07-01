@@ -215,7 +215,7 @@
 	// Comparing Data Provinsi BUJK Database <-> Maps Geo
 	function search(nameKey, myArray){
 		for (var i=0; i < myArray.length; i++) {
-			if (myArray[i].propinsi === nameKey) {
+			if (myArray[i].propinsi === nameKey.toUpperCase()) {
 				return myArray[i];
 			}
 		}
