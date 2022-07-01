@@ -92,7 +92,7 @@
 				<div class="col-md-12 text-center skeleton-div">
 
 					<h1 class="section-title"><b>Provinsi Domisili Tenaga Ahli</b></h1>
-					<a id="download-provinsi-registrasi" href="#provinsi-registrasi-section" class="btn radius btn-lg bg-pupr-blue download-btn text-white disabled" data-file-name="Provinsi-Domisili-Tenaga-Ahli" data-sheet-name="Provinsi Domisili Tenaga Ahli" data-source="resData.provinsi_domisili_ta" data-order-index="provinsi_domisili_ta" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Provinsi Registrasi</a>
+					<a id="download-provinsi-registrasi" href="#provinsi-registrasi-section" class="btn radius btn-lg bg-pupr-blue download-btn text-white disabled" data-file-name="Provinsi-Domisili-Tenaga-Ahli" data-sheet-name="Provinsi Domisili Tenaga Ahli" data-source="resData.provinsi_domisili_ta" data-order-index="provinsi_domisili_ta" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Provinsi Domisili Tenaga Ahli</a>
 
 					<canvas id="provDomisiliTAMaps"></canvas>
 				</div>
@@ -359,9 +359,13 @@
 							$.each(resData[data.index], (i, e) => {
 								var containsNull = false
 								Object.keys(e).map((dimensi) => {
-									if (resData[data.index][i][dimensi] === null) { containsNull = true }
+									if (resData[data.index][i][dimensi] === null) {
+										containsNull = true
+									}
 								})
-								if (!containsNull) { clearData.push(resData[data.index][i]) }
+								if (!containsNull) {
+									clearData.push(resData[data.index][i])
+								}
 							})
 							resData[data.index] = clearData
 						}
