@@ -18,7 +18,7 @@
 
 							<p class="user-info pt-3 mb-0 loading-skeleton"><span><i class="fa fa-user"></i>&emsp;Admin Datin DJBK&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span id="ajax-last-update">&nbsp;</span></p>
 
-							<a href="#" id="download-full" class="btn text-white radius btn-lg bg-pupr-yellow px-5 py-3 mt-5 f-16 download-btn disabled" data-file-name="Rekapitulasi-SKA-Masa-Transisi" data-sheet-name="Rekapitulasi SKA.Rekapitulasi Tenaga Ahli.Rekapitulasi Tenaga Ahli Asing.Provinsi Registrasi.Asosiasi.Bidang SKA.Kualifikasi SKA.Sub Bidang SKA.Periode Pembuatan Sertifikat" data-source="resData" data-order-index="jumlah_subklas.jumlah_ta.jumlah_ta_asing.provinsi_registrasi.asosiasi.bidang.kualifikasi.sub_bidang.waktu_proses" disabled><span><i class="fa fa-solid fa-download"></i></span>&nbsp;&nbsp;Download Full Data SKA Masa Transisi</a>
+							<a href="#" id="download-full" class="btn text-white radius btn-lg bg-pupr-yellow px-5 py-3 mt-5 f-16 download-btn disabled" data-file-name="Rekapitulasi-SKTK-Masa-Transisi" data-sheet-name="Rekapitulasi SKTK.Rekapitulasi Tenaga Terampil.Provinsi Registrasi.Asosiasi.Bidang SKT.Kualifikasi SKT.Sub Bidang SKT.Periode Pembuatan Sertifikat" data-source="resData" data-order-index="jumlah_subklas.jumlah_tkk.provinsi_registrasi.asosiasi.bidang.kualifikasi.sub_bidang.waktu_proses" disabled><span><i class="fa fa-solid fa-download"></i></span>&nbsp;&nbsp;Download Full Data SKTK Masa Transisi</a>
 						</div>
 					</div>
 
@@ -34,51 +34,34 @@
 	<section class="blog_area single-post-area section-padding">
 		<div class="container">
 			<div class="row">
-				<!-- JUMLAH TKK -->
-				<div class="col-xl-4 col-md-4 mb-4">
+				<!-- SERTIFIKAT KETERAMPILAN -->
+				<div class="col-xl-6 col-md-6 mb-4">
 					<div class="card border-bottom-pupr-blue shadow h-100 py-2">
 						<div class="card-body">
 							<div class="row no-gutters align-items-center pb-3" style="padding-top: inherit;">
-								<div class="col-md-7 border-right-custom">
+								<div class="col-md-9 border-right-custom">
 									<h2 class="font-weight-bold text-pupr-blue text-uppercase mb-0 ml-5">TOTAL</h2>
-									<p class="text-gray-800 ml-5 mb-0">Sertifikat Keahlian</p>
+									<p class="text-gray-800 ml-5 mb-0">Sertifikat Keterampilan</p>
 								</div>
-								<div class="col-md-5 px-2 loading-skeleton">
-									<h1 class="text-center font-weight-bold text-pupr-orange" id="ajax-jumlah-ska">&emsp;</h1>
+								<div class="col-md-3 px-2 loading-skeleton">
+									<h1 class="text-center font-weight-bold text-pupr-orange" id="ajax-jumlah-sktk">&emsp;</h1>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<!-- JUMLAH TENAGA AHLI -->
-				<div class="col-xl-4 col-md-4 mb-4">
+				<!-- TENAGA TERAMPIL -->
+				<div class="col-xl-6 col-md-6 mb-4">
 					<div class="card border-bottom-pupr-blue shadow h-100 py-2">
 						<div class="card-body">
 							<div class="row no-gutters align-items-center pb-3" style="padding-top: inherit;">
-								<div class="col-md-7 border-right-custom">
+								<div class="col-md-9 border-right-custom">
 									<h2 class="font-weight-bold text-pupr-blue text-uppercase mb-0 ml-5">TOTAL</h2>
-									<p class="text-gray-800 ml-5 mb-0">Tenaga Ahli</p>
+									<p class="text-gray-800 ml-5 mb-0">Tenaga Terampil</p>
 								</div>
-								<div class="col-md-5 px-2 loading-skeleton">
-									<h1 class="text-center font-weight-bold text-pupr-orange" id="ajax-jumlah-ta">&emsp;</h1>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- JUMLAH TENAGA ASING -->
-				<div class="col-xl-4 col-md-4 mb-4">
-					<div class="card border-bottom-pupr-blue shadow h-100 py-2">
-						<div class="card-body">
-							<div class="row no-gutters align-items-center pb-3" style="padding-top: inherit;">
-								<div class="col-md-7 border-right-custom">
-									<h2 class="font-weight-bold text-pupr-blue text-uppercase mb-0 ml-5">TOTAL</h2>
-									<p class="text-gray-800 ml-5 mb-0">Tenaga Ahli Asing</p>
-								</div>
-								<div class="col-md-5 px-2 loading-skeleton">
-									<h1 class="text-center font-weight-bold text-pupr-orange" id="ajax-jumlah-ta-asing">&emsp;</h1>
+								<div class="col-md-3 px-2 loading-skeleton">
+									<h1 class="text-center font-weight-bold text-pupr-orange" id="ajax-jumlah-ttk">&emsp;</h1>
 								</div>
 							</div>
 						</div>
@@ -92,7 +75,7 @@
 				<div class="col-md-12 text-center skeleton-div">
 
 					<h1 class="section-title"><b>Provinsi Registrasi</b></h1>
-					<a id="download-provinsi-registrasi" href="#provinsi-registrasi-section" class="btn radius btn-lg bg-pupr-blue download-btn text-white disabled" data-file-name="Provinsi-Registrasi-SKA" data-sheet-name="Provinsi Registrasi SKA" data-source="resData.provinsi_registrasi" data-order-index="provinsi_registrasi" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Provinsi Registrasi</a>
+					<a id="download-provinsi-registrasi" href="#provinsi-registrasi-section" class="btn radius btn-lg bg-pupr-blue download-btn text-white disabled" data-file-name="Provinsi-Registrasi-SKT" data-sheet-name="Provinsi Registrasi SKT" data-source="resData.provinsi_registrasi" data-order-index="provinsi_registrasi" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Provinsi Registrasi</a>
 
 					<canvas id="provRegistrasiMaps"></canvas>
 				</div>
@@ -127,8 +110,8 @@
 
 			<div class="row" id="bidang-sertifikat-section">
 				<div class="col-md-12 text-center my-5 py-3">
-					<h1 class="section-title bg-white"><b>Bidang Sertifikat Keahlian</b></h1>
-					<a id="download-bidang-sertifikat" href="#bidang-sertifikat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Bidang-sertifikat-keahlian" data-sheet-name="Bidang Sertifikat Keahlian" data-source="resData.bidang" data-order-index="bidang" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Bidang Sertifikat Keahlian</a>
+					<h1 class="section-title bg-white"><b>Bidang Sertifikat Keterampilan</b></h1>
+					<a id="download-bidang-sertifikat" href="#bidang-sertifikat-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Bidang-sertifikat-keterampilan" data-sheet-name="Bidang Sertifikat Keterampilan" data-source="resData.bidang" data-order-index="bidang" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Bidang Sertifikat Keterampilan</a>
 				</div>
 				<div class="col-md-7">
 					<table class="table table-bordered" width="100%" id="bidang-sertifikat">
@@ -155,16 +138,16 @@
 				</div>
 			</div>
 
-			<div class="row" id="kualifikasi-ska-section">
+			<div class="row" id="kualifikasi-sktk-section">
 				<div class="col-md-12 text-center my-5 py-3">
-					<h1 class="section-title"><b>Kualifikasi Sertifikat Keahlian</b></h1>
-					<a id="download-kualifiaksi" href="#kualifikasi-ska-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Kualifikasi-SKA" data-sheet-name="Kualifikasi SKA" data-source="resData.kualifikasi" data-order-index="kualifikasi" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Kualifikasi</a>
+					<h1 class="section-title"><b>Kualifikasi Sertifikat Keterampilan</b></h1>
+					<a id="download-kualifiaksi" href="#kualifikasi-sktk-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Kualifikasi-SKTK" data-sheet-name="Kualifikasi SKTK" data-source="resData.kualifikasi" data-order-index="kualifikasi" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Kualifikasi</a>
 				</div>
 				<div class="col-md-7">
-					<table class="table table-bordered" width="100%" id="kualifikasi-ska">
+					<table class="table table-bordered" width="100%" id="kualifikasi-sktk">
 						<thead>
 							<tr>
-								<th class="text-center" width="60%">Kualifikasi Sertifikat Keahlian</th>
+								<th class="text-center" width="60%">Kualifikasi Sertifikat Keterampilan</th>
 								<th class="text-center" width="40%">Total</th>
 							</tr>
 						</thead>
@@ -176,19 +159,19 @@
 					</table>
 				</div>
 				<div class="col-md-5 loading-skeleton">
-					<div style="height: 522px; position: relative" class="chart-container skeleton-div pl-5" id="kualifikasi-ska-chart-container">
-						<canvas id="kualifikasi-ska-chart" height="1044px"></canvas>
+					<div style="height: 522px; position: relative" class="chart-container skeleton-div pl-5" id="kualifikasi-sktk-chart-container">
+						<canvas id="kualifikasi-sktk-chart" height="1044px"></canvas>
 					</div>
 				</div>
 			</div>
 
-			<div class="row" id="sub-bidang-ska-section">
+			<div class="row" id="sub-bidang-sktk-section">
 				<div class="col-md-12 text-center my-5 py-3">
-					<h1 class="section-title bg-white"><b>Sub Bidang Sertifikat Keahlian</b></h1>
-					<a id="download-sub-bidang-ska" href="#sub-bidang-ska-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Sub-bidang-SKA" data-sheet-name="Sub Bidang SKA" data-source="resData.sub_bidang" data-order-index="sub_bidang" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Sub Bidang Sertifikat Keahlian</a>
+					<h1 class="section-title bg-white"><b>Sub Bidang Sertifikat Keterampilan</b></h1>
+					<a id="download-sub-bidang-sktk" href="#sub-bidang-sktk-section" class="btn radius btn-lg bg-pupr-blue text-white download-btn disabled" data-file-name="Sub-bidang-SKTK" data-sheet-name="Sub Bidang SKTK" data-source="resData.sub_bidang" data-order-index="sub_bidang" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Sub Bidang Sertifikat Keahlian</a>
 				</div>
 				<div class="col-md-7">
-					<table class="table table-bordered" width="100%" id="sub-bidang-ska">
+					<table class="table table-bordered" width="100%" id="sub-bidang-sktk">
 						<thead>
 							<tr>
 								<th class="text-center" width="15%">ID</th>
@@ -206,8 +189,8 @@
 					</table>
 				</div>
 				<div class="col-md-5 loading-skeleton">
-					<div style="height: 522px; position: relative" class="chart-container skeleton-div pl-5" id="sub-bidang-ska-chart-container">
-						<canvas id="sub-bidang-ska-chart" height="1044px"></canvas>
+					<div style="height: 522px; position: relative" class="chart-container skeleton-div pl-5" id="sub-bidang-sktk-chart-container">
+						<canvas id="sub-bidang-sktk-chart" height="1044px"></canvas>
 					</div>
 				</div>
 			</div>
@@ -218,7 +201,7 @@
 				<div class="col-md-12 text-center skeleton-div">
 
 					<h1 class="section-title"><b>Periode Penerbitan Sertifkat</b></h1>
-					<a id="download-waktu-proses-sertifikat" href="#waktu-proses-sertifikat-section" class="btn radius btn-lg bg-pupr-blue download-btn text-white disabled" data-file-name="Periode-Sertifikat-Keahlian" data-sheet-name="Periode Sertifikat Sertifikat" data-source="resData.waktu_proses" data-order-index="waktu_proses" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Periode Penerbitan Sertifikat</a>
+					<a id="download-waktu-proses-sertifikat" href="#waktu-proses-sertifikat-section" class="btn radius btn-lg bg-pupr-blue download-btn text-white disabled" data-file-name="Periode-Sertifikat-Keterampilan" data-sheet-name="Periode Sertifikat Sertifikat" data-source="resData.waktu_proses" data-order-index="waktu_proses" disabled><span><i class="fa fa-solid fa-download"></i></span>&emsp;Download Data Periode Penerbitan Sertifikat</a>
 
 					<div style="height: 522px; position: relative" class="chart-container skeleton-div" id="waktu-proses-sertifikat-chart-container">
 						<canvas id="waktu-proses-sertifikat-chart" height="1044px"></canvas>
@@ -278,7 +261,7 @@
 					}
 				},
 				{
-					id: "#kualifikasi-ska",
+					id: "#kualifikasi-sktk",
 					index: "kualifikasi",
 					fields: ["kualifikasi", "jumlah_subklas"],
 					centerIndex: [1],
@@ -293,7 +276,7 @@
 					}
 				},
 				{
-					id: "#sub-bidang-ska",
+					id: "#sub-bidang-sktk",
 					index: "sub_bidang",
 					fields: ["id_sub_bidang", "sub_bidang", "jumlah_subklas"],
 					centerIndex: [0, 2],
@@ -336,7 +319,7 @@
 			 * 		}
 			 */
 
-			$.get(baseUrl + `/${devMode ? "tenagakerja-dev" : "tenaga-kerja"}/ska-transisi/ajax`, (res) => {
+			$.get(baseUrl + `/${devMode ? "tenagakerja-dev" : "tenaga-kerja"}/sktk-transisi/ajax`, (res) => {
 				res = $.parseJSON(res)
 				if (res.status == 200) {
 					$(".loading-skeleton").removeClass("loading-skeleton")
@@ -344,9 +327,8 @@
 					const resDateRecord = new Date(res.dateRecord)
 
 					const ElementLastUpdate = $("#ajax-last-update").html(" Data per Tanggal : " + resDateRecord.toLocaleString("ID"))
-					const ElementJumlahSKA = $("#ajax-jumlah-ska").html((resData.jumlah_subklas.jumlah_subklas.toLocaleString()))
-					const ElementJumlahTA = $("#ajax-jumlah-ta").html((resData.jumlah_ta.jumlah_ta.toLocaleString()))
-					const ElementJumlahTAAsing = $("#ajax-jumlah-ta-asing").html((resData.jumlah_ta_asing.jumlah_ta_asing.toLocaleString()))
+					const ElementJumlahSKTK = $("#ajax-jumlah-sktk").html((resData.jumlah_subklas.jumlah_subklas.toLocaleString()))
+					const ElementJumlahTTK = $("#ajax-jumlah-ttk").html((resData.jumlah_tkk.jumlah_ttk.toLocaleString()))
 
 					// Provinsi Registrasi Database Array
 					const dataProvRegistrasi = resData.provinsi_registrasi
@@ -491,9 +473,9 @@
 
 
 					/**
-					 * @desc Chart Asosiasi SKA
+					 * @desc Chart Asosiasi SKTK
 					 * @plugin Chart.js 3.8
-					 * @dataSource /tenagakerja/skatransisi [data: asosiasi]
+					 * @dataSource /tenaga-kerja-konstruksi/skt-transisi [data: asosiasi]
 					 */
 
 					const sortedDataAsosiasi = sort('jumlah_subklas', resData['asosiasi'])
@@ -535,7 +517,7 @@
 						}
 					}
 
-					const asosiasiSKAChart = new Chart(
+					const asosiasiSKTKChart = new Chart(
 						document.getElementById("asosiasi-chart"),
 						configAsosiasi
 					)
@@ -543,38 +525,37 @@
 					/**
 					 * @desc Chart Bidang Sertifikat Keahlian
 					 * @plugin Chart.js 3.8
-					 * @dataSource /tenagakerja/skatransisi [data: bidang]
+					 * @dataSource /tenaga-kerja-kontruksi/skt-transisi [data: bidang]
 					 */
 
-					const sortedDataBidangSKA = {}
+					const sortedDataBidangSKTK = {}
 					resData.bidang.map((item) => {
-						sortedDataBidangSKA[item.bidang] = parseInt(sortedDataBidangSKA[item.bidang] ?? 0) + item.jumlah_subklas
+						sortedDataBidangSKTK[item.bidang] = parseInt(sortedDataBidangSKTK[item.bidang] ?? 0) + item.jumlah_subklas
 					})
 
-					const labelsBidangSKA = Object.keys(sortedDataBidangSKA)
-					const dataValueBidangSKA = Object.values(sortedDataBidangSKA)
+					const labelsBidangSKTK = Object.keys(sortedDataBidangSKTK)
+					const dataValueBidangSKTK = Object.values(sortedDataBidangSKTK)
 
-					const dataBidangSKA = {
-						labels: labelsBidangSKA,
+					const dataBidangSKTK = {
+						labels: labelsBidangSKTK,
 						datasets: [{
-							label: 'Bidang SKA',
-							data: dataValueBidangSKA,
+							label: 'Bidang SKTK',
+							data: dataValueBidangSKTK,
 							// backgroundColor: Object.values(Utils.CHART_COLORS)
 							backgroundColor: [
-								'rgb(201, 203, 207)',
-								'rgb(255, 159, 64)',
 								'rgb(75, 192, 192)',
+								'rgb(201, 203, 207)',
 								'rgb(54, 162, 235)',
-								'rgb(153, 102, 255)',
+								'rgb(255, 99, 132)',
 								"rgb(234, 182, 48)",
-								'rgb(255, 99, 132)'
+								'rgb(153, 102, 255)'
 							]
 						}]
 					};
 
-					const configBidangSKA = {
+					const configBidangSKTK = {
 						type: 'doughnut',
-						data: dataBidangSKA,
+						data: dataBidangSKTK,
 						options: {
 							responsive: true,
 							plugins: {
@@ -585,30 +566,30 @@
 						}
 					};
 
-					const bidangSKAChart = new Chart(
+					const bidangSKTKChart = new Chart(
 						document.getElementById("bidang-sertifikat-chart"),
-						configBidangSKA
+						configBidangSKTK
 					)
 
 					/**
-					 * @desc Chart Kualifikasi SKA
+					 * @desc Chart Kualifikasi SKTK
 					 * @plugin Chart.js 3.8
-					 * @dataSource /tenagakerja/skatransisi [data: kualifikasi]
+					 * @dataSource /tenaga-kerja-konstruksi/skt-transisi [data: kualifikasi]
 					 */
 
-					const sortedDataKualifikasiSKA = {}
+					const sortedDataKualifikasiSKTK = {}
 					resData.kualifikasi.map((item) => {
-						sortedDataKualifikasiSKA[item.kualifikasi] = parseInt(sortedDataKualifikasiSKA[item.kualifikasi] ?? 0) + item.jumlah_subklas
+						sortedDataKualifikasiSKTK[item.kualifikasi] = parseInt(sortedDataKualifikasiSKTK[item.kualifikasi] ?? 0) + item.jumlah_subklas
 					})
 
-					const labelsKualifikasiSKA = Object.keys(sortedDataKualifikasiSKA)
-					const dataValueKualifikasiSKA = Object.values(sortedDataKualifikasiSKA)
+					const labelsKualifikasiSKTK = Object.keys(sortedDataKualifikasiSKTK)
+					const dataValueKualifikasiSKTK = Object.values(sortedDataKualifikasiSKTK)
 
-					const dataKualifikasiSKA = {
-						labels: labelsKualifikasiSKA,
+					const dataKualifikasiSKTK = {
+						labels: labelsKualifikasiSKTK,
 						datasets: [{
 							label: 'Kualifikasi',
-							data: dataValueKualifikasiSKA,
+							data: dataValueKualifikasiSKTK,
 							backgroundColor: [
 								'rgb(255, 99, 132)',
 								"rgb(234, 182, 48)",
@@ -617,9 +598,9 @@
 						}]
 					};
 
-					const configKualifikasiSKA = {
+					const configKualifikasiSKTK = {
 						type: 'doughnut',
-						data: dataKualifikasiSKA,
+						data: dataKualifikasiSKTK,
 						options: {
 							responsive: true,
 							plugins: {
@@ -630,34 +611,34 @@
 						}
 					};
 
-					const kualifikasiSKAChart = new Chart(
-						document.getElementById("kualifikasi-ska-chart"),
-						configKualifikasiSKA
+					const kualifikasiSKTKChart = new Chart(
+						document.getElementById("kualifikasi-sktk-chart"),
+						configKualifikasiSKTK
 					)
 
 					/**
-					 * @desc Chart Sub Bidang SKA
+					 * @desc Chart Sub Bidang SKTK
 					 * @plugin Chart.js 3.8
-					 * @dataSource /tenagakerja/skatransisi [data: sub_bidang]
+					 * @dataSource /tenaga-kerja-konstruksi/skt-transisi [data: sub_bidang]
 					 */
 
-					const sortedDataSubBidangSKA = sort('jumlah_subklas', resData['sub_bidang'])
-					const labelsSubBidangSKA = []
-					const dataValueSubBidangSKA = []
+					const sortedDataSubBidangSKTK = sort('jumlah_subklas', resData['sub_bidang'])
+					const labelsSubBidangSKTK = []
+					const dataValueSubBidangSKTK = []
 
-					sortedDataSubBidangSKA.map((item, index) => {
+					sortedDataSubBidangSKTK.map((item, index) => {
 						if (index < 15) {
-							labelsSubBidangSKA.push(item.sub_bidang)
-							dataValueSubBidangSKA.push(parseInt(item.jumlah_subklas))
+							labelsSubBidangSKTK.push(item.sub_bidang)
+							dataValueSubBidangSKTK.push(parseInt(item.jumlah_subklas))
 						}
 					})
 
-					const dataSubBidangSKA = {
-						labels: labelsSubBidangSKA,
+					const dataSubBidangSKTK = {
+						labels: labelsSubBidangSKTK,
 						datasets: [{
 							axis: 'y',
 							label: 'Total Subklas',
-							data: dataValueSubBidangSKA,
+							data: dataValueSubBidangSKTK,
 							fill: true,
 							// backgroundColor: "rgb(55,71,116)",
 							backgroundColor: "rgb(234,182,48)",
@@ -665,44 +646,44 @@
 						}]
 					}
 
-					const configSubBidangSKA = {
+					const configSubBidangSKTK = {
 						type: 'bar',
-						data: dataSubBidangSKA,
+						data: dataSubBidangSKTK,
 						options: {
 							indexAxis: 'y',
 							maintainAspectRatio: false,
 							plugins: {
 								title: {
 									display: true,
-									text: 'Sub Bidang Sertifikat Keahlian'
+									text: 'Sub Bidang Sertifikat Keterampilan'
 								}
 							}
 						}
 					}
 
-					const subBidangSKAChart = new Chart(
-						document.getElementById("sub-bidang-ska-chart"),
-						configSubBidangSKA
+					const subBidangSKTKChart = new Chart(
+						document.getElementById("sub-bidang-sktk-chart"),
+						configSubBidangSKTK
 					)
 
 					/**
 					 * @desc Chart Waktu Proses Sertifikat
 					 * @plugin Chart.js 3.8
-					 * @dataSource /tenagakerja/skatransisi [data: waktu_proses]
+					 * @dataSource /tenaga-kerja-konstruksi/skt-transisi [data: waktu_proses]
 					 */
 
 					const bulanIndex = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
 					resData['waktu_proses'].map((item, index) => {
-						const fullDate = item.tahun_proses_ska + "-" + (("0" + (bulanIndex.indexOf(item.bulan_proses_ska) + 1)).slice(-2)) + "-01"
+						const fullDate = item.tahun_proses_skt + "-" + (("0" + (bulanIndex.indexOf(item.bulan_proses_skt) + 1)).slice(-2)) + "-01"
 						resData['waktu_proses'][index]['fullDate'] = fullDate
 					})
 					resData['waktu_proses'].sort((a, b) => new Date(a.fullDate).getTime() - new Date(b.fullDate).getTime())
 
 					const dataWaktuProsesSertifikat = {
-						labels: resData['waktu_proses'].map(item => (item.bulan_proses_ska + " " + item.tahun_proses_ska)),
+						labels: resData['waktu_proses'].map(item => (item.bulan_proses_skt + " " + item.tahun_proses_skt)),
 						datasets: [{
 							type: "line",
-							label: 'Total SKA',
+							label: 'Total SKTK',
 							data: resData['waktu_proses'].map(item => (item.jumlah_subklas)),
 							borderColor: "rgb(55,71,116)",
 							backgroundColor: "rgba(55,71,116,0.5)",
@@ -749,13 +730,10 @@
 
 					const tableHeaders = {
 						jumlah_subklas: {
-							jumlah_subklas: "Total SKA"
+							jumlah_subklas: "Total SKTK"
 						},
-						jumlah_ta: {
-							jumlah_ta: "Total Tenaga Ahli"
-						},
-						jumlah_ta_asing: {
-							jumlah_ta_asing: "Total Tenaga Ahli Asing"
+						jumlah_tkk: {
+							jumlah_ttk: "Total Tenaga Terampil"
 						},
 						provinsi_registrasi: {
 							provinsi_regitrasi: "Nama Provinsi Registrasi",
@@ -766,22 +744,22 @@
 							jumlah_subklas: "Total Subklas"
 						},
 						bidang: {
-							id_bidang: "ID Bidang SKA",
-							bidang: "Bidang SKA",
+							id_bidang: "ID Bidang SKT",
+							bidang: "Bidang SKT",
 							jumlah_subklas: "Total Subklas"
 						},
 						kualifikasi: {
-							kualifikasi: "Kualifikasi SKA",
+							kualifikasi: "Kualifikasi SKT",
 							jumlah_subklas: "Total Subklas"
 						},
 						sub_bidang: {
-							id_sub_bidang: "ID Sub Bidang SKA",
-							sub_bidang: "Sub Bidang SKA",
+							id_sub_bidang: "ID Sub Bidang SKT",
+							sub_bidang: "Sub Bidang SKT",
 							jumlah_subklas: "Total Subklas"
 						},
 						waktu_proses: {
-							tahun_proses_ska: "Tahun Penerbitan SKA",
-							bulan_proses_ska: "Bulan Penerbitan SKA",
+							tahun_proses_skt: "Tahun Penerbitan SKT",
+							bulan_proses_skt: "Bulan Penerbitan SKT",
 							jumlah_subklas: "Total Subklas"
 						}
 					}

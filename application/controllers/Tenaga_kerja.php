@@ -18,7 +18,7 @@ class Tenaga_kerja extends CI_Controller
         $this->load->view('component/footer');
     }
 
-    public function skaTransisi($type = null)
+    public function ska_transisi($type = null)
     {
         $pageTitle = 'Sertifikat Keahlian (SKA) Masa Transisi';
 
@@ -28,6 +28,19 @@ class Tenaga_kerja extends CI_Controller
             echo json_encode($data, true);
         } else {
             loadPage('tenaga_kerja', 'ska_transisi', $pageTitle);
+        }
+    }
+
+    public function sktk_transisi($type = null)
+    {
+        $pageTitle = 'Sertifikat Keterampilan Kerja (SKTK) Masa Transisi';
+
+        if ($type == "ajax") {
+            $context   = "/tenaga-kerja-konstruksi/skt-transisi";
+            $data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
+            echo json_encode($data, true);
+        } else {
+            loadPage('tenaga_kerja', 'sktk_transisi', $pageTitle);
         }
     }
 

@@ -107,9 +107,10 @@
 					<table class="table table-bordered" width="100%" id="kabupaten-kota">
 						<thead>
 							<tr>
-								<th class="text-center" width="15%">Provinsi</th>
+								<!-- <th class="text-center" width="15%">Provinsi</th> -->
 								<th class="text-center" width="70%">Kabupaten/Kota</th>
-								<th class="text-center" width="15%">Total Tenaga Ahli</th>
+								<!-- <th class="text-center" width="15%">Total Tenaga Ahli</th> -->
+								<th class="text-center" width="30%">Total Tenaga Ahli</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -147,9 +148,12 @@
 			const tableElementData = [{
 				id: "#kabupaten-kota",
 				index: "kabkot_domisili_ta",
-				fields: ["provinsi_personal", "kabupaten_personal", "jumlah_ta"],
-				centerIndex: [2],
-				formating: ['text', 'text', 'number'],
+				// fields: ["provinsi_personal", "kabupaten_personal", "jumlah_ta"],
+				// centerIndex: [2],
+				// formating: ['text', 'text', 'number'],
+				fields: ["kabupaten_personal", "jumlah_ta"],
+				centerIndex: [1],
+				formating: ['text', 'number'],
 				options: {
 					scrollX: true,
 					scrollY: "640px",
@@ -316,27 +320,61 @@
 					// const indexOrderingKeyJenisSertifikat = ["Jasa Konsultasi Konstruksi", "Pekerjaan Konstruksi", "Pekerjaan Konstruksi Terintegrasi", null]
 					// resData.jenis_sertifikat = mapOrder(rawJenisSertifikat, indexOrderingKeyJenisSertifikat, "jenis_sbu_grup")
 
+					// /**
+					//  * @desc DataTables mapping data
+					//  */
+
+					// const ps = []
+					// tableElementData.map((data) => {
+
+					// 	$(`${data.id} tbody`).empty()
+
+					// 	$.each(resData[data.index], (idx, elm) => {
+					// 		$(`${data.id} tbody`).append(`<tr>${data.fields.map((field, fIndex) => {return `<td class="${data.centerIndex.includes(fIndex) ? "text-center text-middle bg-white" : "text-middle bg-white"}">${elm[field] != null ? (data.formating[fIndex] == "number" ? parseInt(elm[field]).toLocaleString() : elm[field]) : "-"}</td>`})}</tr>`)
+					// 	})
+
+					// 	// const dataTablesOpt = {
+					// 	// 	fnInitComplete: function () {
+					// 	// 		ps[data.id] = new PerfectScrollbar('.dataTables_scrollBody')
+					// 	// 	},
+					// 	// 	fnDrawCallback: function (oSettings) {
+					// 	// 		ps[data.id] = new PerfectScrollbar('.dataTables_scrollBody')
+					// 	// 	}
+					// 	// , ...data.options}
+
+					// 	$(data.id).DataTable(data.options)
+					// })
+
 					/**
 					 * @desc DataTables mapping data
 					 */
-
-					const ps = []
 					tableElementData.map((data) => {
 
 						$(`${data.id} tbody`).empty()
 
 						$.each(resData[data.index], (idx, elm) => {
-							$(`${data.id} tbody`).append(`<tr>${data.fields.map((field, fIndex) => {return `<td class="${data.centerIndex.includes(fIndex) ? "text-center text-middle bg-white" : "text-middle bg-white"}">${elm[field] != null ? (data.formating[fIndex] == "number" ? parseInt(elm[field]).toLocaleString() : elm[field]) : "-"}</td>`})}</tr>`)
-						})
 
-						// const dataTablesOpt = {
-						// 	fnInitComplete: function () {
-						// 		ps[data.id] = new PerfectScrollbar('.dataTables_scrollBody')
-						// 	},
-						// 	fnDrawCallback: function (oSettings) {
-						// 		ps[data.id] = new PerfectScrollbar('.dataTables_scrollBody')
-						// 	}
-						// , ...data.options}
+							$(`${data.id} tbody`).append(`
+							<tr>${
+								data.fields.map((field, fIndex) => {
+									return `<td class="${
+										
+										data.centerIndex.includes(fIndex) ? 
+										"text-center text-middle bg-white" : 
+										"text-middle bg-white"
+									
+									}">${
+										elm[field] != null ? 
+											(
+												data.formating[fIndex] == "number" ? 
+												parseInt(elm[field]).toLocaleString() : 
+												elm[field]
+											) : 
+											"-"
+									}</td>`
+								})
+							}</tr>`)
+						})
 
 						$(data.id).DataTable(data.options)
 					})
