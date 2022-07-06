@@ -44,6 +44,19 @@ class Tenaga_kerja extends CI_Controller
         }
     }
 
+    public function skk_reguler($type = null)
+    {
+        $pageTitle = 'Sertifikat Kompetensi Kerja (SKK) Masa Reguler';
+
+        if ($type == "ajax") {
+            $context   = "/tenaga-kerja-konstruksi/skk-reguler";
+            $data      = http_request($this->endpoints['default'] . '/' . $this->apikey['default'] . $context);
+            echo json_encode($data, true);
+        } else {
+            loadPage('tenaga_kerja', 'skk_reguler', $pageTitle);
+        }
+    }
+
     public function ahli($type = null)
     {
         $pageTitle = 'Tenaga Ahli (SKA Masa Transisi)';
